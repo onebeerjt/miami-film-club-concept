@@ -133,7 +133,36 @@ section { padding: 56px 0 8px; }
 .detail-line svg { width: 16px; height: 16px; color: var(--amber); flex: none; }
 .spotlight .btn { margin-top: 14px; align-self: flex-start; padding: 12px 22px; font-size: 14px; }
 
-/* screening cards */
+.spotlight + .spotlight { margin-top: 16px; }
+.spotlight .poster-art {
+  display: grid; place-items: center; min-height: 220px;
+  background: radial-gradient(130% 130% at 30% 20%, #3a2a16 0%, #191410 70%);
+  border-right: 1px solid var(--line);
+}
+.spotlight .poster-art span {
+  font-family: "Bebas Neue", sans-serif; font-size: 34px; line-height: 1;
+  letter-spacing: 0.04em; text-align: center; color: var(--amber); padding: 16px;
+}
+
+/* testimonials */
+.quote-card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+  padding: 22px 20px; font-size: 15px; line-height: 1.7; color: var(--ink); font-style: italic;
+}
+.quote-card span {
+  display: block; margin-top: 12px; font-style: normal;
+  font-size: 12.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber);
+}
+.press { text-align: center; color: var(--faint); font-size: 13.5px; margin-top: 22px; line-height: 1.7; }
+.press a { color: var(--amber); font-weight: 700; text-decoration: none; }
+
+/* socials */
+.socials { display: flex; flex-wrap: wrap; gap: 8px; }
+.socials a {
+  font-size: 12.5px; font-weight: 700; color: var(--muted); text-decoration: none;
+  border: 1px solid var(--line); padding: 8px 14px; border-radius: 999px;
+}
+.socials a:active { transform: scale(0.95); }
 .grid { display: grid; gap: 16px; }
 .scard {
   display: grid; grid-template-columns: 108px 1fr; gap: 16px;
@@ -243,6 +272,7 @@ footer .brand .name { font-size: 19px; }
     <div class="navlinks">
       <a href="#screenings">Nights</a>
       <a href="#about">About</a>
+      <a href="#membership">Membership</a>
       <a href="#join" class="cta">Join us</a>
     </div>
   </div>
@@ -252,15 +282,15 @@ footer .brand .name { font-size: 19px; }
   <div class="wrap">
     <div class="kicker">Pop-up cinema · Miami, FL</div>
     <h1 class="display">THE<br>MOVIEGOERS<br><span class="amber">ARE THE MOVIE.</span></h1>
-    <p class="lede">We're a crew of film lovers throwing <strong>pop-up screenings and movie parties</strong> all over the 305 — horror nights, cult classics, themed throwbacks. No velvet ropes. Just good movies, good people, and rooms full of folks who actually love this stuff.</p>
+    <p class="lede">We're <strong>Miami Moviegoers</strong> — a club on a mission to <strong>champion the theater experience</strong> and connect film lovers across South Florida. Pop-up screenings, themed parties, horror nights, cult classics. Grab a ticket, show up, and talk movies with people who actually get it.</p>
     <div class="btn-row">
       <a class="btn primary" href="#spotlight">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
         Next screening
       </a>
-      <a class="btn ghost" href="https://www.instagram.com/miamimoviegoers" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor" stroke="none"/></svg>
-        Follow the club
+      <a class="btn ghost" href="https://www.patreon.com/user?u=42357437" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7c-2 0-4.5-1-5.5-3 2.5 0 5.5 1.5 5.5 3zM12 7c2 0 4.5-1 5.5-3-2.5 0-5.5 1.5-5.5 3z"/></svg>
+        Become a Moviegoer
       </a>
     </div>
   </div>
@@ -273,30 +303,64 @@ footer .brand .name { font-size: 19px; }
 <section id="spotlight">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">Don't miss it</div>
-      <h2 class="display">NEXT UP</h2>
+      <div class="eyebrow">On the marquee</div>
+      <h2 class="display">UP NEXT</h2>
+      <p>Real nights, real dates — straight from the club's calendar.</p>
     </div>
+
     <div class="spotlight">
       <div class="poster">
-        <img src="https://m.media-amazon.com/images/M/MV5BMzZiNTdiYTgtYjNkMS00MmJmLWEwZGQtNmY0NGJkMGE0YmYzXkEyXkFqcGc@._V1_QL75_UX380_CR0,9,380,562_.jpg" alt="Halloween (1978) movie poster" loading="eager">
+        <img src="https://m.media-amazon.com/images/M/MV5BOTg2YzY5ZGYtNDk1My00N2Q2LWFhN2YtZWU5YTkzODIyZGRmXkEyXkFqcGc@._V1_SX300.jpg" alt="The Rocky Horror Picture Show (1975) movie poster" loading="eager">
       </div>
       <div class="info">
-        <span class="tag">Horror Night</span>
-        <h3>HALLOWEEN</h3>
-        <div class="yr">1978 · John Carpenter</div>
-        <div class="detail-line">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
-          Fri, Oct 16 · 8:00 PM
-        </div>
+        <span class="tag">Interactive screening</span>
+        <h3>ROCKY HORROR PICTURE SHOW</h3>
+        <div class="yr">1975 · Jim Sharman</div>
         <div class="detail-line">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1116 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Secret location · revealed to RSVPs
+          Pinecrest Gardens
         </div>
         <div class="detail-line">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7c-2 0-4.5-1-5.5-3 2.5 0 5.5 1.5 5.5 3zM12 7c2 0 4.5-1 5.5-3-2.5 0-5.5 1.5-5.5 3z"/></svg>
-          Costumes encouraged
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+          Date TBA · tickets on sale now
         </div>
-        <a class="btn primary" href="https://www.instagram.com/miamimoviegoers" target="_blank" rel="noopener">RSVP on Instagram</a>
+        <a class="btn primary" href="https://pinecrestgardens.vbotickets.com/event/The_Rocky_Horror_Picture_Show/203409" target="_blank" rel="noopener">Get tickets</a>
+      </div>
+    </div>
+
+    <div class="spotlight">
+      <div class="poster poster-art"><span>ELIZABETH<br>HOLMES<br>LOOKALIKE<br>CONTEST</span></div>
+      <div class="info">
+        <span class="tag">Contest night</span>
+        <h3>ELIZABETH HOLMES LOOKALIKE CONTEST</h3>
+        <div class="yr">Black turtlenecks strongly encouraged</div>
+        <div class="detail-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1116 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Churchill's Pub
+        </div>
+        <div class="detail-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+          Wed, Oct 21 · 7:30 PM
+        </div>
+        <a class="btn primary" href="https://www.instagram.com/miamimoviegoers" target="_blank" rel="noopener">Register via Instagram</a>
+      </div>
+    </div>
+
+    <div class="spotlight">
+      <div class="poster poster-art"><span>OKTOBER-<br>FEST<br>MIAMI<br>2026</span></div>
+      <div class="info">
+        <span class="tag">Member perk</span>
+        <h3>OKTOBERFEST MIAMI 2026</h3>
+        <div class="yr">Discount tickets for the club</div>
+        <div class="detail-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1116 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Miami · venue on Eventbrite
+        </div>
+        <div class="detail-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+          Fall 2026 · link in bio
+        </div>
+        <a class="btn primary" href="https://linktr.ee/miamimoviegoers" target="_blank" rel="noopener">Get discount link</a>
       </div>
     </div>
   </div>
@@ -305,9 +369,9 @@ footer .brand .name { font-size: 19px; }
 <section id="screenings">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">Coming soon</div>
-      <h2 class="display">UPCOMING NIGHTS</h2>
-      <p>Every screening is a little different — a theme, a vibe, sometimes a costume rack. Follow along so you never miss a marquee.</p>
+      <div class="eyebrow">From the archives</div>
+      <h2 class="display">RECENT NIGHTS</h2>
+      <p>A taste of how the club does it — themed, costumed, full-send. Every night hits different.</p>
     </div>
     <div class="grid" id="screenGrid"></div>
   </div>
@@ -320,8 +384,8 @@ footer .brand .name { font-size: 19px; }
       <h2 class="display">A CLUB, NOT<br>A THEATER.</h2>
     </div>
     <div class="about-card">
-      <p><strong>Miami Film Club</strong> started the way all the best things start — a group chat full of people who never shut up about movies. Now we're <strong>thousands deep</strong>, turning rooftops, warehouses, and backyards across the 305 into cinemas for a night.</p>
-      <p>We don't do assigned seating and overpriced popcorn. We do <strong>themed nights</strong> where the crowd dresses the part, <strong>pop-up screenings</strong> in places you'd never expect, and parties where the movie is just the excuse to get everyone in one room.</p>
+      <p><strong>Miami Moviegoers</strong> — aka Miami Film Club — exists to <strong>champion the theater experience</strong> and connect movie lovers across South Florida. Joining is dead simple: <strong>buy your ticket ahead of time and show up</strong>. Maybe grab some concessions while you're there.</p>
+      <p>Nights usually come with <strong>pre- or post-screening hangouts</strong> — billiards, themed cocktails, costume contests, trivia — because half the fun is talking film with people who get it. Free library screenings, anniversary blowouts with live performances, festival outings: every night is built on one idea — the moviegoers are the movie.</p>
       <div class="pillars">
         <div class="pillar">
           <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2.5"/><path d="M7 4v16M17 4v16M2 9h5M2 15h5M17 9h5M17 15h5"/></svg></div>
@@ -339,6 +403,38 @@ footer .brand .name { font-size: 19px; }
           <p>The crowd is the show. Come as you are.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="words">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Word of mouth</div>
+      <h2 class="display">THE CROWD<br>TALKS.</h2>
+    </div>
+    <div class="grid">
+      <div class="quote-card">"Being new to Miami was a whole different world, and looking to make friends, I chose Miami Moviegoers, and it was the best decision I ever made."<span>— Marya Johnson</span></div>
+      <div class="quote-card">"It's amazing how a love for films has brought together such a diverse group of people, turning strangers into friends."<span>— Romina Espinosa</span></div>
+      <div class="quote-card">"Miami Moviegoers has been a great opportunity not only to meet other movie fans, but also to soak in the city life."<span>— Mikey Martinez</span></div>
+    </div>
+    <p class="press">As featured in <a href="https://www.miaminewtimes.com/arts/miami-moviegoers-helps-south-florida-make-friends-at-the-movies-22497929" target="_blank" rel="noopener">Miami New Times</a><br>"helps South Florida make friends at the movies."</p>
+  </div>
+</section>
+
+<section id="membership">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Moviegoers Network</div>
+      <h2 class="display">BECOME A<br>MOVIEGOER.</h2>
+      <p>Membership starts at <strong>$2/month</strong> on Patreon — unlocking advance screenings, member discounts, the Discord, and more. Every little bit keeps the projector running.</p>
+    </div>
+    <div class="btn-row">
+      <a class="btn primary" href="https://www.patreon.com/user?u=42357437" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7c-2 0-4.5-1-5.5-3 2.5 0 5.5 1.5 5.5 3zM12 7c2 0 4.5-1 5.5-3-2.5 0-5.5 1.5-5.5 3z"/></svg>
+        Join on Patreon
+      </a>
+      <a class="btn ghost" href="https://miamimoviegoers.com/volunteer" target="_blank" rel="noopener">Volunteer</a>
     </div>
   </div>
 </section>
@@ -366,13 +462,13 @@ footer .brand .name { font-size: 19px; }
   <div class="wrap">
     <div class="join">
       <h2 class="display">PULL UP.</h2>
-      <p>Want in? Nights get announced on Instagram first — that's where RSVPs live. Got a venue, a rooftop, or a wild screening idea? Come talk to us.</p>
+      <p>Nights get announced on Instagram first — that's where the RSVPs live. Want to help run the show? The club is always looking for volunteers.</p>
       <div class="btn-row">
         <a class="btn primary" href="https://www.instagram.com/miamimoviegoers" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor" stroke="none"/></svg>
           @miamimoviegoers
         </a>
-        <a class="btn ghost" href="https://www.instagram.com/miamimoviegoers" target="_blank" rel="noopener">Host with us</a>
+        <a class="btn ghost" href="https://miamimoviegoers.com/volunteer" target="_blank" rel="noopener">Volunteer</a>
       </div>
     </div>
   </div>
@@ -387,10 +483,14 @@ footer .brand .name { font-size: 19px; }
         </span>
         <span class="name">MIAMI FILM CLUB</span>
       </a>
-      <a class="ig-link" href="https://www.instagram.com/miamimoviegoers" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor" stroke="none"/></svg>
-        Instagram
-      </a>
+      <div class="socials">
+        <a href="https://miamimoviegoers.com" target="_blank" rel="noopener">Website</a>
+        <a href="https://www.instagram.com/miamimoviegoers" target="_blank" rel="noopener">Instagram</a>
+        <a href="http://www.tiktok.com/@miamimoviegoers" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://boxd.it/58OIJ" target="_blank" rel="noopener">Letterboxd</a>
+        <a href="https://www.meetup.com/miami-moviegoers/" target="_blank" rel="noopener">Meetup</a>
+        <a href="https://www.patreon.com/user?u=42357437" target="_blank" rel="noopener">Patreon</a>
+      </div>
     </div>
     <span class="concept-badge">Concept redesign — unofficial pitch mockup, not affiliated with @miamimoviegoers</span>
     <div class="copy">Made with love for the 305 film community.</div>
@@ -400,18 +500,14 @@ footer .brand .name { font-size: 19px; }
 <script>
 "use strict";
 const SCREENINGS = [
-  { title: "Scream", year: 1996, theme: "Horror Night Pt. 2", date: "Fri, Oct 23 · 8:30 PM", venue: "Wynwood · venue TBA",
-    poster: "https://m.media-amazon.com/images/M/MV5BMjA2NjU5MTg5OF5BMl5BanBnXkFtZTgwOTkyMzQxMDE@._V1_SX300.jpg" },
-  { title: "Scarface", year: 1983, theme: "305 Classics", date: "Sat, Oct 31 · 9:00 PM", venue: "Little Havana · venue TBA",
-    poster: "https://m.media-amazon.com/images/M/MV5BNDUzYjY0NmUtMDM4OS00Y2Q5LWJiODYtNTk0ZTk0YjZhMTg1XkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg" },
-  { title: "Moonlight", year: 2016, theme: "Miami Stories", date: "Fri, Nov 6 · 7:30 PM", venue: "Liberty City · venue TBA",
-    poster: "https://m.media-amazon.com/images/M/MV5BNzQxNTIyODAxMV5BMl5BanBnXkFtZTgwNzQyMDA3OTE@._V1_SX300.jpg" },
-  { title: "Get Out", year: 2017, theme: "Modern Horror", date: "Fri, Nov 13 · 8:30 PM", venue: "Downtown · venue TBA",
-    poster: "https://m.media-amazon.com/images/M/MV5BMjUxMDQwNjcyNl5BMl5BanBnXkFtZTgwNzcwMzc0MTI@._V1_QL75_UX380_CR0,0,380,562_.jpg" },
-  { title: "Pulp Fiction", year: 1994, theme: "Cult Classics", date: "Sat, Nov 21 · 8:00 PM", venue: "MiMo · venue TBA",
-    poster: "https://m.media-amazon.com/images/M/MV5BYTViYTE3ZGQtNDBlMC00ZTAyLTkyODMtZGRiZDg0MjA2YThkXkEyXkFqcGc@._V1_QL75_UY562_CR3,0,380,562_.jpg" },
-  { title: "Clueless", year: 1995, theme: "Throwback Party", date: "Fri, Dec 4 · 8:00 PM", venue: "Coral Gables · venue TBA",
-    poster: "https://m.media-amazon.com/images/M/MV5BMTgwYjQ1NDktOTcwNi00MWZhLTliYWQtZDg5NjZhY2U5ZTNlXkEyXkFqcGc@._V1_SX300.jpg" },
+  { title: "Hedwig and the Angry Inch", year: 2001, theme: "25th anniversary · glam rock night", date: "Las Rosas", venue: "w/ Hexed Miami — live sets, costume contest, gift bags",
+    poster: "https://m.media-amazon.com/images/M/MV5BN2Q4MGJmYTgtNDhiMS00MTcwLTlhZjgtN2U5NWUyYzFiMWRmXkEyXkFqcGc@._V1_QL75_UX380_CR0,2,380,562_.jpg" },
+  { title: "Your Name", year: 2016, theme: "10th anniversary · 4K re-release", date: "AMC Sunset", venue: "Billiards pre-social at GameTime Miami",
+    poster: "https://m.media-amazon.com/images/M/MV5BMjI1ODZkYTgtYTY3Yy00ZTJkLWFkOTgtZDUyYWM4MzQwNjk0XkEyXkFqcGc@._V1_SX300.jpg" },
+  { title: "Shakespeare in Love", year: 1998, theme: "Free screening · poetry & popcorn", date: "Coral Gables Branch Library", venue: "w/ Miami Poetry Club — live readings",
+    poster: "https://m.media-amazon.com/images/M/MV5BYmM3MTllNzYtN2MzNS00MWQwLTk0NTEtNjY1MmMwYjNkNTE5XkEyXkFqcGc@._V1_QL75_UY562_CR8,0,380,562_.jpg" },
+  { title: "Super Mario Bros.", year: 1993, theme: "Retro game social + trivia", date: "Muse Studio", venue: "Colada, popcorn & Ricky's trivia night",
+    poster: "https://m.media-amazon.com/images/M/MV5BYWUzYWIxMDUtYTdmYS00MjUxLWJjNDItYzcxOTY0N2M2YWE5XkEyXkFqcGc@._V1_QL75_UX380_CR0,1,380,562_.jpg" },
 ];
 const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const calSVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>';
@@ -430,7 +526,7 @@ document.getElementById("screenGrid").innerHTML = SCREENINGS.map(s => `
   </article>`).join("");
 
 // marquee content (duplicated for seamless loop)
-const words = ["Pop-up cinema", "Movie parties", "Horror nights", "Cult classics", "The 305", "Costumes encouraged", "Community first"];
+const words = ["Pop-up cinema", "Movie parties", "Horror nights", "Cult classics", "The 305", "Advance screenings", "Discord community"];
 const seq = words.map(w => `<span>${w} <b>·</b></span>`).join("");
 document.getElementById("mqTrack").innerHTML = seq + seq;
 </script>
