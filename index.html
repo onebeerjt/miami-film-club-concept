@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0d0a08">
+<title>Miami Film Club — Pop-Up Cinema & Movie Parties in the 305</title>
+<meta name="description" content="A community of movie lovers throwing pop-up cinema nights and movie parties across Miami. The moviegoers are the movie.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d0a08;
+  --bg2: #141009;
+  --card: #191410;
+  --ink: #f7f1e8;
+  --muted: rgba(247,241,232,0.62);
+  --faint: rgba(247,241,232,0.38);
+  --amber: #f0a832;
+  --amber-deep: #c77f1a;
+  --red: #e5484d;
+  --line: rgba(247,241,232,0.12);
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html { background: var(--bg); scroll-behavior: smooth; }
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg); color: var(--ink);
+  min-height: 100dvh; -webkit-font-smoothing: antialiased; overflow-x: hidden;
+}
+/* film grain */
+.grain {
+  position: fixed; inset: 0; z-index: 60; pointer-events: none; opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.wrap { max-width: 640px; margin: 0 auto; padding: 0 20px; }
+.display { font-family: "Bebas Neue", "Arial Narrow", sans-serif; letter-spacing: 0.02em; line-height: 0.95; font-weight: 400; }
+
+/* nav */
+nav.top {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(13,10,8,0.82); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--line);
+}
+nav.top .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 12px; padding-bottom: 12px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
+.brand .mark {
+  width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--amber), var(--amber-deep));
+  box-shadow: 0 4px 18px rgba(240,168,50,0.35);
+}
+.brand .name { font-family: "Bebas Neue", sans-serif; font-size: 22px; letter-spacing: 0.04em; }
+.navlinks { display: flex; gap: 4px; align-items: center; }
+.navlinks a {
+  color: var(--muted); text-decoration: none; font-size: 13.5px; font-weight: 600;
+  padding: 8px 10px; border-radius: 10px;
+}
+.navlinks a.cta {
+  background: var(--amber); color: #1a1206; font-weight: 700;
+  box-shadow: 0 4px 16px rgba(240,168,50,0.35);
+}
+.navlinks a.cta:active { transform: scale(0.95); }
+
+/* hero */
+.hero { position: relative; padding: 56px 0 40px; overflow: hidden; }
+.hero .kicker {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11.5px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--amber); margin-bottom: 18px;
+}
+.hero .kicker::before { content: ""; width: 26px; height: 2px; background: var(--amber); border-radius: 2px; }
+.hero h1 { font-size: clamp(58px, 17vw, 108px); margin-bottom: 18px; }
+.hero h1 .amber { color: var(--amber); }
+.hero p.lede { font-size: 17px; line-height: 1.65; color: var(--muted); max-width: 46ch; margin-bottom: 28px; }
+.hero p.lede strong { color: var(--ink); }
+.btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-size: 15px; font-weight: 700; text-decoration: none;
+  padding: 15px 26px; border-radius: 999px; cursor: pointer; border: 0; font-family: inherit;
+  transition: transform 0.15s ease;
+}
+.btn:active { transform: scale(0.95); }
+.btn.primary { background: var(--amber); color: #1a1206; box-shadow: 0 8px 28px rgba(240,168,50,0.35); }
+.btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+.btn svg { width: 17px; height: 17px; }
+
+/* marquee strip */
+.marquee {
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  overflow: hidden; white-space: nowrap; padding: 14px 0; margin: 8px 0 0;
+  background: var(--bg2);
+}
+.marquee .track { display: inline-block; animation: mq 28s linear infinite; }
+.marquee span {
+  font-family: "Bebas Neue", sans-serif; font-size: 20px; letter-spacing: 0.14em;
+  color: var(--faint); margin: 0 26px; text-transform: uppercase;
+}
+.marquee span b { color: var(--amber); font-weight: 400; }
+@keyframes mq { to { transform: translateX(-50%); } }
+
+/* section */
+section { padding: 56px 0 8px; }
+.sec-head { margin-bottom: 26px; }
+.sec-head .eyebrow {
+  font-size: 11.5px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--amber); margin-bottom: 10px;
+}
+.sec-head h2 { font-size: clamp(40px, 11vw, 64px); }
+.sec-head p { color: var(--muted); font-size: 15.5px; line-height: 1.6; margin-top: 10px; max-width: 44ch; }
+
+/* spotlight */
+.spotlight {
+  border-radius: 22px; overflow: hidden; position: relative;
+  border: 1px solid var(--line); background: var(--card);
+  display: grid; grid-template-columns: 148px 1fr;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+}
+.spotlight .poster { position: relative; min-height: 220px; }
+.spotlight .poster img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.spotlight .info { padding: 22px 20px; display: flex; flex-direction: column; justify-content: center; }
+.tag {
+  display: inline-block; font-size: 10.5px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+  color: #1a1206; background: var(--amber); padding: 5px 11px; border-radius: 999px; margin-bottom: 12px;
+  align-self: flex-start;
+}
+.spotlight h3 { font-family: "Bebas Neue", sans-serif; font-size: 38px; letter-spacing: 0.02em; margin-bottom: 4px; }
+.spotlight .yr { color: var(--faint); font-size: 14px; font-weight: 600; margin-bottom: 14px; }
+.detail-line { display: flex; align-items: center; gap: 9px; font-size: 14px; color: var(--muted); margin-bottom: 8px; font-weight: 500; }
+.detail-line svg { width: 16px; height: 16px; color: var(--amber); flex: none; }
+.spotlight .btn { margin-top: 14px; align-self: flex-start; padding: 12px 22px; font-size: 14px; }
+
+/* screening cards */
+.grid { display: grid; gap: 16px; }
+.scard {
+  display: grid; grid-template-columns: 108px 1fr; gap: 16px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+  padding: 14px; align-items: center;
+  transition: transform 0.15s ease, border-color 0.2s ease;
+}
+.scard:active { transform: scale(0.98); }
+.scard .p { width: 108px; height: 152px; border-radius: 12px; overflow: hidden; flex: none; background: #241c12; }
+.scard .p img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.scard h3 { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 2px; }
+.scard .yr { font-size: 12.5px; color: var(--faint); font-weight: 600; margin-bottom: 10px; }
+.scard .theme {
+  display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--amber); border: 1px solid rgba(240,168,50,0.4); padding: 4px 10px; border-radius: 999px;
+  margin-bottom: 10px;
+}
+.scard .detail-line { font-size: 13px; margin-bottom: 5px; }
+
+/* about */
+.about-card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 30px 26px;
+}
+.about-card p { font-size: 16px; line-height: 1.75; color: var(--muted); margin-bottom: 16px; }
+.about-card p:last-child { margin-bottom: 0; }
+.about-card strong { color: var(--ink); }
+.pillars { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 24px; }
+.pillar {
+  background: var(--bg2); border: 1px solid var(--line); border-radius: 16px; padding: 18px 14px; text-align: center;
+}
+.pillar .ic {
+  width: 42px; height: 42px; margin: 0 auto 10px; border-radius: 13px; display: grid; place-items: center;
+  background: rgba(240,168,50,0.12); border: 1px solid rgba(240,168,50,0.3);
+}
+.pillar .ic svg { width: 21px; height: 21px; color: var(--amber); }
+.pillar h4 { font-size: 13.5px; font-weight: 700; margin-bottom: 5px; }
+.pillar p { font-size: 12px; color: var(--faint); line-height: 1.5; margin: 0; }
+
+/* community */
+.cgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.tile {
+  aspect-ratio: 1; border-radius: 16px; position: relative; overflow: hidden;
+  border: 1px solid var(--line); display: grid; place-items: center;
+}
+.tile svg { width: 30px; height: 30px; color: rgba(247,241,232,0.5); }
+.tile.t1 { background: radial-gradient(120% 120% at 20% 10%, #3a2a16 0%, #191410 70%); }
+.tile.t2 { background: radial-gradient(120% 120% at 80% 20%, #4a1f1a 0%, #191410 70%); }
+.tile.t3 { background: radial-gradient(120% 120% at 50% 90%, #1e3a2e 0%, #191410 70%); }
+.tile.t4 { background: radial-gradient(120% 120% at 10% 80%, #2e2340 0%, #191410 70%); }
+.tile.t5 { background: radial-gradient(120% 120% at 90% 80%, #40301a 0%, #191410 70%); }
+.tile.t6 { background: radial-gradient(120% 120% at 50% 10%, #1a2e3a 0%, #191410 70%); }
+.tile .cap {
+  position: absolute; bottom: 8px; left: 10px; right: 10px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint);
+}
+.comm-note { text-align: center; color: var(--faint); font-size: 13px; margin-top: 18px; line-height: 1.6; }
+
+/* join */
+.join {
+  margin: 56px 0 8px; border-radius: 26px; padding: 44px 28px; text-align: center;
+  background: linear-gradient(160deg, #2a1e0e 0%, #191410 60%);
+  border: 1px solid rgba(240,168,50,0.25);
+  position: relative; overflow: hidden;
+}
+.join::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(80% 60% at 50% 0%, rgba(240,168,50,0.16), transparent 70%);
+}
+.join h2 { font-size: clamp(44px, 12vw, 68px); margin-bottom: 12px; position: relative; }
+.join p { color: var(--muted); font-size: 15.5px; line-height: 1.65; max-width: 40ch; margin: 0 auto 26px; position: relative; }
+.join .btn-row { justify-content: center; position: relative; }
+
+/* footer */
+footer { border-top: 1px solid var(--line); margin-top: 64px; padding: 30px 0 calc(var(--sab) + 34px); }
+footer .wrap { display: flex; flex-direction: column; gap: 14px; }
+.frow { display: flex; align-items: center; justify-content: space-between; }
+footer .brand .name { font-size: 19px; }
+.ig-link {
+  display: inline-flex; align-items: center; gap: 8px; color: var(--muted);
+  text-decoration: none; font-size: 13.5px; font-weight: 600;
+}
+.ig-link svg { width: 17px; height: 17px; color: var(--amber); }
+.concept-badge {
+  align-self: flex-start; font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
+  color: var(--faint); border: 1px dashed rgba(247,241,232,0.25);
+  padding: 7px 13px; border-radius: 999px;
+}
+.copy { font-size: 12px; color: var(--faint); }
+
+@media (min-width: 560px) {
+  .spotlight { grid-template-columns: 200px 1fr; }
+  .spotlight .poster { min-height: 290px; }
+}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<nav class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <span class="mark">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#1a1206" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2.5"/><path d="M7 4v16M17 4v16M2 9h5M2 15h5M17 9h5M17 15h5"/></svg>
+      </span>
+      <span class="name">MIAMI FILM CLUB</span>
+    </a>
+    <div class="navlinks">
+      <a href="#screenings">Nights</a>
+      <a href="#about">About</a>
+      <a href="#join" class="cta">Join us</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="kicker">Pop-up cinema · Miami, FL</div>
+    <h1 class="display">THE<br>MOVIEGOERS<br><span class="amber">ARE THE MOVIE.</span></h1>
+    <p class="lede">We're a crew of film lovers throwing <strong>pop-up screenings and movie parties</strong> all over the 305 — horror nights, cult classics, themed throwbacks. No velvet ropes. Just good movies, good people, and rooms full of folks who actually love this stuff.</p>
+    <div class="btn-row">
+      <a class="btn primary" href="#spotlight">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+        Next screening
+      </a>
+      <a class="btn ghost" href="https://www.instagram.com/miamimoviegoers" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor" stroke="none"/></svg>
+        Follow the club
+      </a>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track" id="mqTrack"></div>
+</div>
+
+<section id="spotlight">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Don't miss it</div>
+      <h2 class="display">NEXT UP</h2>
+    </div>
+    <div class="spotlight">
+      <div class="poster">
+        <img src="https://m.media-amazon.com/images/M/MV5BMzZiNTdiYTgtYjNkMS00MmJmLWEwZGQtNmY0NGJkMGE0YmYzXkEyXkFqcGc@._V1_QL75_UX380_CR0,9,380,562_.jpg" alt="Halloween (1978) movie poster" loading="eager">
+      </div>
+      <div class="info">
+        <span class="tag">Horror Night</span>
+        <h3>HALLOWEEN</h3>
+        <div class="yr">1978 · John Carpenter</div>
+        <div class="detail-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+          Fri, Oct 16 · 8:00 PM
+        </div>
+        <div class="detail-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1116 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Secret location · revealed to RSVPs
+        </div>
+        <div class="detail-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7c-2 0-4.5-1-5.5-3 2.5 0 5.5 1.5 5.5 3zM12 7c2 0 4.5-1 5.5-3-2.5 0-5.5 1.5-5.5 3z"/></svg>
+          Costumes encouraged
+        </div>
+        <a class="btn primary" href="https://www.instagram.com/miamimoviegoers" target="_blank" rel="noopener">RSVP on Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="screenings">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Coming soon</div>
+      <h2 class="display">UPCOMING NIGHTS</h2>
+      <p>Every screening is a little different — a theme, a vibe, sometimes a costume rack. Follow along so you never miss a marquee.</p>
+    </div>
+    <div class="grid" id="screenGrid"></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Who we are</div>
+      <h2 class="display">A CLUB, NOT<br>A THEATER.</h2>
+    </div>
+    <div class="about-card">
+      <p><strong>Miami Film Club</strong> started the way all the best things start — a group chat full of people who never shut up about movies. Now we're <strong>thousands deep</strong>, turning rooftops, warehouses, and backyards across the 305 into cinemas for a night.</p>
+      <p>We don't do assigned seating and overpriced popcorn. We do <strong>themed nights</strong> where the crowd dresses the part, <strong>pop-up screenings</strong> in places you'd never expect, and parties where the movie is just the excuse to get everyone in one room.</p>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2.5"/><path d="M7 4v16M17 4v16M2 9h5M2 15h5M17 9h5M17 15h5"/></svg></div>
+          <h4>Pop-up cinema</h4>
+          <p>Screenings in unexpected spots around Miami.</p>
+        </div>
+        <div class="pillar">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7c-2 0-4.5-1-5.5-3 2.5 0 5.5 1.5 5.5 3zM12 7c2 0 4.5-1 5.5-3-2.5 0-5.5 1.5-5.5 3z"/></svg></div>
+          <h4>Movie parties</h4>
+          <p>Themed nights, costumes, full-send energy.</p>
+        </div>
+        <div class="pillar">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <h4>The community</h4>
+          <p>The crowd is the show. Come as you are.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="community">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">The 305 shows up</div>
+      <h2 class="display">THE COMMUNITY</h2>
+      <p>Every night looks different because every crowd is different. Here's the energy.</p>
+    </div>
+    <div class="cgrid">
+      <div class="tile t1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2.5"/><path d="M7 4v16M17 4v16M2 9h5M2 15h5M17 9h5M17 15h5"/></svg><span class="cap">Rooftop nights</span></div>
+      <div class="tile t2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7c-2 0-4.5-1-5.5-3 2.5 0 5.5 1.5 5.5 3zM12 7c2 0 4.5-1 5.5-3-2.5 0-5.5 1.5-5.5 3z"/></svg><span class="cap">Costume parties</span></div>
+      <div class="tile t3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg><span class="cap">The regulars</span></div>
+      <div class="tile t4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="cap">Premiere vibes</span></div>
+      <div class="tile t5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span class="cap">Late shows</span></div>
+      <div class="tile t6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><span class="cap">Post-film hangs</span></div>
+    </div>
+    <p class="comm-note">Tag along, bring a friend, leave with ten more.<br>That's kind of the whole point.</p>
+  </div>
+</section>
+
+<section id="join">
+  <div class="wrap">
+    <div class="join">
+      <h2 class="display">PULL UP.</h2>
+      <p>Want in? Nights get announced on Instagram first — that's where RSVPs live. Got a venue, a rooftop, or a wild screening idea? Come talk to us.</p>
+      <div class="btn-row">
+        <a class="btn primary" href="https://www.instagram.com/miamimoviegoers" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor" stroke="none"/></svg>
+          @miamimoviegoers
+        </a>
+        <a class="btn ghost" href="https://www.instagram.com/miamimoviegoers" target="_blank" rel="noopener">Host with us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="frow">
+      <a class="brand" href="#top">
+        <span class="mark">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a1206" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2.5"/><path d="M7 4v16M17 4v16M2 9h5M2 15h5M17 9h5M17 15h5"/></svg>
+        </span>
+        <span class="name">MIAMI FILM CLUB</span>
+      </a>
+      <a class="ig-link" href="https://www.instagram.com/miamimoviegoers" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor" stroke="none"/></svg>
+        Instagram
+      </a>
+    </div>
+    <span class="concept-badge">Concept redesign — unofficial pitch mockup, not affiliated with @miamimoviegoers</span>
+    <div class="copy">Made with love for the 305 film community.</div>
+  </div>
+</footer>
+
+<script>
+"use strict";
+const SCREENINGS = [
+  { title: "Scream", year: 1996, theme: "Horror Night Pt. 2", date: "Fri, Oct 23 · 8:30 PM", venue: "Wynwood · venue TBA",
+    poster: "https://m.media-amazon.com/images/M/MV5BMjA2NjU5MTg5OF5BMl5BanBnXkFtZTgwOTkyMzQxMDE@._V1_SX300.jpg" },
+  { title: "Scarface", year: 1983, theme: "305 Classics", date: "Sat, Oct 31 · 9:00 PM", venue: "Little Havana · venue TBA",
+    poster: "https://m.media-amazon.com/images/M/MV5BNDUzYjY0NmUtMDM4OS00Y2Q5LWJiODYtNTk0ZTk0YjZhMTg1XkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg" },
+  { title: "Moonlight", year: 2016, theme: "Miami Stories", date: "Fri, Nov 6 · 7:30 PM", venue: "Liberty City · venue TBA",
+    poster: "https://m.media-amazon.com/images/M/MV5BNzQxNTIyODAxMV5BMl5BanBnXkFtZTgwNzQyMDA3OTE@._V1_SX300.jpg" },
+  { title: "Get Out", year: 2017, theme: "Modern Horror", date: "Fri, Nov 13 · 8:30 PM", venue: "Downtown · venue TBA",
+    poster: "https://m.media-amazon.com/images/M/MV5BMjUxMDQwNjcyNl5BMl5BanBnXkFtZTgwNzcwMzc0MTI@._V1_QL75_UX380_CR0,0,380,562_.jpg" },
+  { title: "Pulp Fiction", year: 1994, theme: "Cult Classics", date: "Sat, Nov 21 · 8:00 PM", venue: "MiMo · venue TBA",
+    poster: "https://m.media-amazon.com/images/M/MV5BYTViYTE3ZGQtNDBlMC00ZTAyLTkyODMtZGRiZDg0MjA2YThkXkEyXkFqcGc@._V1_QL75_UY562_CR3,0,380,562_.jpg" },
+  { title: "Clueless", year: 1995, theme: "Throwback Party", date: "Fri, Dec 4 · 8:00 PM", venue: "Coral Gables · venue TBA",
+    poster: "https://m.media-amazon.com/images/M/MV5BMTgwYjQ1NDktOTcwNi00MWZhLTliYWQtZDg5NjZhY2U5ZTNlXkEyXkFqcGc@._V1_SX300.jpg" },
+];
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const calSVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>';
+const pinSVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1116 0z"/><circle cx="12" cy="10" r="3"/></svg>';
+
+document.getElementById("screenGrid").innerHTML = SCREENINGS.map(s => `
+  <article class="scard">
+    <div class="p"><img src="${s.poster}" alt="${esc(s.title)} (${s.year}) movie poster" loading="lazy"></div>
+    <div>
+      <span class="theme">${esc(s.theme)}</span>
+      <h3>${esc(s.title)}</h3>
+      <div class="yr">${s.year}</div>
+      <div class="detail-line">${calSVG}${esc(s.date)}</div>
+      <div class="detail-line">${pinSVG}${esc(s.venue)}</div>
+    </div>
+  </article>`).join("");
+
+// marquee content (duplicated for seamless loop)
+const words = ["Pop-up cinema", "Movie parties", "Horror nights", "Cult classics", "The 305", "Costumes encouraged", "Community first"];
+const seq = words.map(w => `<span>${w} <b>·</b></span>`).join("");
+document.getElementById("mqTrack").innerHTML = seq + seq;
+</script>
+</body>
+</html>
