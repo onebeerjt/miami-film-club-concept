@@ -54,8 +54,8 @@ button { font-family: inherit; cursor: pointer; }
 .d-venue { display: block; font-size: 11.5px; margin-top: 3px; opacity: 0.72; }
 .d-tag { flex: none; font-size: 9.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 9px; border-radius: 999px; }
 .d-go { flex: none; font-size: 17px; }
-/* unified ticket action on dashboard cards — hidden by default, themes opt in */
-.d-ticket { display: none; }
+/* unified ticket action on dashboard cards — visible by default, themes restyle */
+.d-ticket { display: inline-block; flex: none; font-size: 10.5px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 14px; border-radius: 999px; border: 1px solid currentColor; white-space: nowrap; }
 
 /* diary — layout base */
 .diary-list { display: grid; gap: 0; max-width: 680px; margin: 0 auto; padding: 0 20px; }
@@ -517,12 +517,12 @@ body.switching.theme-editorial .dash, body.switching.theme-editorial .hero, body
 .theme-screenplay .sec-head { max-width: 680px; margin: 0 auto 16px; padding: 0 20px; }
 .theme-screenplay .sec-head::before { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--red); margin-bottom: 8px; }
 .theme-screenplay #week .sec-head::before, .theme-screenplay .dash-head::before { content: none; }
-.theme-screenplay #upcoming .sec-head::before { content: "INT. UPCOMING NIGHTS - CONTINUOUS"; }
+.theme-screenplay #week .dash-head::after { content:"INT. UPCOMING IN THE 305 - CONTINUOUS"; display:block; width:100%; font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--faint); margin-top:8px; }
 .theme-screenplay #diary .sec-head::before { content: "INT. PRODUCTION NOTES - LOGGED TAKES"; }
-.theme-screenplay #recent .sec-head::before { content: "INT. RECENT NIGHTS - FLASHBACK"; }
-.theme-screenplay #lists .sec-head::before { content: "INT. THE LISTS - DAY"; }
+
+
 .theme-screenplay #join .sec-head::before { content: "INT. MEMBERSHIP - NIGHT"; }
-.theme-screenplay section.block:not([id]) .sec-head::before { content: "INT. WORD ON THE STREET - LATER"; }
+
 .theme-screenplay .sec-head h2 { font-size: 24px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; }
 .theme-screenplay .sec-head .sub { display: block; margin-top: 6px; font-size: 12.5px; color: var(--faint); }
 .theme-screenplay .sec-head .sub::before { content: "<!-- "; } .theme-screenplay .sec-head .sub::after { content: " -->"; }
@@ -770,12 +770,12 @@ body.switching.theme-brutalist .dash, body.switching.theme-brutalist .hero, body
 .theme-noir section.block { position: relative; z-index: 2; padding: 38px 0 10px; }
 .theme-noir .sec-head { max-width: 680px; margin: 0 auto 20px; padding: 0 20px; text-align: center; }
 .theme-noir .sec-head::before { display: block; font-family: "Playfair Display", serif; font-style: italic; font-size: 13px; color: var(--dim); letter-spacing: 0.24em; margin-bottom: 10px; }
-.theme-noir #upcoming .sec-head::before { content: "Chapter One"; }
+
 .theme-noir #diary .sec-head::before { content: "Interlude — the surveillance log"; }
-.theme-noir #recent .sec-head::before { content: "Chapter Two"; }
-.theme-noir #lists .sec-head::before { content: "Chapter Three"; }
+
+
 .theme-noir #join .sec-head::before { content: "Chapter Four"; }
-.theme-noir section.block:not([id]) .sec-head::before { content: "Epilogue"; }
+
 .theme-noir .sec-head h2 { font-family: "Playfair Display", serif; font-style: italic; font-weight: 600; font-size: clamp(32px, 9vw, 50px); color: #f5f5fa; }
 .theme-noir .sec-head .sub { display: block; margin-top: 8px; font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--faint); }
 .theme-noir .ev { width: 266px; background: linear-gradient(165deg, #15151c, #0b0b10); border: 1px solid rgba(201,201,212,0.18); border-radius: 4px; box-shadow: 0 26px 60px rgba(0,0,0,0.62); transition: transform .35s ease, box-shadow .35s ease; }
@@ -848,11 +848,14 @@ body.switching.theme-noir .dash, body.switching.theme-noir .hero, body.switching
 /* ================================================================
    MEMBER REVIEWS — community Letterboxd feed (base layout; themed below)
    ================================================================ */
-.rev-list { display: grid; gap: 10px; max-width: 680px; margin: 0 auto; padding: 0 20px; }
-.rev { display: flex; gap: 13px; padding: 12px; align-items: flex-start; }
-.rev-poster { flex: none; width: 62px; aspect-ratio: 2/3; overflow: hidden; border-radius: 6px; background: #222; }
-.rev-poster img { width: 100%; height: 100%; object-fit: cover; }
-.rev-main { flex: 1; min-width: 0; }
+/* reviews — members x movies grid (layout base). Card = member + poster + stars + excerpt; tap to expand. */
+.rev-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; max-width: 680px; margin: 0 auto; padding: 0 20px; }
+.rev { display: flex; flex-direction: column; padding: 12px; gap: 10px; min-width: 0; }
+.rev-card { all: unset; display: flex; flex-direction: column; gap: 10px; width: 100%; cursor: pointer; font: inherit; color: inherit; text-align: left; box-sizing: border-box; }
+.rev-card:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; border-radius: 6px; }
+.rev-poster { flex: none; width: 100%; aspect-ratio: 2/3; overflow: hidden; border-radius: 6px; background: #222; }
+.rev-poster img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.rev-main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
 .rev-who { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
 .rev-avatar { width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-size: 11px; font-weight: 800; flex: none; font-style: normal; }
 .rev-name { font-size: 12.5px; font-weight: 700; }
@@ -861,7 +864,24 @@ body.switching.theme-noir .dash, body.switching.theme-noir .hero, body.switching
 .rev-film { display: block; font-size: 14.5px; margin-bottom: 4px; line-height: 1.3; }
 .rev-film i { font-style: normal; font-weight: 400; opacity: 0.6; }
 .rev-stars { display: block; margin-bottom: 6px; }
-.rev-text { display: block; font-size: 13px; line-height: 1.6; font-style: italic; opacity: 0.85; }
+.rev-text { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 13px; line-height: 1.6; font-style: italic; opacity: 0.85; }
+.rev.open .rev-text { -webkit-line-clamp: unset; }
+.rev-src { align-self: flex-start; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.65; text-decoration: none; color: inherit; }
+.rev-src:hover { opacity: 1; }
+
+/* diary — poster thumbnails (layout base) */
+.de-poster { flex: none; width: 54px; align-self: flex-start; }
+.de-poster img { width: 54px; aspect-ratio: 2/3; object-fit: cover; border-radius: 4px; display: block; }
+
+/* radar strip — on-the-radar chips under the agenda (layout base) */
+.radar { margin-top: 14px; }
+.radar-label { display: block; font-size: 10px; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.6; margin-bottom: 8px; }
+.radar .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-size: 11px; font-weight: 600; padding: 7px 12px; border-radius: 999px; border: 1px solid currentColor; opacity: 0.85; white-space: nowrap; }
+
+/* manifesto ribbon — one-line slogan (layout base) */
+.manifesto-ribbon { text-align: center; padding: 30px 20px 8px; font-size: 12.5px; line-height: 1.7; opacity: 0.7; }
+.manifesto-ribbon strong { font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
 
 /* neon reviews */
 .theme-neon .rev { background: rgba(12,12,46,0.8); border: 1px solid rgba(0,229,255,0.35); border-radius: 14px; box-shadow: 0 0 14px rgba(0,229,255,0.12); transition: transform .22s ease, box-shadow .3s ease; }
@@ -952,15 +972,14 @@ body.switching.theme-noir .dash, body.switching.theme-noir .hero, body.switching
 .theme-letterboxd .head-cta { font-size:12px; font-weight:700; color:#fff; background:var(--green); border-radius:4px; padding:9px 16px; transition:background .2s ease; }
 .theme-letterboxd .head-cta:hover { background:#00d636; }
 .theme-letterboxd #week { order:3; }
-.theme-letterboxd #diary { order:4; }
-.theme-letterboxd .hero { order:5; }
-.theme-letterboxd #reviews { order:6; }
-.theme-letterboxd #recent { order:7; }
-.theme-letterboxd #lists { order:8; }
-.theme-letterboxd #join { order:9; }
-.theme-letterboxd section.block:not([id]) { order:10; }
+.theme-letterboxd #reviews { order:4; }
+.theme-letterboxd #diary { order:5; }
+.theme-letterboxd .hero { order:6; }
+.theme-letterboxd .manifesto-ribbon { order:7; }
+.theme-letterboxd #join { order:8; }
+
 .theme-letterboxd footer { order:11; }
-.theme-letterboxd #upcoming { display:none; }
+
 /* dashboard — LB-style list rows with green ticket buttons */
 .theme-letterboxd .dash-title { font-size:14px; font-weight:800; letter-spacing:-.01em; color:#fff; }
 .theme-letterboxd .dash-count { font-size:10.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); }
@@ -1009,7 +1028,7 @@ body.switching.theme-noir .dash, body.switching.theme-noir .hero, body.switching
 .theme-letterboxd .rev-stars { color:var(--green); }
 .theme-letterboxd .rev-text { color:var(--ink); font-size:13px; }
 /* recent — dense poster GRID */
-.theme-letterboxd #recent .rail { display:grid; grid-template-columns:repeat(auto-fill,minmax(116px,1fr)); gap:14px 12px; overflow:visible; padding:0 20px 16px; }
+
 .theme-letterboxd .rn { width:auto; }
 .theme-letterboxd .rn .p { width:100%; aspect-ratio:2/3; border-radius:6px; border:1px solid rgba(0,0,0,.55); background:var(--panel); margin-bottom:8px; transition:transform .2s ease, border-color .2s ease; }
 .theme-letterboxd .rn:hover .p { transform:translateY(-3px); border-color:var(--green); }
@@ -1068,7 +1087,7 @@ body.switching.theme-letterboxd .dash, body.switching.theme-letterboxd .hero, bo
 .theme-kiosk .brand .name { font-family:"Bebas Neue", sans-serif; font-size:22px; letter-spacing:.06em; color:#fff; }
 .theme-kiosk .head-cta { font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.1em; color:#fff; background:var(--red); border-radius:8px; padding:11px 18px; box-shadow:0 4px 18px rgba(228,0,43,.4); transition:transform .12s ease; }
 .theme-kiosk .head-cta:active { transform:scale(.95); }
-.theme-kiosk #upcoming { display:none; }
+
 /* dashboard — showtime selector */
 .theme-kiosk #week { padding-bottom:80px; }
 .theme-kiosk .dash-title { font-family:"Bebas Neue", sans-serif; font-size:26px; letter-spacing:.08em; color:#fff; }
@@ -1168,7 +1187,7 @@ body.switching.theme-kiosk .dash, body.switching.theme-kiosk .hero, body.switchi
 
 /* ================================================================
    CONCEPT 9 — FESTIVAL · the program guide
-   Warm paper, crimson serif: #upcoming is the October program.
+   Warm paper, crimson serif: the #week agenda is the October program.
    ================================================================ */
 .theme-festival { --paper:#f7f3ea; --ink:#1a1a1a; --crimson:#b3001b; --gold:#8a6d2f;
   display:flex; flex-direction:column;
@@ -1184,34 +1203,30 @@ body.switching.theme-kiosk .dash, body.switching.theme-kiosk .hero, body.switchi
 .theme-festival .brand .name::before { content:"MFC · "; color:var(--crimson); }
 .theme-festival .head-cta { font-style:normal; font-family:"Inter", sans-serif; font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#fff; background:var(--crimson); border-radius:999px; padding:10px 18px; transition:transform .15s ease; }
 .theme-festival .head-cta:active { transform:scale(.95); }
-.theme-festival #week { display:none; }
-.theme-festival #upcoming { order:3; }
+.theme-festival #week { order:3; }
 .theme-festival .hero { order:4; }
-.theme-festival #diary { order:5; }
-.theme-festival #reviews { order:6; }
-.theme-festival #recent { order:7; }
-.theme-festival #lists { order:8; }
-.theme-festival #join { order:9; }
-.theme-festival section.block:not([id]) { order:10; }
-.theme-festival footer { order:11; }
-/* program masthead */
-.theme-festival #upcoming .sec-head { text-align:center; }
-.theme-festival #upcoming .sec-head h2 { font-size:0; line-height:0; }
-.theme-festival #upcoming .sec-head h2::after { content:"PROGRAM — OCTOBER"; font-size:clamp(30px,8.5vw,46px); line-height:1.1; font-weight:600; letter-spacing:.02em; color:var(--ink); }
-.theme-festival #upcoming .sec-head .sub { font-style:normal; font-family:"Inter", sans-serif; font-size:11px; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--crimson); }
+.theme-festival #reviews { order:5; }
+.theme-festival #diary { order:6; }
+.theme-festival .manifesto-ribbon { order:7; }
+.theme-festival #join { order:8; }
+.theme-festival footer { order:9; }
+/* program masthead — the agenda is the October program */
+.theme-festival #week .dash-head { display:block; text-align:center; margin-bottom:6px; }
+.theme-festival #week .dash-title { font-size:0; line-height:0; }
+.theme-festival #week .dash-title::after { content:"PROGRAM \2014 OCTOBER"; font-size:clamp(30px,8.5vw,46px); line-height:1.1; font-weight:600; letter-spacing:.02em; color:var(--ink); }
+.theme-festival #week .dash-count { display:block; margin-top:8px; font-style:normal; font-family:"Inter", sans-serif; font-size:11px; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--crimson); }
 /* program entries — numbered vertical stack */
-.theme-festival #upcoming .rail { display:grid; grid-template-columns:1fr; gap:0; overflow:visible; padding:0 20px 10px; counter-reset:film; }
-.theme-festival #upcoming .ev { width:auto; counter-increment:film; position:relative; background:transparent; border:0; border-bottom:1px solid rgba(26,26,26,.18); border-radius:0; padding:18px 0 18px 62px; }
-.theme-festival #upcoming .ev::before { content:counter(film, decimal-leading-zero); position:absolute; left:0; top:18px; font-style:normal; font-family:"Inter", sans-serif; font-weight:800; font-size:13px; letter-spacing:.08em; color:var(--crimson); border-bottom:2px solid var(--crimson); padding-bottom:5px; }
-.theme-festival #upcoming .ev .art { display:none; }
-.theme-festival #upcoming .ev .body { padding:0; }
-.theme-festival #upcoming .ev h3 { font-size:24px; font-weight:600; line-height:1.2; margin-bottom:8px; }
-.theme-festival #upcoming .ev .meta { display:grid; gap:5px; margin-bottom:12px; }
-.theme-festival #upcoming .ev .mrow { display:flex; align-items:center; gap:8px; font-style:normal; font-family:"Inter", sans-serif; font-size:13px; font-weight:600; color:var(--ink); }
-.theme-festival #upcoming .ev .mrow:first-child { color:var(--crimson); font-weight:800; font-size:14px; letter-spacing:.05em; text-transform:uppercase; }
-.theme-festival #upcoming .ev .mrow svg { display:none; }
-.theme-festival #upcoming .btn { display:inline-block; font-style:normal; font-family:"Inter", sans-serif; font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--crimson); border:2px solid var(--crimson); border-radius:999px; padding:10px 22px; margin-top:2px; transition:background .2s ease, color .2s ease; }
-.theme-festival #upcoming .btn:hover { background:var(--crimson); color:#fff; }
+.theme-festival #week .dash-list { counter-reset:film; display:grid; gap:0; padding:0 0 10px; }
+.theme-festival #week .dash-item { counter-increment:film; position:relative; background:transparent; border:0; border-bottom:1px solid rgba(26,26,26,.18); border-radius:0; padding:18px 0 18px 62px; }
+.theme-festival #week .dash-item::before { content:counter(film, decimal-leading-zero); position:absolute; left:0; top:18px; font-style:normal; font-family:"Inter", sans-serif; font-weight:800; font-size:13px; letter-spacing:.08em; color:var(--crimson); border-bottom:2px solid var(--crimson); padding-bottom:5px; }
+.theme-festival #week .d-date b { font-style:normal; font-family:"Inter", sans-serif; font-weight:800; font-size:20px; color:var(--ink); }
+.theme-festival #week .d-date i { font-style:normal; font-family:"Inter", sans-serif; font-size:10px; font-weight:700; letter-spacing:.2em; color:var(--crimson); }
+.theme-festival #week .d-name { font-size:22px; font-weight:600; line-height:1.25; color:var(--ink); margin-bottom:4px; }
+.theme-festival #week .d-venue { font-style:normal; font-family:"Inter", sans-serif; font-size:13px; font-weight:600; color:var(--crimson); letter-spacing:.04em; text-transform:uppercase; }
+.theme-festival #week .d-tag { display:none; }
+.theme-festival #week .d-go { display:none; }
+.theme-festival #week .d-ticket { display:inline-block; font-style:normal; font-family:"Inter", sans-serif; font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--crimson); border:2px solid var(--crimson); border-radius:999px; padding:10px 22px; }
+.theme-festival #week .radar { border-top:1px solid rgba(26,26,26,.18); padding-top:16px; }
 /* hero */
 .theme-festival .hero { text-align:center; padding:22px 20px 20px; max-width:680px; margin:0 auto; }
 .theme-festival .kicker { font-style:normal; font-family:"Inter", sans-serif; font-size:11px; font-weight:700; letter-spacing:.32em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
@@ -1310,7 +1325,17 @@ body.switching.theme-festival .dash, body.switching.theme-festival .hero, body.s
 .theme-vhs .brand .name { font-size:17px; color:#fff; text-shadow:0 0 12px rgba(255,47,179,.9); letter-spacing:.02em; }
 .theme-vhs .head-cta { font-size:11px; letter-spacing:.08em; color:#0f0f22; background:var(--lime); border-radius:8px; padding:10px 18px; box-shadow:0 0 16px rgba(182,255,0,.5); transition:transform .12s ease; }
 .theme-vhs .head-cta:active { transform:scale(.94); }
-.theme-vhs #week { display:none; }
+/* #week — the new-releases shelf, VHS boxes */
+.theme-vhs .dash-item { background:#101024; border:2px solid rgba(0,229,255,.25); border-radius:6px; box-shadow:inset 6px 0 0 rgba(255,255,255,.1); transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.theme-vhs .dash-item:hover { transform:translateY(-3px); border-color:var(--pink); box-shadow:0 0 20px rgba(255,47,179,.3); }
+.theme-vhs .d-name { color:#fff; }
+.theme-vhs .d-venue { color:rgba(240,240,255,.65); }
+.theme-vhs .d-date b { color:#fff; }
+.theme-vhs .d-date i { color:var(--cyan); }
+.theme-vhs .d-tag { color:var(--lime); border-color:var(--lime); }
+.theme-vhs .d-go { color:var(--pink); }
+.theme-vhs .d-ticket { color:#0f0f22; background:var(--cyan); border:0; box-shadow:0 0 14px rgba(0,229,255,.45); }
+.theme-vhs .de-poster img { border:2px solid #2a2a4a; filter:saturate(.35) brightness(.85) contrast(1.05); }
 /* hero — store signage */
 .theme-vhs .hero { position:relative; z-index:2; text-align:center; padding:calc(var(--sat) + 26px) 20px 24px; max-width:680px; margin:0 auto; }
 .theme-vhs .kicker { font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--cyan); text-shadow:0 0 10px rgba(0,229,255,.8); margin-bottom:14px; }
@@ -1325,22 +1350,6 @@ body.switching.theme-festival .dash, body.switching.theme-festival .hero, body.s
 .theme-vhs .sec-head h2 { font-size:clamp(20px,6vw,28px); color:#fff; text-shadow:0 0 12px rgba(0,229,255,.8); }
 .theme-vhs .sec-head h2::before { content:"▸ "; color:var(--pink); }
 .theme-vhs .sec-head .sub { display:block; margin-top:6px; font-size:10px; letter-spacing:.24em; text-transform:uppercase; color:var(--lime); }
-/* #upcoming — the new-releases shelf, VHS boxes */
-.theme-vhs .ev { width:230px; background:#101024; border-radius:6px; overflow:hidden; border:2px solid rgba(0,229,255,.25); transition:transform .2s ease, border-color .2s ease; }
-.theme-vhs .ev:hover { transform:translateY(-5px) rotate(-1deg); border-color:var(--pink); box-shadow:0 0 20px rgba(255,47,179,.3); }
-.theme-vhs .ev .art { height:170px; margin:10px 10px 0; border-radius:6px; border:3px solid #2a2a4a; background:#05051a;
-  box-shadow:inset 9px 0 0 rgba(255,255,255,.14), inset -9px 0 0 rgba(0,0,0,.55); }
-.theme-vhs .ev .art img { filter:saturate(1.3) contrast(1.05); }
-.theme-vhs .ev .tag { top:18px; left:20px; font-size:9px; letter-spacing:.14em; text-transform:uppercase; color:#0f0f22; background:var(--lime); border-radius:4px; padding:5px 10px; }
-.theme-vhs .ev .poster-art { position:absolute; inset:0; display:grid; place-items:center; text-align:center; font-size:22px; line-height:1.25; color:#fff; padding:14px;
-  background:radial-gradient(120% 120% at 50% 20%, #2c2c5e 0%, #101024 75%); text-shadow:0 0 10px rgba(255,47,179,.8); }
-.theme-vhs .ev .body { padding:14px 14px 16px; }
-.theme-vhs .ev h3 { font-size:15px; line-height:1.3; color:#fff; margin-bottom:10px; }
-.theme-vhs .ev .meta { display:grid; gap:5px; margin-bottom:13px; }
-.theme-vhs .ev .mrow { display:flex; align-items:center; gap:7px; font-size:10px; line-height:1.7; color:rgba(240,240,255,.65); }
-.theme-vhs .ev .mrow svg { width:13px; height:13px; color:var(--cyan); flex:none; }
-.theme-vhs .btn { display:block; text-align:center; font-size:11px; letter-spacing:.08em; color:#0f0f22; background:var(--cyan); border-radius:8px; padding:12px; box-shadow:0 0 14px rgba(0,229,255,.45); transition:transform .12s ease; }
-.theme-vhs .btn:active { transform:scale(.95); }
 /* diary */
 .theme-vhs .diary-entry { border-bottom:2px solid rgba(255,47,179,.25); align-items:baseline; }
 .theme-vhs .diary-entry:last-child { border-bottom:0; }
@@ -1357,17 +1366,6 @@ body.switching.theme-festival .dash, body.switching.theme-festival .hero, body.s
 .theme-vhs .rev-film { color:#fff; font-size:13.5px; }
 .theme-vhs .rev-stars { color:var(--lime); text-shadow:0 0 8px rgba(182,255,0,.6); }
 .theme-vhs .rev-text { color:rgba(240,240,255,.65); font-size:11.5px; }
-/* #recent — the PREVIOUSLY RENTED shelf, slightly desaturated */
-.theme-vhs #recent .sec-head h2 { font-size:0; line-height:0; }
-.theme-vhs #recent .sec-head h2::before { content:none; }
-.theme-vhs #recent .sec-head h2::after { content:"PREVIOUSLY RENTED"; font-size:clamp(20px,6vw,28px); line-height:1.2; color:#fff; text-shadow:0 0 12px rgba(0,229,255,.8); }
-.theme-vhs .rn { width:148px; }
-.theme-vhs .rn .p { width:148px; aspect-ratio:2/3; border-radius:6px; border:3px solid #2a2a4a; background:#05051a; margin-bottom:9px; box-shadow:inset 6px 0 0 rgba(255,255,255,.1); transition:transform .2s ease; }
-.theme-vhs .rn:hover .p { transform:translateY(-4px); border-color:var(--cyan); }
-.theme-vhs .rn .p img { filter:saturate(.35) brightness(.85) contrast(1.05); }
-.theme-vhs .rn h4 { font-size:12.5px; color:#fff; margin-bottom:4px; line-height:1.3; }
-.theme-vhs .rn .stars { color:var(--cyan); margin-bottom:5px; }
-.theme-vhs .rn .d { font-size:10px; color:rgba(240,240,255,.55); line-height:1.7; }
 /* lists */
 .theme-vhs .chips { display:flex; flex-wrap:wrap; gap:10px; padding:0 20px; max-width:680px; margin:0 auto; }
 .theme-vhs .chip { font-size:10.5px; color:var(--ink); border:2px solid rgba(0,229,255,.4); border-radius:6px; padding:9px 14px; background:rgba(0,229,255,.06); transition:transform .15s ease; }
@@ -1411,7 +1409,7 @@ body.switching.theme-vhs .dash, body.switching.theme-vhs .hero, body.switching.t
    CONCEPT 7 — GROUP CHAT · planning movie night over iMessage
    The club thread as an iPhone group chat: incoming bubbles, an
    "I'm in" tapback pill, the diary as the chat log, #join as the
-   RSVP poll. Hero + #upcoming hidden — events live in the thread.
+   RSVP poll. Hero hidden — events live in the thread.
    ================================================================ */
 .theme-groupchat { --blue: #007aff; --green: #34c759; --grey: #8e8e93; --line: #e5e5ea;
   background: #f2f2f7; color: #1a1a1a;
@@ -1427,7 +1425,7 @@ body.switching.theme-vhs .dash, body.switching.theme-vhs .hero, body.switching.t
 .theme-groupchat .brand .mark svg { stroke: #fff; }
 .theme-groupchat .brand .name { font-weight: 800; font-size: 17px; letter-spacing: -0.01em; }
 .theme-groupchat .head-cta { font-size: 14px; font-weight: 600; color: var(--blue); }
-.theme-groupchat .hero, .theme-groupchat #upcoming { display: none; }
+.theme-groupchat .hero, 
 /* dashboard — the group thread */
 .theme-groupchat .dash-head { align-items: center; margin-bottom: 12px; }
 .theme-groupchat .dash-title { font-size: 17px; font-weight: 800; letter-spacing: -0.01em; }
@@ -1524,7 +1522,7 @@ body.switching.theme-groupchat .dash, body.switching.theme-groupchat .hero, body
    CONCEPT 8 — CALENDAR · the iOS agenda
    Clean white, giant date numerals, a red today-dot on the nearest
    event, and a timeline rail down the left of the agenda. Hero +
-   #upcoming hidden — the agenda is the event surface. The diary is
+   the agenda is the event surface. The diary is
    kept as a muted "past events" list, no duplication.
    ================================================================ */
 .theme-calendar { --red: #ff3b30; --grey: #8e8e93; --line: #e5e5ea; --ink: #1a1a1a;
@@ -1541,7 +1539,7 @@ body.switching.theme-groupchat .dash, body.switching.theme-groupchat .hero, body
 .theme-calendar .brand .mark svg { stroke: #fff; }
 .theme-calendar .brand .name { font-weight: 800; font-size: 17px; letter-spacing: -0.01em; }
 .theme-calendar .head-cta { font-size: 14px; font-weight: 600; color: var(--red); }
-.theme-calendar .hero, .theme-calendar #upcoming { display: none; }
+.theme-calendar .hero, 
 /* dashboard — agenda with timeline rail */
 .theme-calendar .dash-head { margin-bottom: 4px; }
 .theme-calendar .dash-title { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; }
@@ -1622,7 +1620,7 @@ body.switching.theme-calendar .dash, body.switching.theme-calendar .hero, body.s
    CONCEPT 9 — MARQUEE · the cinema sign at night
    The hero becomes a changeable-letter marquee board ringed with
    chasing amber bulbs; the dashboard rows are lit board rows and
-   the ticket pill glows. #upcoming hidden — the board is the event
+   the ticket pill glows. The board is the event
    surface. The ticker strip is opted in as the bulb-row marquee.
    ================================================================ */
 .theme-marquee { --amber: #ffb000; --cream: #ffe9c4; --board: #150903; --ink: #0d0208;
@@ -1639,7 +1637,7 @@ body.switching.theme-calendar .dash, body.switching.theme-calendar .hero, body.s
 .theme-marquee .brand .mark svg { stroke: var(--amber); }
 .theme-marquee .brand .name { font-family: "Bebas Neue", sans-serif; font-size: 22px; letter-spacing: 0.12em; color: var(--amber); text-shadow: 0 0 10px rgba(255,176,0,0.7); }
 .theme-marquee .head-cta { font-family: "Bebas Neue", sans-serif; font-size: 15px; letter-spacing: 0.14em; color: var(--amber); border: 2px solid var(--amber); border-radius: 8px; padding: 8px 18px; box-shadow: 0 0 12px rgba(255,176,0,0.35), inset 0 0 8px rgba(255,176,0,0.12); }
-.theme-marquee #upcoming { display: none; }
+
 /* chasing-bulb ticker */
 .theme-marquee .marquee-strip { display: block; position: relative; z-index: 2; background: #000; border-top: 1px solid rgba(255,176,0,0.4); border-bottom: 1px solid rgba(255,176,0,0.4); }
 .theme-marquee .marquee-strip::before, .theme-marquee .marquee-strip::after { content: ""; position: absolute; left: 0; right: 0; height: 8px; pointer-events: none;
@@ -1809,7 +1807,7 @@ body.switching.theme-marquee .dash, body.switching.theme-marquee .hero, body.swi
 .theme-stubs .sec-head { max-width: 680px; margin: 0 auto 16px; padding: 0 20px; display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
 .theme-stubs .sec-head h2 { font-family: "Special Elite", cursive; font-size: clamp(24px, 7vw, 34px); }
 .theme-stubs .sec-head .sub { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); white-space: nowrap; }
-.theme-stubs #upcoming { display: none; }
+
 /* diary — margin-scribbled log pages */
 .theme-stubs .diary-entry { border-bottom: 2px dashed var(--line); }
 .theme-stubs .diary-entry:last-child { border-bottom: 0; }
@@ -1827,8 +1825,8 @@ body.switching.theme-marquee .dash, body.switching.theme-marquee .hero, body.swi
 .theme-stubs .rev-text { color: var(--faint); }
 .theme-stubs .rev-date { color: var(--faint); }
 /* recent nights — THE COLLECTION: kept, creased, slightly faded */
-.theme-stubs #recent .sec-head h2 { font-size: 0; }
-.theme-stubs #recent .sec-head h2::after { content: "THE COLLECTION"; font-family: "Special Elite", cursive; font-size: clamp(24px, 7vw, 34px); }
+.theme-stubs #diary .sec-head h2 { font-size: 0; }
+.theme-stubs #diary .sec-head h2::after { content: "THE COLLECTION"; font-family: "Special Elite", cursive; font-size: clamp(24px, 7vw, 34px); }
 .theme-stubs .rn { width: 150px; opacity: 0.88; filter: sepia(0.25); }
 .theme-stubs .rn .p { width: 150px; aspect-ratio: 2/3; border: 1px solid var(--line); background: var(--stub); margin-bottom: 10px; box-shadow: 0 4px 0 rgba(43,33,24,0.1); }
 .theme-stubs .rn .p img { filter: sepia(0.4) contrast(0.98); }
@@ -1944,11 +1942,11 @@ body.switching.theme-stubs .dash, body.switching.theme-stubs .hero, body.switchi
 .theme-booth .sec-head::before { display: block; font-size: 11px; font-weight: 700; color: var(--faint); margin-bottom: 8px; }
 .theme-booth #diary .sec-head::before { content: "// PROJECTION BOOTH"; }
 .theme-booth #reviews .sec-head::before { content: "// MEMBER TRANSMISSIONS"; }
-.theme-booth #lists .sec-head::before { content: "// QUEUED PRINTS"; }
+
 .theme-booth section.block:not([id]) .sec-head::before { content: "// SIGNAL REPORTS"; }
 .theme-booth .sec-head h2 { font-family: "Courier Prime", monospace; font-size: clamp(24px, 7vw, 34px); font-weight: 700; color: #eafff0; text-shadow: 0 0 14px rgba(51,255,102,0.5); }
 .theme-booth .sec-head .sub { display: block; margin-top: 6px; font-size: 11px; color: var(--dim); }
-.theme-booth #upcoming { display: none; }
+
 /* diary — the screening LOG */
 .theme-booth #diary .sec-head h2 { font-size: 0; }
 .theme-booth #diary .sec-head h2::after { content: "LOG"; font-family: "Courier Prime", monospace; font-size: clamp(24px, 7vw, 34px); font-weight: 700; color: #eafff0; text-shadow: 0 0 14px rgba(51,255,102,0.5); }
@@ -2080,7 +2078,7 @@ body.switching.theme-booth .dash, body.switching.theme-booth .hero, body.switchi
 .theme-boarding .sec-head { max-width: 680px; margin: 0 auto 16px; padding: 0 20px; display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
 .theme-boarding .sec-head h2 { font-family: "Archivo", sans-serif; font-weight: 900; font-size: clamp(26px, 7.5vw, 38px); letter-spacing: -0.02em; }
 .theme-boarding .sec-head .sub { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue); white-space: nowrap; }
-.theme-boarding #upcoming { display: none; }
+
 /* diary — the flight log */
 .theme-boarding .diary-entry { border-bottom: 1px solid var(--line); }
 .theme-boarding .diary-entry:last-child { border-bottom: 0; }
@@ -2099,8 +2097,8 @@ body.switching.theme-booth .dash, body.switching.theme-booth .hero, body.switchi
 .theme-boarding .rev-stars { color: var(--blue); }
 .theme-boarding .rev-text { color: var(--dim); }
 /* recent — past flights */
-.theme-boarding #recent .sec-head h2 { font-size: 0; }
-.theme-boarding #recent .sec-head h2::after { content: "PAST FLIGHTS"; font-family: "Archivo", sans-serif; font-weight: 900; font-size: clamp(26px, 7.5vw, 38px); letter-spacing: -0.02em; }
+.theme-boarding #diary .sec-head h2 { font-size: 0; }
+.theme-boarding #diary .sec-head h2::after { content: "PAST FLIGHTS"; font-family: "Archivo", sans-serif; font-weight: 900; font-size: clamp(26px, 7.5vw, 38px); letter-spacing: -0.02em; }
 .theme-boarding .rn { width: 148px; }
 .theme-boarding .rn .p { width: 148px; aspect-ratio: 2/3; border-radius: 12px; background: #dbe4ef; margin-bottom: 10px; box-shadow: 0 8px 20px rgba(15,30,51,0.12); transition: transform .25s ease; }
 .theme-boarding .rn:hover .p { transform: translateY(-5px); }
@@ -2173,7 +2171,7 @@ body.switching.theme-boarding .dash, body.switching.theme-boarding .hero, body.s
   <button class="tab" data-theme="theme-boarding">Boarding</button>
 </div></div>
 
-<div class="marquee-strip" aria-hidden="true"><div class="marquee-track"><span>THIS WEEK IN THE 305</span><span>★</span><span>ELIZABETH HOLMES LOOKALIKE CONTEST · OCT 21 · CHURCHILL'S PUB</span><span>★</span><span>ROCKY HORROR · PINECREST GARDENS</span><span>★</span><span>OKTOBERFEST MIAMI 2026</span><span>★</span><span>THIS WEEK IN THE 305</span><span>★</span><span>ELIZABETH HOLMES LOOKALIKE CONTEST · OCT 21 · CHURCHILL'S PUB</span><span>★</span><span>ROCKY HORROR · PINECREST GARDENS</span><span>★</span><span>OKTOBERFEST MIAMI 2026</span><span>★</span></div></div>
+<div class="marquee-strip" aria-hidden="true"><div class="marquee-track"><span>UPCOMING IN THE 305</span><span>★</span><span>ELIZABETH HOLMES LOOKALIKE CONTEST · OCT 21 · CHURCHILL'S PUB</span><span>★</span><span>ROCKY HORROR · PINECREST GARDENS</span><span>★</span><span>OKTOBERFEST MIAMI 2026</span><span>★</span><span>UPCOMING IN THE 305</span><span>★</span><span>ELIZABETH HOLMES LOOKALIKE CONTEST · OCT 21 · CHURCHILL'S PUB</span><span>★</span><span>ROCKY HORROR · PINECREST GARDENS</span><span>★</span><span>OKTOBERFEST MIAMI 2026</span><span>★</span></div></div>
 
 <header class="site-head"><div class="wrap">
   <a class="brand" href="#top">
@@ -2186,7 +2184,7 @@ body.switching.theme-boarding .dash, body.switching.theme-boarding .hero, body.s
 <!-- DASHBOARD: don't-miss-anything agenda. New events + repertory, scannable in seconds. -->
 <section class="dash" id="week">
   <div class="dash-head">
-    <span class="dash-title">This week in the 305</span>
+    <span class="dash-title">Upcoming in the 305</span>
     <span class="dash-count">3 on the calendar</span>
   </div>
   <div class="dash-list">
@@ -2212,13 +2210,24 @@ body.switching.theme-boarding .dash, body.switching.theme-boarding .hero, body.s
       <span class="d-go">→</span>
     </a>
   </div>
+  <div class="radar rv">
+    <span class="radar-label">On the radar</span>
+    <div class="chips">
+      <span class="chip hot">Advance: Resident Evil</span>
+      <span class="chip">Advance: Spider-Man: Brand New Day</span>
+      <span class="chip">Advance: The Odyssey</span>
+      <span class="chip">Advance: Supergirl</span>
+      <span class="chip">Mandalorian and Grogu</span>
+      <span class="chip hot">Frankenstein · live score</span>
+      <span class="chip">Killer Klowns cosplay party</span>
+      <span class="chip">Supercon animated shorts</span>
+    </div>
+  </div>
 </section>
 
 <section class="hero" id="top">
   <div class="sun" aria-hidden="true"></div>
   <div class="kicker">Pop-up cinema · Miami, FL</div>
-  <h1 class="ransom"><span class="w1">MOVIES</span> <span class="w2">ARE</span> <span class="w3 blood">BETTER</span> <span class="w4 scripty">TOGETHER.</span></h1>
-  <p class="sub">A crew of film lovers throwing <strong>pop-up screenings and movie parties</strong> across the 305 — horror nights, cosplay crowds, glitter, cult classics. Grab a ticket, show up, talk movies with people who get it.</p>
   <div class="stats">
     <span class="stat"><b>9.6K</b><i>members</i></span>
     <span class="stat"><b>128</b><i>posts deep</i></span>
@@ -2232,50 +2241,83 @@ body.switching.theme-boarding .dash, body.switching.theme-boarding .hero, body.s
   <svg class="right" viewBox="0 0 120 100"><rect x="53" y="46" width="10" height="54" rx="5" fill="#050518"/><path d="M58 50 Q42 44 28 52 M58 50 Q74 44 88 52 M58 50 Q44 34 30 32 M58 50 Q72 34 86 32 M58 50 Q58 32 54 20 M58 50 Q50 38 38 32" stroke="#050518" stroke-width="8" fill="none" stroke-linecap="round"/></svg>
 </div>
 
-<section class="block" id="upcoming">
-  <div class="sec-head"><h2>UPCOMING NIGHTS</h2><span class="sub">tickets live now</span></div>
-  <div class="rail">
-    <article class="ev rv">
-      <div class="art">
-        <img src="https://m.media-amazon.com/images/M/MV5BOTg2YzY5ZGYtNDk1My00N2Q2LWFhN2YtZWU5YTkzODIyZGRmXkEyXkFqcGc@._V1_SX300.jpg" alt="The Rocky Horror Picture Show poster" loading="eager">
-        <span class="tag">Interactive screening</span>
-      </div>
-      <div class="body">
-        <h3>The Rocky Horror Picture Show</h3>
-        <div class="meta">
-          <div class="mrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Oct 31 · on sale now</div>
-          <div class="mrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1116 0z"/><circle cx="12" cy="10" r="3"/></svg>Pinecrest Gardens</div>
-        </div>
-        <a class="btn" href="https://pinecrestgardens.vbotickets.com/event/The_Rocky_Horror_Picture_Show/203409" target="_blank" rel="noopener">Get tickets</a>
-      </div>
+
+
+<!-- MEMBER REVIEWS: the social heartbeat — members x movies grid.
+     Baked in from Letterboxd RSS at build time.
+     Feed: https://letterboxd.com/miamimoviegoers/rss/ (54 entries, fetched 2026-10-06).
+     To refresh: curl each member RSS in LB_MEMBERS (see script below) and re-bake these cards.
+     Full recipe: tools/refresh-reviews.md -->
+<section class="block" id="reviews">
+  <div class="sec-head"><h2>MEMBER REVIEWS</h2><span class="sub">fresh from Letterboxd</span></div>
+  <div class="rev-list">
+    <article class="rev rv">
+      <button class="rev-card" aria-expanded="false" aria-label="Expand review of Untold Raygun: Breaking Badly">
+        <span class="rev-poster"><img src="https://a.ltrbxd.com/resized/film-poster/1/6/0/5/4/5/6/1605456-untold-raygun-breaking-badly-0-600-0-900-crop.jpg?v=bd29480df9" alt="Untold Raygun: Breaking Badly poster" loading="lazy"></span>
+        <span class="rev-main">
+          <span class="rev-who"><b class="rev-avatar">M</b><span class="rev-name">Miami Film Club <i>@miamimoviegoers</i></span><span class="rev-date">Oct 5</span></span>
+          <b class="rev-film">Untold Raygun: Breaking Badly <i>(2026)</i></b>
+          <span class="rev-stars stars">&#9733;&#9733;&#9733;</span>
+        </span>
+      </button>
+      <a class="rev-src" href="https://letterboxd.com/miamimoviegoers/film/untold-raygun-breaking-badly/" target="_blank" rel="noopener">Letterboxd &rarr;</a>
     </article>
-    <article class="ev rv">
-      <div class="art">
-        <div class="poster-art">ELIZABETH<br>HOLMES<br>LOOKALIKE<br>CONTEST</div>
-        <span class="tag">Contest night</span>
-      </div>
-      <div class="body">
-        <h3>Elizabeth Holmes Lookalike Contest</h3>
-        <div class="meta">
-          <div class="mrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Wed, Oct 21 · 7:30 PM</div>
-          <div class="mrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1116 0z"/><circle cx="12" cy="10" r="3"/></svg>Churchill's Pub</div>
-        </div>
-        <a class="btn" href="https://www.instagram.com/miamimoviegoers" target="_blank" rel="noopener">Register</a>
-      </div>
+    <article class="rev rv">
+      <button class="rev-card" aria-expanded="false" aria-label="Expand review of Killer Klowns from Outer Space">
+        <span class="rev-poster"><img src="https://a.ltrbxd.com/resized/film-poster/4/1/6/7/2/41672-killer-klowns-from-outer-space-0-600-0-900-crop.jpg?v=62918cf2e0" alt="Killer Klowns from Outer Space poster" loading="lazy"></span>
+        <span class="rev-main">
+          <span class="rev-who"><b class="rev-avatar">M</b><span class="rev-name">Miami Film Club <i>@miamimoviegoers</i></span><span class="rev-date">Sep 29</span></span>
+          <b class="rev-film">Killer Klowns from Outer Space <i>(1988)</i></b>
+          <span class="rev-stars stars">&#9733;&#9733;&#9733;&#9733;&#189;</span>
+        </span>
+      </button>
+      <a class="rev-src" href="https://letterboxd.com/miamimoviegoers/film/killer-klowns-from-outer-space/" target="_blank" rel="noopener">Letterboxd &rarr;</a>
     </article>
-    <article class="ev rv">
-      <div class="art">
-        <div class="poster-art">OKTOBER-<br>FEST<br>MIAMI<br>2026</div>
-        <span class="tag">Member perk</span>
-      </div>
-      <div class="body">
-        <h3>Oktoberfest Miami 2026</h3>
-        <div class="meta">
-          <div class="mrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Fall 2026 · link in bio</div>
-          <div class="mrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1116 0z"/><circle cx="12" cy="10" r="3"/></svg>Discount via Eventbrite</div>
-        </div>
-        <a class="btn" href="https://linktr.ee/miamimoviegoers" target="_blank" rel="noopener">Get discount link</a>
-      </div>
+    <article class="rev rv">
+      <button class="rev-card" aria-expanded="false" aria-label="Expand review of Forgotten Island">
+        <span class="rev-poster"><img src="https://a.ltrbxd.com/resized/film-poster/1/3/4/1/7/3/7/1341737-forgotten-island-2026-0-600-0-900-crop.jpg?v=a0d4d1bb5e" alt="Forgotten Island poster" loading="lazy"></span>
+        <span class="rev-main">
+          <span class="rev-who"><b class="rev-avatar">M</b><span class="rev-name">Miami Film Club <i>@miamimoviegoers</i></span><span class="rev-date">Sep 19</span></span>
+          <b class="rev-film">Forgotten Island <i>(2026)</i></b>
+          <span class="rev-text">&ldquo;If you squint your eyes enough, this movie basically had the same plot as The Hangover.&rdquo;</span>
+        </span>
+      </button>
+      <a class="rev-src" href="https://letterboxd.com/miamimoviegoers/film/forgotten-island-2026/" target="_blank" rel="noopener">Letterboxd &rarr;</a>
+    </article>
+    <article class="rev rv">
+      <button class="rev-card" aria-expanded="false" aria-label="Expand review of Ha-Chan, Shake Your Booty!">
+        <span class="rev-poster"><img src="https://a.ltrbxd.com/resized/film-poster/1/4/6/4/9/4/0/1464940-ha-chan-shake-your-booty-0-600-0-900-crop.jpg?v=1971a69a5b" alt="Ha-Chan, Shake Your Booty! poster" loading="lazy"></span>
+        <span class="rev-main">
+          <span class="rev-who"><b class="rev-avatar">M</b><span class="rev-name">Miami Film Club <i>@miamimoviegoers</i></span><span class="rev-date">Sep 11</span></span>
+          <b class="rev-film">Ha-Chan, Shake Your Booty! <i>(2026)</i></b>
+          <span class="rev-stars stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="rev-text">&ldquo;This was an actual five star movie. I hope people make the time to go out and experience this movie in the theaters.&rdquo;</span>
+        </span>
+      </button>
+      <a class="rev-src" href="https://letterboxd.com/miamimoviegoers/film/ha-chan-shake-your-booty/" target="_blank" rel="noopener">Letterboxd &rarr;</a>
+    </article>
+    <article class="rev rv">
+      <button class="rev-card" aria-expanded="false" aria-label="Expand review of The Uprising">
+        <span class="rev-poster"><img src="https://a.ltrbxd.com/resized/film-poster/8/8/0/4/2/5/880425-the-uprising-2026-0-600-0-900-crop.jpg?v=688bf1bc5f" alt="The Uprising poster" loading="lazy"></span>
+        <span class="rev-main">
+          <span class="rev-who"><b class="rev-avatar">M</b><span class="rev-name">Miami Film Club <i>@miamimoviegoers</i></span><span class="rev-date">Sep 10</span></span>
+          <b class="rev-film">The Uprising <i>(2026)</i></b>
+          <span class="rev-text">&ldquo;This is going to be a great movie for people who don&rsquo;t like paying their taxes.&rdquo;</span>
+        </span>
+      </button>
+      <a class="rev-src" href="https://letterboxd.com/miamimoviegoers/film/the-uprising-2026/" target="_blank" rel="noopener">Letterboxd &rarr;</a>
+    </article>
+    <article class="rev rv">
+      <button class="rev-card" aria-expanded="false" aria-label="Expand review of Coyote vs. Acme">
+        <span class="rev-poster"><img src="https://a.ltrbxd.com/resized/film-poster/1/0/8/9/0/8/8/1089088-coyote-vs-acme-0-600-0-900-crop.jpg?v=735eb10cc7" alt="Coyote vs. Acme poster" loading="lazy"></span>
+        <span class="rev-main">
+          <span class="rev-who"><b class="rev-avatar">M</b><span class="rev-name">Miami Film Club <i>@miamimoviegoers</i></span><span class="rev-date">Sep 9</span></span>
+          <b class="rev-film">Coyote vs. Acme <i>(2026)</i></b>
+          <span class="rev-stars stars">&#9733;&#9733;&#9733;&#9733;&#189;</span>
+          <span class="rev-text">&ldquo;I&rsquo;m going to tell my kids this was Erin Brockovich.&rdquo;</span>
+        </span>
+      </button>
+      <a class="rev-src" href="https://letterboxd.com/miamimoviegoers/film/coyote-vs-acme/" target="_blank" rel="noopener">Letterboxd &rarr;</a>
     </article>
   </div>
 </section>
@@ -2284,6 +2326,7 @@ body.switching.theme-boarding .dash, body.switching.theme-boarding .hero, body.s
   <div class="sec-head"><h2>THE DIARY</h2><span class="sub">recently logged</span></div>
   <div class="diary-list">
     <article class="diary-entry rv">
+      <span class="de-poster"><img src="https://m.media-amazon.com/images/M/MV5BN2Q4MGJmYTgtNDhiMS00MTcwLTlhZjgtN2U5NWUyYzFiMWRmXkEyXkFqcGc@._V1_QL75_UX380_CR0,2,380,562_.jpg" alt="Hedwig and the Angry Inch poster" loading="lazy"></span>
       <span class="de-date">SEP<br>2026</span>
       <div class="de-main">
         <b class="de-film">Hedwig and the Angry Inch <i>(2001)</i></b>
@@ -2292,6 +2335,7 @@ body.switching.theme-boarding .dash, body.switching.theme-boarding .hero, body.s
       </div>
     </article>
     <article class="diary-entry rv">
+      <span class="de-poster"><img src="https://m.media-amazon.com/images/M/MV5BMjI1ODZkYTgtYTY3Yy00ZTk0LWFhN2YtZWU5NWUyYzFiMWRmXkEyXkFqcGc@._V1_SX300.jpg" alt="Your Name poster" loading="lazy"></span>
       <span class="de-date">SEP<br>2026</span>
       <div class="de-main">
         <b class="de-film">Your Name <i>(2016)</i></b>
@@ -2300,6 +2344,7 @@ body.switching.theme-boarding .dash, body.switching.theme-boarding .hero, body.s
       </div>
     </article>
     <article class="diary-entry rv">
+      <span class="de-poster"><img src="https://m.media-amazon.com/images/M/MV5BYmM3MTllNzYtN2MzNS00MWQwLT0NTEtNjY1MmMwYjNkNTE5XkEyXkFqcGc@._V1_QL75_UY562_CR8,0,380,562_.jpg" alt="Shakespeare in Love poster" loading="lazy"></span>
       <span class="de-date">SEP<br>2026</span>
       <div class="de-main">
         <b class="de-film">Shakespeare in Love <i>(1998)</i></b>
@@ -2308,6 +2353,7 @@ body.switching.theme-boarding .dash, body.switching.theme-boarding .hero, body.s
       </div>
     </article>
     <article class="diary-entry rv">
+      <span class="de-poster"><img src="https://m.media-amazon.com/images/M/MV5BYWUzYWIxMDUtYTdmYS00MjUxLWJjNDItYzcxOTY0N2M2YWE5XkEyXkFqcGc@._V1_QL75_UX380_CR0,1,380,562_.jpg" alt="Super Mario Bros. poster" loading="lazy"></span>
       <span class="de-date">AUG<br>2026</span>
       <div class="de-main">
         <b class="de-film">Super Mario Bros. <i>(1993)</i></b>
@@ -2322,107 +2368,13 @@ body.switching.theme-boarding .dash, body.switching.theme-boarding .hero, body.s
      Feed: https://letterboxd.com/miamimoviegoers/rss/ (54 entries, fetched 2026-10-06).
      To refresh: curl each member RSS in LB_MEMBERS (see script below) and re-bake these cards.
      Full recipe: tools/refresh-reviews.md -->
-<section class="block" id="reviews">
-  <div class="sec-head"><h2>MEMBER REVIEWS</h2><span class="sub">fresh from Letterboxd</span></div>
-  <div class="rev-list">
-    <a class="rev rv" href="https://letterboxd.com/miamimoviegoers/film/untold-raygun-breaking-badly/" target="_blank" rel="noopener">
-      <span class="rev-poster"><img src="https://a.ltrbxd.com/resized/film-poster/1/6/0/5/4/5/6/1605456-untold-raygun-breaking-badly-0-600-0-900-crop.jpg?v=bd29480df9" alt="Untold Raygun: Breaking Badly poster" loading="lazy"></span>
-      <span class="rev-main">
-        <span class="rev-who"><b class="rev-avatar">M</b><span class="rev-name">Miami Film Club <i>@miamimoviegoers</i></span><span class="rev-date">Oct 5</span></span>
-        <b class="rev-film">Untold Raygun: Breaking Badly <i>(2026)</i></b>
-        <span class="rev-stars stars">★★★</span>
-      </span>
-    </a>
-    <a class="rev rv" href="https://letterboxd.com/miamimoviegoers/film/killer-klowns-from-outer-space/" target="_blank" rel="noopener">
-      <span class="rev-poster"><img src="https://a.ltrbxd.com/resized/film-poster/4/1/6/7/2/41672-killer-klowns-from-outer-space-0-600-0-900-crop.jpg?v=62918cf2e0" alt="Killer Klowns from Outer Space poster" loading="lazy"></span>
-      <span class="rev-main">
-        <span class="rev-who"><b class="rev-avatar">M</b><span class="rev-name">Miami Film Club <i>@miamimoviegoers</i></span><span class="rev-date">Sep 29</span></span>
-        <b class="rev-film">Killer Klowns from Outer Space <i>(1988)</i></b>
-        <span class="rev-stars stars">★★★★½</span>
-      </span>
-    </a>
-    <a class="rev rv" href="https://letterboxd.com/miamimoviegoers/film/forgotten-island-2026/" target="_blank" rel="noopener">
-      <span class="rev-poster"><img src="https://a.ltrbxd.com/resized/film-poster/1/3/4/1/7/3/7/1341737-forgotten-island-2026-0-600-0-900-crop.jpg?v=a0d4d1bb5e" alt="Forgotten Island poster" loading="lazy"></span>
-      <span class="rev-main">
-        <span class="rev-who"><b class="rev-avatar">M</b><span class="rev-name">Miami Film Club <i>@miamimoviegoers</i></span><span class="rev-date">Sep 19</span></span>
-        <b class="rev-film">Forgotten Island <i>(2026)</i></b>
-        <span class="rev-text">“If you squint your eyes enough, this movie basically had the same plot as The Hangover.”</span>
-      </span>
-    </a>
-    <a class="rev rv" href="https://letterboxd.com/miamimoviegoers/film/ha-chan-shake-your-booty/" target="_blank" rel="noopener">
-      <span class="rev-poster"><img src="https://a.ltrbxd.com/resized/film-poster/1/4/6/4/9/4/0/1464940-ha-chan-shake-your-booty-0-600-0-900-crop.jpg?v=1971a69a5b" alt="Ha-Chan, Shake Your Booty! poster" loading="lazy"></span>
-      <span class="rev-main">
-        <span class="rev-who"><b class="rev-avatar">M</b><span class="rev-name">Miami Film Club <i>@miamimoviegoers</i></span><span class="rev-date">Sep 11</span></span>
-        <b class="rev-film">Ha-Chan, Shake Your Booty! <i>(2026)</i></b>
-        <span class="rev-stars stars">★★★★★</span>
-        <span class="rev-text">“This was an actual five star movie. I hope people make the time to go out and experience this movie in the theaters.”</span>
-      </span>
-    </a>
-    <a class="rev rv" href="https://letterboxd.com/miamimoviegoers/film/the-uprising-2026/" target="_blank" rel="noopener">
-      <span class="rev-poster"><img src="https://a.ltrbxd.com/resized/film-poster/8/8/0/4/2/5/880425-the-uprising-2026-0-600-0-900-crop.jpg?v=688bf1bc5f" alt="The Uprising poster" loading="lazy"></span>
-      <span class="rev-main">
-        <span class="rev-who"><b class="rev-avatar">M</b><span class="rev-name">Miami Film Club <i>@miamimoviegoers</i></span><span class="rev-date">Sep 10</span></span>
-        <b class="rev-film">The Uprising <i>(2026)</i></b>
-        <span class="rev-text">“This is going to be a great movie for people who don't like paying their taxes.”</span>
-      </span>
-    </a>
-    <a class="rev rv" href="https://letterboxd.com/miamimoviegoers/film/coyote-vs-acme/" target="_blank" rel="noopener">
-      <span class="rev-poster"><img src="https://a.ltrbxd.com/resized/film-poster/1/0/8/9/0/8/8/1089088-coyote-vs-acme-0-600-0-900-crop.jpg?v=735eb10cc7" alt="Coyote vs. Acme poster" loading="lazy"></span>
-      <span class="rev-main">
-        <span class="rev-who"><b class="rev-avatar">M</b><span class="rev-name">Miami Film Club <i>@miamimoviegoers</i></span><span class="rev-date">Sep 9</span></span>
-        <b class="rev-film">Coyote vs. Acme <i>(2026)</i></b>
-        <span class="rev-stars stars">★★★★½</span>
-        <span class="rev-text">“I'm going to tell my kids this was Erin Brockovich.”</span>
-      </span>
-    </a>
-  </div>
-</section>
 
-<section class="block" id="recent">
-  <div class="sec-head"><h2>RECENT NIGHTS</h2><span class="sub">from the archives</span></div>
-  <div class="rail">
-    <article class="rn rv">
-      <div class="p"><img src="https://m.media-amazon.com/images/M/MV5BN2Q4MGJmYTgtNDhiMS00MTcwLTlhZjgtN2U5NWUyYzFiMWRmXkEyXkFqcGc@._V1_QL75_UX380_CR0,2,380,562_.jpg" alt="Hedwig and the Angry Inch poster" loading="lazy"></div>
-      <h4>Hedwig and the Angry Inch</h4>
-      <div class="stars">★★★★★</div>
-      <div class="d">25th anniversary · glam rock night<br>Las Rosas, w/ Hexed Miami</div>
-    </article>
-    <article class="rn rv">
-      <div class="p"><img src="https://m.media-amazon.com/images/M/MV5BMjI1ODZkYTgtYTY3Yy00ZTJkLWFkOTgtZDUyYWM4MzQwNjk0XkEyXkFqcGc@._V1_SX300.jpg" alt="Your Name poster" loading="lazy"></div>
-      <h4>Your Name</h4>
-      <div class="stars">★★★★½</div>
-      <div class="d">10th anniversary · 4K re-release<br>AMC Sunset · billiards pre-social</div>
-    </article>
-    <article class="rn rv">
-      <div class="p"><img src="https://m.media-amazon.com/images/M/MV5BYmM3MTllNzYtN2MzNS00MWQwLTk0NTEtNjY1MmMwYjNkNTE5XkEyXkFqcGc@._V1_QL75_UY562_CR8,0,380,562_.jpg" alt="Shakespeare in Love poster" loading="lazy"></div>
-      <h4>Shakespeare in Love</h4>
-      <div class="stars">★★★★</div>
-      <div class="d">Free screening · poetry &amp; popcorn<br>Coral Gables Library</div>
-    </article>
-    <article class="rn rv">
-      <div class="p"><img src="https://m.media-amazon.com/images/M/MV5BYWUzYWIxMDUtYTdmYS00MjUxLWJjNDItYzcxOTY0N2M2YWE5XkEyXkFqcGc@._V1_QL75_UX380_CR0,1,380,562_.jpg" alt="Super Mario Bros. poster" loading="lazy"></div>
-      <h4>Super Mario Bros.</h4>
-      <div class="stars">★★★½</div>
-      <div class="d">Retro game social + trivia<br>Muse Studio</div>
-    </article>
-  </div>
-</section>
 
-<section class="block" id="lists">
-  <div class="sec-head"><h2>LISTS</h2><span class="sub">from the feed</span></div>
-  <div class="chips">
-    <span class="chip hot rv">Advance: Resident Evil</span>
-    <span class="chip rv">Advance: Spider-Man: Brand New Day</span>
-    <span class="chip rv">Advance: The Odyssey</span>
-    <span class="chip rv">Advance: Supergirl</span>
-    <span class="chip rv">Mandalorian and Grogu</span>
-    <span class="chip hot rv">Frankenstein · live score</span>
-    <span class="chip rv">Killer Klowns cosplay party</span>
-    <span class="chip rv">Supercon animated shorts</span>
-  </div>
-  <p class="feed-note">Horror + glam, anime nights, themed throwbacks — and a crowd that shows up in costume. The glitter-freak energy is real: 9.6K strong and growing.</p>
-</section>
 
+
+
+
+  <div class="manifesto-ribbon rv"><span><strong>Movies are better together</strong> &mdash; a crew of film lovers throwing pop-up screenings &amp; movie parties across the 305.</span></div>
 <section class="block" id="join">
   <div class="member rv">
     <div class="eyebrow">Become a moviegoer</div>
@@ -2433,17 +2385,16 @@ body.switching.theme-boarding .dash, body.switching.theme-boarding .hero, body.s
       <a class="btn ghost" href="https://miamimoviegoers.com/volunteer" target="_blank" rel="noopener">Volunteer</a>
     </div>
   </div>
+
+  <div class="quotes">
+    <div class="quote rv"><p>&ldquo;Being new to Miami was a whole different world, and looking to make friends, I chose Miami Moviegoers, and it was the best decision I ever made.&rdquo;</p><span>&mdash; Marya Johnson</span></div>
+    <div class="quote rv"><p>&ldquo;It&rsquo;s amazing how a love for films has brought together such a diverse group of people, turning strangers into friends.&rdquo;</p><span>&mdash; Romina Espinosa</span></div>
+    <div class="quote rv"><p>&ldquo;Miami Moviegoers has been a great opportunity not only to meet other movie fans, but also to soak in the city life.&rdquo;</p><span>&mdash; Mikey Martinez</span></div>
+  </div>
+  <p class="press">As featured in <a href="https://www.miaminewtimes.com/arts/miami-moviegoers-helps-south-florida-make-friends-at-the-movies-22497929" target="_blank" rel="noopener">Miami New Times</a><br>&ldquo;helps South Florida make friends at the movies.&rdquo;</p>
 </section>
 
-<section class="block">
-  <div class="sec-head"><h2>WORD ON THE STREET</h2></div>
-  <div class="quotes">
-    <div class="quote rv"><p>"Being new to Miami was a whole different world, and looking to make friends, I chose Miami Moviegoers, and it was the best decision I ever made."</p><span>— Marya Johnson</span></div>
-    <div class="quote rv"><p>"It's amazing how a love for films has brought together such a diverse group of people, turning strangers into friends."</p><span>— Romina Espinosa</span></div>
-    <div class="quote rv"><p>"Miami Moviegoers has been a great opportunity not only to meet other movie fans, but also to soak in the city life."</p><span>— Mikey Martinez</span></div>
-  </div>
-  <p class="press">As featured in <a href="https://www.miaminewtimes.com/arts/miami-moviegoers-helps-south-florida-make-friends-at-the-movies-22497929" target="_blank" rel="noopener">Miami New Times</a><br>"helps South Florida make friends at the movies."</p>
-</section>
+
 
 <footer><div class="wrap">
   <div class="socials">
@@ -2517,6 +2468,15 @@ function revealScan() {
   els.forEach(function (el) { revealIO.observe(el); });
 }
 revealScan();
+
+/* member reviews — tap a card to expand the full review */
+document.querySelectorAll(".rev-card").forEach(function (b) {
+  b.addEventListener("click", function () {
+    var card = b.closest(".rev");
+    var open = card.classList.toggle("open");
+    b.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+});
 </script>
 <noscript><style>.rv { opacity: 1 !important; transform: none !important; }</style></noscript>
 </body>
