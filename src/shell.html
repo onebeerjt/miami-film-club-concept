@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#06061f" id="tcolor">
+<title>Miami Film Club — 16 Concepts</title>
+<meta name="description" content="Sixteen concept redesigns for the Miami Film Club. Unofficial pitch mockup.">
+<style>
+/* ============ SHELL (shared by all 16 themes — keep minimal) ============ */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100dvh;background:#0b0b10;color:#f5f2ea;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+
+/* concept switcher — always available, themes may recolor it via body[data-theme] */
+.tabbar{position:sticky;top:0;z-index:200;background:#111;border-bottom:1px solid rgba(255,255,255,.14)}
+.tabbar-inner{display:flex;align-items:center;gap:6px;overflow-x:auto;scrollbar-width:none;
+  padding:10px 14px;-webkit-overflow-scrolling:touch}
+.tabbar-inner::-webkit-scrollbar{display:none}
+.tabbar-label{flex:none;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  opacity:.55;margin-right:4px;color:#fff}
+.tab{flex:none;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,.6);border:1px solid transparent;border-radius:999px;padding:8px 14px;white-space:nowrap}
+.tab.active{color:#0b0b10;background:#fff}
+#stage{display:block;min-height:60dvh}
+
+/* disclosure — always present, themes may recolor */
+.disclosure{padding:18px 20px calc(20px + env(safe-area-inset-bottom));text-align:center;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.55;line-height:1.8}
+.disclosure a{text-decoration:underline}
+
+/* scroll reveal base — themes define their own motion via .rv/.rv.in */
+.rv{opacity:0}
+.rv.in{opacity:1}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1!important;transform:none!important}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+
+/* ============ THEME CSS (built from work/batch*/themes.css) ============ */
+/*__THEME_CSS__*/
+</style>
+</head>
+<body data-theme="neon">
+
+<nav class="tabbar" aria-label="Design concepts"><div class="tabbar-inner" id="tabs">
+  <span class="tabbar-label">Concepts</span>
+</div></nav>
+
+<main id="stage"></main>
+
+<div class="disclosure">Concept redesign &mdash; unofficial pitch mockup, not affiliated with @miamimoviegoers<br>
+<a href="https://miamimoviegoers.com" target="_blank" rel="noopener">miamimoviegoers.com</a></div>
+
+<script>
+"use strict";
+/* ================================================================
+   MIAMI FILM CLUB — 16 concepts. One shared content pool, 16
+   completely different products. Each theme renders its own DOM
+   into #stage via THEMES[key].render(CONTENT).
+
+   Member reviews feed config: letterboxd.com/miamimoviegoers/rss/
+   (54 entries, fetched 2026-10-06). To refresh, curl each member
+   RSS in LB_MEMBERS and re-bake the review cards below.
+   Full recipe: tools/refresh-reviews.md
+   ================================================================ */
+var LB_MEMBERS = ["miamimoviegoers"];
+
+var CONTENT = {
+  club: { name: "Miami Film Club", handle: "@miamimoviegoers", tagline: "Pop-up cinema \u00B7 Miami, FL",
+    slogan: "Movies are better together",
+    blurb: "A crew of film lovers throwing pop-up screenings & movie parties across the 305." },
+  stats: { members: "9.6K", posts: "128", upcoming: "3" },
+  events: [
+    { id: "holmes", title: "Elizabeth Holmes Lookalike Contest", day: "21", mon: "OCT", dow: "Wed",
+      time: "7:30 PM", venue: "Churchill's Pub", tag: "NEW",
+      ticketLabel: "RSVP FREE", ticketUrl: "https://www.instagram.com/miamimoviegoers" },
+    { id: "rocky", title: "The Rocky Horror Picture Show", day: "31", mon: "OCT", dow: "Sat",
+      time: "", venue: "Pinecrest Gardens", note: "Interactive screening", tag: "REPERTORY",
+      ticketLabel: "GET TICKETS",
+      ticketUrl: "https://pinecrestgardens.vbotickets.com/event/The_Rocky_Horror_Picture_Show/203409" },
+    { id: "oktoberfest", title: "Oktoberfest Miami 2026", day: "\u2605", mon: "FALL", dow: "",
+      time: "", venue: "", note: "Member discount via Eventbrite", tag: "PERK",
+      ticketLabel: "GET DISCOUNT", ticketUrl: "https://linktr.ee/miamimoviegoers" }
+  ],
+  diary: [
+    { film: "Hedwig and the Angry Inch", year: "2001", stars: 5, date: "SEP 2026",
+      note: "25th anniversary glam rock night at Las Rosas with Hexed Miami. Full costume crowd.",
+      poster: "https://m.media-amazon.com/images/M/MV5BN2Q4MGJmYTgtNDhiMS00MTcwLTlhZjgtN2U5NWUyYzFiMWRmXkEyXkFqcGc@._V1_QL75_UX380_CR0,2,380,562_.jpg" },
+    { film: "Your Name", year: "2016", stars: 4.5, date: "SEP 2026",
+      note: "10th anniversary 4K at AMC Sunset. Billiards pre-social, not a dry eye in the house.",
+      poster: "https://m.media-amazon.com/images/M/MV5BMjI1ODZkYTgtYTY3Yy00ZTk0LWFhN2YtZWU5NWUyYzFiMWRmXkEyXkFqcGc@._V1_SX300.jpg" },
+    { film: "Shakespeare in Love", year: "1998", stars: 4, date: "SEP 2026",
+      note: "Free screening at Coral Gables Library. Poetry and popcorn.",
+      poster: "https://m.media-amazon.com/images/M/MV5BYmM3MTllNzYtN2MzNS00MWQwLT0NTEtNjY1MmMwYjNkNTE5XkEyXkFqcGc@._V1_QL75_UY562_CR8,0,380,562_.jpg" },
+    { film: "Super Mario Bros.", year: "1993", stars: 3.5, date: "AUG 2026",
+      note: "Retro game social + trivia at Muse Studio. Better with a crowd.",
+      poster: "https://m.media-amazon.com/images/M/MV5BYWUzYWIxMDUtYTdmYS00MTUxLWJjNDItYzcxOTY0N2M2YWE5XkEyXkFqcGc@._V1_QL75_UX380_CR0,1,380,562_.jpg" }
+  ],
+  reviews: [
+    { film: "Untold Raygun: Breaking Badly", year: "2026", stars: 3, text: null, date: "Oct 5",
+      poster: "https://a.ltrbxd.com/resized/film-poster/1/6/0/5/4/5/6/1605456-untold-raygun-breaking-badly-0-600-0-900-crop.jpg?v=bd29480df9",
+      url: "https://letterboxd.com/miamimoviegoers/film/untold-raygun-breaking-badly/" },
+    { film: "Killer Klowns from Outer Space", year: "1988", stars: 4.5, text: null, date: "Sep 29",
+      poster: "https://a.ltrbxd.com/resized/film-poster/4/1/6/7/2/41672-killer-klowns-from-outer-space-0-600-0-900-crop.jpg?v=62918cf2e0",
+      url: "https://letterboxd.com/miamimoviegoers/film/killer-klowns-from-outer-space/" },
+    { film: "Forgotten Island", year: "2026", stars: null, date: "Sep 19",
+      text: "\u201CIf you squint your eyes enough, this movie basically had the same plot as The Hangover.\u201D",
+      poster: "https://a.ltrbxd.com/resized/film-poster/1/3/4/1/7/3/7/1341737-forgotten-island-2026-0-600-0-900-crop.jpg?v=a0d4d1bb5e",
+      url: "https://letterboxd.com/miamimoviegoers/film/forgotten-island-2026/" },
+    { film: "Ha-Chan, Shake Your Booty!", year: "2026", stars: 5, date: "Sep 11",
+      text: "\u201CThis was an actual five star movie. I hope people make the time to go out and experience this movie in the theaters.\u201D",
+      poster: "https://a.ltrbxd.com/resized/film-poster/1/4/6/4/9/4/0/1464940-ha-chan-shake-your-booty-0-600-0-900-crop.jpg?v=1971a69a5b",
+      url: "https://letterboxd.com/miamimoviegoers/film/ha-chan-shake-your-booty/" },
+    { film: "The Uprising", year: "2026", stars: null, date: "Sep 10",
+      text: "\u201CThis is going to be a great movie for people who don\u2019t like paying their taxes.\u201D",
+      poster: "https://a.ltrbxd.com/resized/film-poster/8/8/0/4/2/5/880425-the-uprising-2026-0-600-0-900-crop.jpg?v=688bf1bc5f",
+      url: "https://letterboxd.com/miamimoviegoers/film/the-uprising-2026/" },
+    { film: "Coyote vs. Acme", year: "2026", stars: 4.5, date: "Sep 9",
+      text: "\u201CI\u2019m going to tell my kids this was Erin Brockovich.\u201D",
+      poster: "https://a.ltrbxd.com/resized/film-poster/1/0/8/9/0/8/8/1089088-coyote-vs-acme-0-600-0-900-crop.jpg?v=735eb10cc7",
+      url: "https://letterboxd.com/miamimoviegoers/film/coyote-vs-acme/" }
+  ],
+  member: { name: "Miami Film Club", handle: "@miamimoviegoers" },
+  join: { network: "Moviegoers Network", price: "from $2/month",
+    patreon: "https://www.patreon.com/user?u=42357437",
+    volunteer: "https://miamimoviegoers.com/volunteer",
+    pitch: "Advance screenings, member discounts, Discord access. Or volunteer and help run the nights." },
+  quotes: [
+    { text: "\u201CBeing new to Miami was a whole different world, and looking to make friends, I chose Miami Moviegoers, and it was the best decision I ever made.\u201D", who: "Marya Johnson" },
+    { text: "\u201CIt\u2019s amazing how a love for films has brought together such a diverse group of people, turning strangers into friends.\u201D", who: "Romina Espinosa" },
+    { text: "\u201CMiami Moviegoers has been a great opportunity not only to meet other movie fans, but also to soak in the city life.\u201D", who: "Mikey Martinez" }
+  ],
+  press: { outlet: "Miami New Times", quote: "\u201Chelps South Florida make friends at the movies.\u201D",
+    url: "https://www.miaminewtimes.com/arts/miami-moviegoers-helps-south-florida-make-friends-at-the-movies-22497929" },
+  links: {
+    website: "https://miamimoviegoers.com",
+    instagram: "https://www.instagram.com/miamimoviegoers",
+    tiktok: "http://www.tiktok.com/@miamimoviegoers",
+    letterboxd: "https://boxd.it/58OIJ",
+    meetup: "https://www.meetup.com/miami-moviegoers/",
+    linktree: "https://linktr.ee/miamimoviegoers"
+  }
+};
+
+/* star helper: 5 -> ★★★★★, 4.5 -> ★★★★½ */
+var MFC = {
+  stars: function(n){
+    if (n == null) return "";
+    var f = Math.floor(n), h = (n - f) >= 0.5 ? "\u00BD" : "";
+    return "\u2605".repeat(f) + h;
+  }
+};
+
+/* theme registry — filled by work/batch*/themes.js */
+var THEMES = {};
+var THEME_ORDER = ["neon","zine","editorial","screenplay","brutalist","noir",
+  "letterboxd","boxoffice","festival","videostore","groupchat","calendar",
+  "marquee","stubs","booth","boarding"];
+
+/*__THEME_JS__*/
+
+/* ============ router ============ */
+var stage = document.getElementById("stage");
+var tabsEl = document.getElementById("tabs");
+THEME_ORDER.forEach(function(key){
+  var b = document.createElement("button");
+  b.className = "tab"; b.dataset.theme = key;
+  b.textContent = (THEMES[key] && THEMES[key].label) || key;
+  b.addEventListener("click", function(){ setTheme(key); });
+  tabsEl.appendChild(b);
+});
+function setTheme(key, save){
+  if (!THEMES[key]) key = THEME_ORDER[0];
+  document.body.setAttribute("data-theme", key);
+  document.body.className = "";
+  stage.innerHTML = THEMES[key].render(CONTENT);
+  if (THEMES[key].mount) { try { THEMES[key].mount(stage); } catch(e){} }
+  var tabs = tabsEl.querySelectorAll(".tab");
+  tabs.forEach(function(b){ b.classList.toggle("active", b.dataset.theme === key); });
+  var m = document.getElementById("tcolor");
+  if (m && THEMES[key].meta) m.setAttribute("content", THEMES[key].meta);
+  if (save !== false) { try { localStorage.setItem("mfc-theme", key); } catch(e){} }
+  window.scrollTo(0, 0);
+  requestAnimationFrame(revealScan);
+}
+/* scroll reveals */
+var revealIO = null;
+function revealScan(){
+  var els = stage.querySelectorAll(".rv:not(.in)");
+  if (!("IntersectionObserver" in window)) { els.forEach(function(el){ el.classList.add("in"); }); return; }
+  if (!revealIO) {
+    revealIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting) { en.target.classList.add("in"); revealIO.unobserve(en.target); }
+      });
+    }, { threshold: 0.08, rootMargin: "0px 0px -4% 0px" });
+  }
+  els.forEach(function(el){ revealIO.observe(el); });
+}
+(function init(){
+  var key = THEME_ORDER[0];
+  try {
+    var saved = localStorage.getItem("mfc-theme");
+    if (saved && THEMES[saved]) key = saved;
+  } catch(e){}
+  setTheme(key, false);
+})();
+</script>
+<noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
+</body>
+</html>
