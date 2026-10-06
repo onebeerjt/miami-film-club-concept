@@ -57,6 +57,25 @@ button { font-family: inherit; cursor: pointer; }
 /* unified ticket action on dashboard cards — visible by default, themes restyle */
 .d-ticket { display: inline-block; flex: none; font-size: 10.5px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 14px; border-radius: 999px; border: 1px solid currentColor; white-space: nowrap; }
 
+/* MOBILE AGENDA FIX — the card's inflexible row (date + tag + ticket + arrow) is
+   wider than narrow viewports, which pushed the ticket pill off-screen and
+   stretched the whole page sideways. Below 560px the card wraps: date + info +
+   tag stay on row one, the ticket drops to its own full-width row, and the
+   redundant arrow hides (the whole card is already a link). Defensive: every
+   theme inherits this, so the pill can never bleed off-screen again. */
+@media (max-width: 560px) {
+  .dash-list .dash-item { flex-wrap: wrap; }
+  .dash-list .dash-item .d-ticket { flex: 1 1 100%; text-align: center; }
+  .dash-list .dash-item .d-go { display: none; }
+  .dash-head { flex-wrap: wrap; row-gap: 6px; }
+  .sec-head { flex-wrap: wrap; row-gap: 6px; }
+  .chips .chip { white-space: normal; }
+  /* absorb rotation bleed so tilted cards never paint past the viewport edge */
+  .theme-zine .dash-list .dash-item { margin-left: 3px; margin-right: 3px; }
+  .theme-zine .rev-list, .theme-stubs .rev-list { padding-left: 26px; padding-right: 26px; }
+  body.theme-zine .marquee-strip { transform: rotate(-0.8deg); }
+}
+
 /* diary — layout base */
 .diary-list { display: grid; gap: 0; max-width: 680px; margin: 0 auto; padding: 0 20px; }
 .diary-entry { display: flex; gap: 14px; padding: 15px 0; }
@@ -858,7 +877,7 @@ body.switching.theme-noir .dash, body.switching.theme-noir .hero, body.switching
 .rev-main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
 .rev-who { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
 .rev-avatar { width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-size: 11px; font-weight: 800; flex: none; font-style: normal; }
-.rev-name { font-size: 12.5px; font-weight: 700; }
+.rev-name { font-size: 12.5px; font-weight: 700; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .rev-name i { font-style: normal; font-weight: 400; opacity: 0.6; }
 .rev-date { margin-left: auto; font-size: 11px; opacity: 0.6; flex: none; font-weight: 600; }
 .rev-film { display: block; font-size: 14.5px; margin-bottom: 4px; line-height: 1.3; }
