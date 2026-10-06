@@ -5,257 +5,134 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0d0a08">
 <title>Miami Film Club — Pop-Up Cinema & Movie Parties in the 305</title>
-<meta name="description" content="A community of movie lovers throwing pop-up cinema nights and movie parties across Miami. The moviegoers are the movie.">
+<meta name="description" content="Pop-up cinema and movie parties across Miami. Upcoming nights, recent screenings, membership.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg: #0d0a08;
-  --bg2: #141009;
-  --card: #191410;
+  --surface: #171310;
+  --surface-2: #1e1813;
   --ink: #f7f1e8;
-  --muted: rgba(247,241,232,0.62);
-  --faint: rgba(247,241,232,0.38);
+  --ink-2: rgba(247,241,232,0.62);
+  --ink-3: rgba(247,241,232,0.38);
   --amber: #f0a832;
   --amber-deep: #c77f1a;
-  --red: #e5484d;
-  --line: rgba(247,241,232,0.12);
+  --line: rgba(247,241,232,0.1);
   --sat: env(safe-area-inset-top, 0px);
   --sab: env(safe-area-inset-bottom, 0px);
 }
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-html { background: var(--bg); scroll-behavior: smooth; }
+html { background: var(--bg); }
 body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--bg); color: var(--ink);
-  min-height: 100dvh; -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  min-height: 100dvh; -webkit-font-smoothing: antialiased;
 }
+.display { font-family: "Bebas Neue", "Arial Narrow", sans-serif; letter-spacing: 0.03em; line-height: 0.95; font-weight: 400; }
+
 /* film grain */
-.grain {
-  position: fixed; inset: 0; z-index: 60; pointer-events: none; opacity: 0.07;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
+.grain { position: fixed; inset: 0; z-index: 60; pointer-events: none; opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
 .wrap { max-width: 640px; margin: 0 auto; padding: 0 20px; }
-.display { font-family: "Bebas Neue", "Arial Narrow", sans-serif; letter-spacing: 0.02em; line-height: 0.95; font-weight: 400; }
 
 /* nav */
-nav.top {
-  position: sticky; top: 0; z-index: 50;
-  background: rgba(13,10,8,0.82); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--line);
-}
-nav.top .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 12px; padding-bottom: 12px; }
-.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
-.brand .mark {
-  width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center;
-  background: linear-gradient(135deg, var(--amber), var(--amber-deep));
-  box-shadow: 0 4px 18px rgba(240,168,50,0.35);
-}
-.brand .name { font-family: "Bebas Neue", sans-serif; font-size: 22px; letter-spacing: 0.04em; }
-.navlinks { display: flex; gap: 4px; align-items: center; }
-.navlinks a {
-  color: var(--muted); text-decoration: none; font-size: 13.5px; font-weight: 600;
-  padding: 8px 10px; border-radius: 10px;
-}
-.navlinks a.cta {
-  background: var(--amber); color: #1a1206; font-weight: 700;
-  box-shadow: 0 4px 16px rgba(240,168,50,0.35);
-}
-.navlinks a.cta:active { transform: scale(0.95); }
+nav.top { position: sticky; top: 0; z-index: 50;
+  background: rgba(13,10,8,0.85); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--line); }
+nav.top .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 11px; padding-bottom: 11px; }
+.brand { display: flex; align-items: center; gap: 9px; text-decoration: none; color: var(--ink); }
+.brand .mark { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--amber), var(--amber-deep)); flex: none; }
+.brand .name { font-family: "Bebas Neue", sans-serif; font-size: 20px; letter-spacing: 0.05em; }
+.navlinks { display: flex; gap: 2px; align-items: center; }
+.navlinks a { color: var(--ink-2); text-decoration: none; font-size: 13px; font-weight: 600; padding: 8px 9px; border-radius: 9px; }
+.navlinks a.cta { background: var(--amber); color: #1a1206; font-weight: 700; margin-left: 4px; }
 
-/* hero */
-.hero { position: relative; padding: 56px 0 40px; overflow: hidden; }
-.hero .kicker {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 11.5px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--amber); margin-bottom: 18px;
-}
-.hero .kicker::before { content: ""; width: 26px; height: 2px; background: var(--amber); border-radius: 2px; }
-.hero h1 { font-size: clamp(58px, 17vw, 108px); margin-bottom: 18px; }
+/* compact hero */
+.hero { text-align: center; padding: calc(var(--sat) + 40px) 20px 34px; max-width: 640px; margin: 0 auto; }
+.hero .kicker { font-size: 11px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: var(--amber); margin-bottom: 14px; }
+.hero h1 { font-size: clamp(46px, 13vw, 72px); margin-bottom: 12px; }
 .hero h1 .amber { color: var(--amber); }
-.hero p.lede { font-size: 17px; line-height: 1.65; color: var(--muted); max-width: 46ch; margin-bottom: 28px; }
-.hero p.lede strong { color: var(--ink); }
-.btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
-.btn {
-  display: inline-flex; align-items: center; gap: 9px;
-  font-size: 15px; font-weight: 700; text-decoration: none;
-  padding: 15px 26px; border-radius: 999px; cursor: pointer; border: 0; font-family: inherit;
-  transition: transform 0.15s ease;
-}
-.btn:active { transform: scale(0.95); }
-.btn.primary { background: var(--amber); color: #1a1206; box-shadow: 0 8px 28px rgba(240,168,50,0.35); }
+.hero p { color: var(--ink-2); font-size: 15px; line-height: 1.6; max-width: 44ch; margin: 0 auto 20px; }
+.hero .next { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--ink);
+  background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 10px 18px; text-decoration: none; }
+.hero .next b { color: var(--amber); font-weight: 800; }
+.hero .next .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--amber); box-shadow: 0 0 8px var(--amber); animation: pulse 1.8s infinite; }
+@keyframes pulse { 50% { opacity: 0.4; } }
+
+/* sections */
+section.block { padding: 30px 0 6px; }
+.sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 16px; padding: 0 20px; max-width: 640px; margin-left: auto; margin-right: auto; }
+.sec-head h2 { font-size: 34px; }
+.sec-head .sub { font-size: 12px; color: var(--ink-3); font-weight: 600; white-space: nowrap; }
+
+/* rails */
+.rail { display: flex; gap: 14px; overflow-x: auto; padding: 4px 20px 14px; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.rail::-webkit-scrollbar { display: none; }
+.rail > * { scroll-snap-align: start; flex: none; }
+
+/* upcoming event card — dense */
+.ev { width: 248px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
+.ev .art { height: 128px; position: relative; overflow: hidden; background: #241c12; }
+.ev .art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ev .art::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(13,10,8,0.55), transparent 60%); }
+.ev .art .tag { position: absolute; top: 10px; left: 10px; z-index: 2; font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+  color: #1a1206; background: var(--amber); padding: 5px 10px; border-radius: 999px; }
+.ev .art .poster-art { position: absolute; inset: 0; display: grid; place-items: center; text-align: center;
+  font-family: "Bebas Neue", sans-serif; font-size: 26px; letter-spacing: 0.05em; color: var(--amber); line-height: 1.05; padding: 12px;
+  background: radial-gradient(120% 120% at 50% 20%, #2e2314 0%, #171310 75%); }
+.ev .body { padding: 14px 15px 15px; }
+.ev h3 { font-size: 16.5px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.25; margin-bottom: 8px; }
+.ev .meta { display: grid; gap: 5px; margin-bottom: 12px; }
+.ev .meta div { display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--ink-2); font-weight: 500; }
+.ev .meta svg { width: 14px; height: 14px; color: var(--amber); flex: none; }
+.ev .btn { display: block; text-align: center; font-size: 13.5px; font-weight: 700; color: #1a1206; background: var(--amber);
+  border-radius: 12px; padding: 11px; text-decoration: none; }
+.ev .btn:active { transform: scale(0.97); }
+
+/* recent night card — poster dense */
+.rn { width: 148px; }
+.rn .p { width: 148px; aspect-ratio: 2/3; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: #241c12; margin-bottom: 9px; }
+.rn .p img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.rn h4 { font-size: 13.5px; font-weight: 700; line-height: 1.3; margin-bottom: 3px; }
+.rn .d { font-size: 11.5px; color: var(--ink-3); font-weight: 600; line-height: 1.45; }
+
+/* membership */
+.member { margin: 30px 20px 6px; max-width: 600px; border-radius: 22px; padding: 30px 24px; text-align: center;
+  background: linear-gradient(160deg, #2a1e0e 0%, #171310 65%); border: 1px solid rgba(240,168,50,0.25); position: relative; overflow: hidden; }
+.member::before { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(80% 60% at 50% 0%, rgba(240,168,50,0.14), transparent 70%); }
+.member .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; position: relative; }
+.member h2 { font-size: 40px; margin-bottom: 10px; position: relative; }
+.member p { color: var(--ink-2); font-size: 14.5px; line-height: 1.65; max-width: 42ch; margin: 0 auto 20px; position: relative; }
+.member p strong { color: var(--ink); }
+.member .row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; position: relative; }
+.btn { display: inline-flex; align-items: center; gap: 8px; font-size: 14.5px; font-weight: 700; text-decoration: none;
+  padding: 14px 24px; border-radius: 999px; border: 0; font-family: inherit; }
+.btn.primary { background: var(--amber); color: #1a1206; }
 .btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
-.btn svg { width: 17px; height: 17px; }
+.btn:active { transform: scale(0.96); }
 
-/* marquee strip */
-.marquee {
-  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
-  overflow: hidden; white-space: nowrap; padding: 14px 0; margin: 8px 0 0;
-  background: var(--bg2);
-}
-.marquee .track { display: inline-block; animation: mq 28s linear infinite; }
-.marquee span {
-  font-family: "Bebas Neue", sans-serif; font-size: 20px; letter-spacing: 0.14em;
-  color: var(--faint); margin: 0 26px; text-transform: uppercase;
-}
-.marquee span b { color: var(--amber); font-weight: 400; }
-@keyframes mq { to { transform: translateX(-50%); } }
-
-/* section */
-section { padding: 56px 0 8px; }
-.sec-head { margin-bottom: 26px; }
-.sec-head .eyebrow {
-  font-size: 11.5px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--amber); margin-bottom: 10px;
-}
-.sec-head h2 { font-size: clamp(40px, 11vw, 64px); }
-.sec-head p { color: var(--muted); font-size: 15.5px; line-height: 1.6; margin-top: 10px; max-width: 44ch; }
-
-/* spotlight */
-.spotlight {
-  border-radius: 22px; overflow: hidden; position: relative;
-  border: 1px solid var(--line); background: var(--card);
-  display: grid; grid-template-columns: 148px 1fr;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
-}
-.spotlight .poster { position: relative; min-height: 220px; }
-.spotlight .poster img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.spotlight .info { padding: 22px 20px; display: flex; flex-direction: column; justify-content: center; }
-.tag {
-  display: inline-block; font-size: 10.5px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
-  color: #1a1206; background: var(--amber); padding: 5px 11px; border-radius: 999px; margin-bottom: 12px;
-  align-self: flex-start;
-}
-.spotlight h3 { font-family: "Bebas Neue", sans-serif; font-size: 38px; letter-spacing: 0.02em; margin-bottom: 4px; }
-.spotlight .yr { color: var(--faint); font-size: 14px; font-weight: 600; margin-bottom: 14px; }
-.detail-line { display: flex; align-items: center; gap: 9px; font-size: 14px; color: var(--muted); margin-bottom: 8px; font-weight: 500; }
-.detail-line svg { width: 16px; height: 16px; color: var(--amber); flex: none; }
-.spotlight .btn { margin-top: 14px; align-self: flex-start; padding: 12px 22px; font-size: 14px; }
-
-.spotlight + .spotlight { margin-top: 16px; }
-.spotlight .poster-art {
-  display: grid; place-items: center; min-height: 220px;
-  background: radial-gradient(130% 130% at 30% 20%, #3a2a16 0%, #191410 70%);
-  border-right: 1px solid var(--line);
-}
-.spotlight .poster-art span {
-  font-family: "Bebas Neue", sans-serif; font-size: 34px; line-height: 1;
-  letter-spacing: 0.04em; text-align: center; color: var(--amber); padding: 16px;
-}
-
-/* testimonials */
-.quote-card {
-  background: var(--card); border: 1px solid var(--line); border-radius: 18px;
-  padding: 22px 20px; font-size: 15px; line-height: 1.7; color: var(--ink); font-style: italic;
-}
-.quote-card span {
-  display: block; margin-top: 12px; font-style: normal;
-  font-size: 12.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber);
-}
-.press { text-align: center; color: var(--faint); font-size: 13.5px; margin-top: 22px; line-height: 1.7; }
-.press a { color: var(--amber); font-weight: 700; text-decoration: none; }
-
-/* socials */
-.socials { display: flex; flex-wrap: wrap; gap: 8px; }
-.socials a {
-  font-size: 12.5px; font-weight: 700; color: var(--muted); text-decoration: none;
-  border: 1px solid var(--line); padding: 8px 14px; border-radius: 999px;
-}
-.socials a:active { transform: scale(0.95); }
-.grid { display: grid; gap: 16px; }
-.scard {
-  display: grid; grid-template-columns: 108px 1fr; gap: 16px;
-  background: var(--card); border: 1px solid var(--line); border-radius: 18px;
-  padding: 14px; align-items: center;
-  transition: transform 0.15s ease, border-color 0.2s ease;
-}
-.scard:active { transform: scale(0.98); }
-.scard .p { width: 108px; height: 152px; border-radius: 12px; overflow: hidden; flex: none; background: #241c12; }
-.scard .p img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.scard h3 { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 2px; }
-.scard .yr { font-size: 12.5px; color: var(--faint); font-weight: 600; margin-bottom: 10px; }
-.scard .theme {
-  display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--amber); border: 1px solid rgba(240,168,50,0.4); padding: 4px 10px; border-radius: 999px;
-  margin-bottom: 10px;
-}
-.scard .detail-line { font-size: 13px; margin-bottom: 5px; }
-
-/* about */
-.about-card {
-  background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 30px 26px;
-}
-.about-card p { font-size: 16px; line-height: 1.75; color: var(--muted); margin-bottom: 16px; }
-.about-card p:last-child { margin-bottom: 0; }
-.about-card strong { color: var(--ink); }
-.pillars { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 24px; }
-.pillar {
-  background: var(--bg2); border: 1px solid var(--line); border-radius: 16px; padding: 18px 14px; text-align: center;
-}
-.pillar .ic {
-  width: 42px; height: 42px; margin: 0 auto 10px; border-radius: 13px; display: grid; place-items: center;
-  background: rgba(240,168,50,0.12); border: 1px solid rgba(240,168,50,0.3);
-}
-.pillar .ic svg { width: 21px; height: 21px; color: var(--amber); }
-.pillar h4 { font-size: 13.5px; font-weight: 700; margin-bottom: 5px; }
-.pillar p { font-size: 12px; color: var(--faint); line-height: 1.5; margin: 0; }
-
-/* community */
-.cgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-.tile {
-  aspect-ratio: 1; border-radius: 16px; position: relative; overflow: hidden;
-  border: 1px solid var(--line); display: grid; place-items: center;
-}
-.tile svg { width: 30px; height: 30px; color: rgba(247,241,232,0.5); }
-.tile.t1 { background: radial-gradient(120% 120% at 20% 10%, #3a2a16 0%, #191410 70%); }
-.tile.t2 { background: radial-gradient(120% 120% at 80% 20%, #4a1f1a 0%, #191410 70%); }
-.tile.t3 { background: radial-gradient(120% 120% at 50% 90%, #1e3a2e 0%, #191410 70%); }
-.tile.t4 { background: radial-gradient(120% 120% at 10% 80%, #2e2340 0%, #191410 70%); }
-.tile.t5 { background: radial-gradient(120% 120% at 90% 80%, #40301a 0%, #191410 70%); }
-.tile.t6 { background: radial-gradient(120% 120% at 50% 10%, #1a2e3a 0%, #191410 70%); }
-.tile .cap {
-  position: absolute; bottom: 8px; left: 10px; right: 10px;
-  font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint);
-}
-.comm-note { text-align: center; color: var(--faint); font-size: 13px; margin-top: 18px; line-height: 1.6; }
-
-/* join */
-.join {
-  margin: 56px 0 8px; border-radius: 26px; padding: 44px 28px; text-align: center;
-  background: linear-gradient(160deg, #2a1e0e 0%, #191410 60%);
-  border: 1px solid rgba(240,168,50,0.25);
-  position: relative; overflow: hidden;
-}
-.join::before {
-  content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(80% 60% at 50% 0%, rgba(240,168,50,0.16), transparent 70%);
-}
-.join h2 { font-size: clamp(44px, 12vw, 68px); margin-bottom: 12px; position: relative; }
-.join p { color: var(--muted); font-size: 15.5px; line-height: 1.65; max-width: 40ch; margin: 0 auto 26px; position: relative; }
-.join .btn-row { justify-content: center; position: relative; }
+/* quotes */
+.quotes { display: grid; gap: 12px; padding: 0 20px; max-width: 640px; margin: 0 auto; }
+.quote { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 18px; }
+.quote p { font-size: 14px; line-height: 1.65; color: var(--ink); font-style: italic; margin-bottom: 10px; }
+.quote span { font-size: 11.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); font-style: normal; }
+.press { text-align: center; font-size: 13px; color: var(--ink-3); margin-top: 16px; line-height: 1.7; }
+.press a { color: var(--amber); font-weight: 600; text-decoration: none; }
 
 /* footer */
-footer { border-top: 1px solid var(--line); margin-top: 64px; padding: 30px 0 calc(var(--sab) + 34px); }
-footer .wrap { display: flex; flex-direction: column; gap: 14px; }
-.frow { display: flex; align-items: center; justify-content: space-between; }
-footer .brand .name { font-size: 19px; }
-.ig-link {
-  display: inline-flex; align-items: center; gap: 8px; color: var(--muted);
-  text-decoration: none; font-size: 13.5px; font-weight: 600;
-}
-.ig-link svg { width: 17px; height: 17px; color: var(--amber); }
-.concept-badge {
-  align-self: flex-start; font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
-  color: var(--faint); border: 1px dashed rgba(247,241,232,0.25);
-  padding: 7px 13px; border-radius: 999px;
-}
-.copy { font-size: 12px; color: var(--faint); }
-
-@media (min-width: 560px) {
-  .spotlight { grid-template-columns: 200px 1fr; }
-  .spotlight .poster { min-height: 290px; }
-}
+footer { border-top: 1px solid var(--line); margin-top: 44px; padding: 28px 0 calc(var(--sab) + 32px); }
+footer .wrap { display: flex; flex-direction: column; gap: 16px; }
+.socials { display: flex; gap: 8px; flex-wrap: wrap; }
+.socials a { font-size: 12.5px; font-weight: 600; color: var(--ink-2); text-decoration: none; border: 1px solid var(--line);
+  border-radius: 999px; padding: 9px 15px; background: var(--surface); }
+.concept-badge { align-self: flex-start; font-size: 11px; font-weight: 600; color: var(--ink-3);
+  border: 1px dashed rgba(247,241,232,0.25); padding: 7px 13px; border-radius: 999px; }
+.copy { font-size: 12px; color: var(--ink-3); }
 </style>
 </head>
 <body>
@@ -264,271 +141,133 @@ footer .brand .name { font-size: 19px; }
 <nav class="top">
   <div class="wrap">
     <a class="brand" href="#top">
-      <span class="mark">
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#1a1206" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2.5"/><path d="M7 4v16M17 4v16M2 9h5M2 15h5M17 9h5M17 15h5"/></svg>
-      </span>
+      <span class="mark"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1a1206" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2.5"/><path d="M7 4v16M17 4v16M2 9h5M2 15h5M17 9h5M17 15h5"/></svg></span>
       <span class="name">MIAMI FILM CLUB</span>
     </a>
     <div class="navlinks">
-      <a href="#screenings">Nights</a>
-      <a href="#about">About</a>
-      <a href="#membership">Membership</a>
-      <a href="#join" class="cta">Join us</a>
+      <a href="#upcoming">Nights</a>
+      <a href="#recent">Recent</a>
+      <a href="#join" class="cta">Join</a>
     </div>
   </div>
 </nav>
 
 <header class="hero" id="top">
-  <div class="wrap">
-    <div class="kicker">Pop-up cinema · Miami, FL</div>
-    <h1 class="display">THE<br>MOVIEGOERS<br><span class="amber">ARE THE MOVIE.</span></h1>
-    <p class="lede">We're <strong>Miami Moviegoers</strong> — a club on a mission to <strong>champion the theater experience</strong> and connect film lovers across South Florida. Pop-up screenings, themed parties, horror nights, cult classics. Grab a ticket, show up, and talk movies with people who actually get it.</p>
-    <div class="btn-row">
-      <a class="btn primary" href="#spotlight">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
-        Next screening
-      </a>
-      <a class="btn ghost" href="https://www.patreon.com/user?u=42357437" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7c-2 0-4.5-1-5.5-3 2.5 0 5.5 1.5 5.5 3zM12 7c2 0 4.5-1 5.5-3-2.5 0-5.5 1.5-5.5 3z"/></svg>
-        Become a Moviegoer
-      </a>
-    </div>
-  </div>
+  <div class="kicker">Pop-up cinema · Miami, FL</div>
+  <h1 class="display">MOVIES ARE BETTER <span class="amber">TOGETHER.</span></h1>
+  <p>A crew of film lovers throwing pop-up screenings and movie parties across the 305 — horror nights, cult classics, themed throwbacks. Grab a ticket, show up, talk movies with people who get it.</p>
+  <a class="next" href="#upcoming"><span class="dot"></span>Next up&nbsp;<b>Oct 21 · Churchill's Pub</b></a>
 </header>
 
-<div class="marquee" aria-hidden="true">
-  <div class="track" id="mqTrack"></div>
-</div>
-
-<section id="spotlight">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">On the marquee</div>
-      <h2 class="display">UP NEXT</h2>
-      <p>Real nights, real dates — straight from the club's calendar.</p>
-    </div>
-
-    <div class="spotlight">
-      <div class="poster">
-        <img src="https://m.media-amazon.com/images/M/MV5BOTg2YzY5ZGYtNDk1My00N2Q2LWFhN2YtZWU5YTkzODIyZGRmXkEyXkFqcGc@._V1_SX300.jpg" alt="The Rocky Horror Picture Show (1975) movie poster" loading="eager">
-      </div>
-      <div class="info">
+<section class="block" id="upcoming">
+  <div class="sec-head"><h2 class="display">UPCOMING NIGHTS</h2><span class="sub">3 on the calendar</span></div>
+  <div class="rail">
+    <article class="ev">
+      <div class="art">
+        <img src="https://m.media-amazon.com/images/M/MV5BOTg2YzY5ZGYtNDk1My00N2Q2LWFhN2YtZWU5YTkzODIyZGRmXkEyXkFqcGc@._V1_SX300.jpg" alt="The Rocky Horror Picture Show poster" loading="eager">
         <span class="tag">Interactive screening</span>
-        <h3>ROCKY HORROR PICTURE SHOW</h3>
-        <div class="yr">1975 · Jim Sharman</div>
-        <div class="detail-line">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1116 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Pinecrest Gardens
-        </div>
-        <div class="detail-line">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
-          Date TBA · tickets on sale now
-        </div>
-        <a class="btn primary" href="https://pinecrestgardens.vbotickets.com/event/The_Rocky_Horror_Picture_Show/203409" target="_blank" rel="noopener">Get tickets</a>
       </div>
-    </div>
-
-    <div class="spotlight">
-      <div class="poster poster-art"><span>ELIZABETH<br>HOLMES<br>LOOKALIKE<br>CONTEST</span></div>
-      <div class="info">
+      <div class="body">
+        <h3>The Rocky Horror Picture Show</h3>
+        <div class="meta">
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Date TBA · on sale now</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1116 0z"/><circle cx="12" cy="10" r="3"/></svg>Pinecrest Gardens</div>
+        </div>
+        <a class="btn" href="https://pinecrestgardens.vbotickets.com/event/The_Rocky_Horror_Picture_Show/203409" target="_blank" rel="noopener">Get tickets</a>
+      </div>
+    </article>
+    <article class="ev">
+      <div class="art">
+        <div class="poster-art">ELIZABETH<br>HOLMES<br>LOOKALIKE<br>CONTEST</div>
         <span class="tag">Contest night</span>
-        <h3>ELIZABETH HOLMES LOOKALIKE CONTEST</h3>
-        <div class="yr">Black turtlenecks strongly encouraged</div>
-        <div class="detail-line">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1116 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Churchill's Pub
-        </div>
-        <div class="detail-line">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
-          Wed, Oct 21 · 7:30 PM
-        </div>
-        <a class="btn primary" href="https://www.instagram.com/miamimoviegoers" target="_blank" rel="noopener">Register via Instagram</a>
       </div>
-    </div>
-
-    <div class="spotlight">
-      <div class="poster poster-art"><span>OKTOBER-<br>FEST<br>MIAMI<br>2026</span></div>
-      <div class="info">
+      <div class="body">
+        <h3>Elizabeth Holmes Lookalike Contest</h3>
+        <div class="meta">
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Wed, Oct 21 · 7:30 PM</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1116 0z"/><circle cx="12" cy="10" r="3"/></svg>Churchill's Pub</div>
+        </div>
+        <a class="btn" href="https://www.instagram.com/miamimoviegoers" target="_blank" rel="noopener">Register</a>
+      </div>
+    </article>
+    <article class="ev">
+      <div class="art">
+        <div class="poster-art">OKTOBER-<br>FEST<br>MIAMI<br>2026</div>
         <span class="tag">Member perk</span>
-        <h3>OKTOBERFEST MIAMI 2026</h3>
-        <div class="yr">Discount tickets for the club</div>
-        <div class="detail-line">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1116 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Miami · venue on Eventbrite
-        </div>
-        <div class="detail-line">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
-          Fall 2026 · link in bio
-        </div>
-        <a class="btn primary" href="https://linktr.ee/miamimoviegoers" target="_blank" rel="noopener">Get discount link</a>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="screenings">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">From the archives</div>
-      <h2 class="display">RECENT NIGHTS</h2>
-      <p>A taste of how the club does it — themed, costumed, full-send. Every night hits different.</p>
-    </div>
-    <div class="grid" id="screenGrid"></div>
-  </div>
-</section>
-
-<section id="about">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">Who we are</div>
-      <h2 class="display">A CLUB, NOT<br>A THEATER.</h2>
-    </div>
-    <div class="about-card">
-      <p><strong>Miami Moviegoers</strong> — aka Miami Film Club — exists to <strong>champion the theater experience</strong> and connect movie lovers across South Florida. Joining is dead simple: <strong>buy your ticket ahead of time and show up</strong>. Maybe grab some concessions while you're there.</p>
-      <p>Nights usually come with <strong>pre- or post-screening hangouts</strong> — billiards, themed cocktails, costume contests, trivia — because half the fun is talking film with people who get it. Free library screenings, anniversary blowouts with live performances, festival outings: every night is built on one idea — the moviegoers are the movie.</p>
-      <div class="pillars">
-        <div class="pillar">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2.5"/><path d="M7 4v16M17 4v16M2 9h5M2 15h5M17 9h5M17 15h5"/></svg></div>
-          <h4>Pop-up cinema</h4>
-          <p>Screenings in unexpected spots around Miami.</p>
+      <div class="body">
+        <h3>Oktoberfest Miami 2026</h3>
+        <div class="meta">
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Fall 2026 · link in bio</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1116 0z"/><circle cx="12" cy="10" r="3"/></svg>Discount via Eventbrite</div>
         </div>
-        <div class="pillar">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7c-2 0-4.5-1-5.5-3 2.5 0 5.5 1.5 5.5 3zM12 7c2 0 4.5-1 5.5-3-2.5 0-5.5 1.5-5.5 3z"/></svg></div>
-          <h4>Movie parties</h4>
-          <p>Themed nights, costumes, full-send energy.</p>
-        </div>
-        <div class="pillar">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-          <h4>The community</h4>
-          <p>The crowd is the show. Come as you are.</p>
-        </div>
+        <a class="btn" href="https://linktr.ee/miamimoviegoers" target="_blank" rel="noopener">Get discount link</a>
       </div>
-    </div>
+    </article>
   </div>
 </section>
 
-<section id="words">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">Word of mouth</div>
-      <h2 class="display">THE CROWD<br>TALKS.</h2>
-    </div>
-    <div class="grid">
-      <div class="quote-card">"Being new to Miami was a whole different world, and looking to make friends, I chose Miami Moviegoers, and it was the best decision I ever made."<span>— Marya Johnson</span></div>
-      <div class="quote-card">"It's amazing how a love for films has brought together such a diverse group of people, turning strangers into friends."<span>— Romina Espinosa</span></div>
-      <div class="quote-card">"Miami Moviegoers has been a great opportunity not only to meet other movie fans, but also to soak in the city life."<span>— Mikey Martinez</span></div>
-    </div>
-    <p class="press">As featured in <a href="https://www.miaminewtimes.com/arts/miami-moviegoers-helps-south-florida-make-friends-at-the-movies-22497929" target="_blank" rel="noopener">Miami New Times</a><br>"helps South Florida make friends at the movies."</p>
+<section class="block" id="recent">
+  <div class="sec-head"><h2 class="display">RECENT NIGHTS</h2><span class="sub">from the archives</span></div>
+  <div class="rail">
+    <article class="rn">
+      <div class="p"><img src="https://m.media-amazon.com/images/M/MV5BN2Q4MGJmYTgtNDhiMS00MTcwLTlhZjgtN2U5NWUyYzFiMWRmXkEyXkFqcGc@._V1_QL75_UX380_CR0,2,380,562_.jpg" alt="Hedwig and the Angry Inch poster" loading="lazy"></div>
+      <h4>Hedwig and the Angry Inch</h4>
+      <div class="d">25th anniversary · glam rock night<br>Las Rosas, w/ Hexed Miami</div>
+    </article>
+    <article class="rn">
+      <div class="p"><img src="https://m.media-amazon.com/images/M/MV5BMjI1ODZkYTgtYTY3Yy00ZTJkLWFkOTgtZDUyYWM4MzQwNjk0XkEyXkFqcGc@._V1_SX300.jpg" alt="Your Name poster" loading="lazy"></div>
+      <h4>Your Name</h4>
+      <div class="d">10th anniversary · 4K re-release<br>AMC Sunset · billiards pre-social</div>
+    </article>
+    <article class="rn">
+      <div class="p"><img src="https://m.media-amazon.com/images/M/MV5BYmM3MTllNzYtN2MzNS00MWQwLTk0NTEtNjY1MmMwYjNkNTE5XkEyXkFqcGc@._V1_QL75_UY562_CR8,0,380,562_.jpg" alt="Shakespeare in Love poster" loading="lazy"></div>
+      <h4>Shakespeare in Love</h4>
+      <div class="d">Free screening · poetry &amp; popcorn<br>Coral Gables Library</div>
+    </article>
+    <article class="rn">
+      <div class="p"><img src="https://m.media-amazon.com/images/M/MV5BYWUzYWIxMDUtYTdmYS00MjUxLWJjNDItYzcxOTY0N2M2YWE5XkEyXkFqcGc@._V1_QL75_UX380_CR0,1,380,562_.jpg" alt="Super Mario Bros. poster" loading="lazy"></div>
+      <h4>Super Mario Bros.</h4>
+      <div class="d">Retro game social + trivia<br>Muse Studio</div>
+    </article>
   </div>
 </section>
 
-<section id="membership">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">Moviegoers Network</div>
-      <h2 class="display">BECOME A<br>MOVIEGOER.</h2>
-      <p>Membership starts at <strong>$2/month</strong> on Patreon — unlocking advance screenings, member discounts, the Discord, and more. Every little bit keeps the projector running.</p>
-    </div>
-    <div class="btn-row">
-      <a class="btn primary" href="https://www.patreon.com/user?u=42357437" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7c-2 0-4.5-1-5.5-3 2.5 0 5.5 1.5 5.5 3zM12 7c2 0 4.5-1 5.5-3-2.5 0-5.5 1.5-5.5 3z"/></svg>
-        Join on Patreon
-      </a>
+<section class="block" id="join">
+  <div class="member">
+    <div class="eyebrow">Become a moviegoer</div>
+    <h2 class="display">JOIN THE CLUB</h2>
+    <p>The <strong>Moviegoers Network</strong> on Patreon — from <strong>$2/month</strong>. Advance screenings, member discounts, Discord access. Or volunteer and help run the nights.</p>
+    <div class="row">
+      <a class="btn primary" href="https://www.patreon.com/user?u=42357437" target="_blank" rel="noopener">Become a member</a>
       <a class="btn ghost" href="https://miamimoviegoers.com/volunteer" target="_blank" rel="noopener">Volunteer</a>
     </div>
   </div>
 </section>
 
-<section id="community">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">The 305 shows up</div>
-      <h2 class="display">THE COMMUNITY</h2>
-      <p>Every night looks different because every crowd is different. Here's the energy.</p>
-    </div>
-    <div class="cgrid">
-      <div class="tile t1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2.5"/><path d="M7 4v16M17 4v16M2 9h5M2 15h5M17 9h5M17 15h5"/></svg><span class="cap">Rooftop nights</span></div>
-      <div class="tile t2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7c-2 0-4.5-1-5.5-3 2.5 0 5.5 1.5 5.5 3zM12 7c2 0 4.5-1 5.5-3-2.5 0-5.5 1.5-5.5 3z"/></svg><span class="cap">Costume parties</span></div>
-      <div class="tile t3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg><span class="cap">The regulars</span></div>
-      <div class="tile t4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="cap">Premiere vibes</span></div>
-      <div class="tile t5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span class="cap">Late shows</span></div>
-      <div class="tile t6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><span class="cap">Post-film hangs</span></div>
-    </div>
-    <p class="comm-note">Tag along, bring a friend, leave with ten more.<br>That's kind of the whole point.</p>
+<section class="block">
+  <div class="sec-head"><h2 class="display">WORD ON THE STREET</h2></div>
+  <div class="quotes">
+    <div class="quote"><p>"Being new to Miami was a whole different world, and looking to make friends, I chose Miami Moviegoers, and it was the best decision I ever made."</p><span>— Marya Johnson</span></div>
+    <div class="quote"><p>"It's amazing how a love for films has brought together such a diverse group of people, turning strangers into friends."</p><span>— Romina Espinosa</span></div>
+    <div class="quote"><p>"Miami Moviegoers has been a great opportunity not only to meet other movie fans, but also to soak in the city life."</p><span>— Mikey Martinez</span></div>
   </div>
-</section>
-
-<section id="join">
-  <div class="wrap">
-    <div class="join">
-      <h2 class="display">PULL UP.</h2>
-      <p>Nights get announced on Instagram first — that's where the RSVPs live. Want to help run the show? The club is always looking for volunteers.</p>
-      <div class="btn-row">
-        <a class="btn primary" href="https://www.instagram.com/miamimoviegoers" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor" stroke="none"/></svg>
-          @miamimoviegoers
-        </a>
-        <a class="btn ghost" href="https://miamimoviegoers.com/volunteer" target="_blank" rel="noopener">Volunteer</a>
-      </div>
-    </div>
-  </div>
+  <p class="press">As featured in <a href="https://www.miaminewtimes.com/arts/miami-moviegoers-helps-south-florida-make-friends-at-the-movies-22497929" target="_blank" rel="noopener">Miami New Times</a><br>"helps South Florida make friends at the movies."</p>
 </section>
 
 <footer>
   <div class="wrap">
-    <div class="frow">
-      <a class="brand" href="#top">
-        <span class="mark">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a1206" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2.5"/><path d="M7 4v16M17 4v16M2 9h5M2 15h5M17 9h5M17 15h5"/></svg>
-        </span>
-        <span class="name">MIAMI FILM CLUB</span>
-      </a>
-      <div class="socials">
-        <a href="https://miamimoviegoers.com" target="_blank" rel="noopener">Website</a>
-        <a href="https://www.instagram.com/miamimoviegoers" target="_blank" rel="noopener">Instagram</a>
-        <a href="http://www.tiktok.com/@miamimoviegoers" target="_blank" rel="noopener">TikTok</a>
-        <a href="https://boxd.it/58OIJ" target="_blank" rel="noopener">Letterboxd</a>
-        <a href="https://www.meetup.com/miami-moviegoers/" target="_blank" rel="noopener">Meetup</a>
-        <a href="https://www.patreon.com/user?u=42357437" target="_blank" rel="noopener">Patreon</a>
-      </div>
+    <div class="socials">
+      <a href="https://miamimoviegoers.com" target="_blank" rel="noopener">Website</a>
+      <a href="https://www.instagram.com/miamimoviegoers" target="_blank" rel="noopener">Instagram</a>
+      <a href="http://www.tiktok.com/@miamimoviegoers" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://boxd.it/58OIJ" target="_blank" rel="noopener">Letterboxd</a>
+      <a href="https://www.meetup.com/miami-moviegoers/" target="_blank" rel="noopener">Meetup</a>
+      <a href="https://www.patreon.com/user?u=42357437" target="_blank" rel="noopener">Patreon</a>
     </div>
     <span class="concept-badge">Concept redesign — unofficial pitch mockup, not affiliated with @miamimoviegoers</span>
     <div class="copy">Made with love for the 305 film community.</div>
   </div>
 </footer>
-
-<script>
-"use strict";
-const SCREENINGS = [
-  { title: "Hedwig and the Angry Inch", year: 2001, theme: "25th anniversary · glam rock night", date: "Las Rosas", venue: "w/ Hexed Miami — live sets, costume contest, gift bags",
-    poster: "https://m.media-amazon.com/images/M/MV5BN2Q4MGJmYTgtNDhiMS00MTcwLTlhZjgtN2U5NWUyYzFiMWRmXkEyXkFqcGc@._V1_QL75_UX380_CR0,2,380,562_.jpg" },
-  { title: "Your Name", year: 2016, theme: "10th anniversary · 4K re-release", date: "AMC Sunset", venue: "Billiards pre-social at GameTime Miami",
-    poster: "https://m.media-amazon.com/images/M/MV5BMjI1ODZkYTgtYTY3Yy00ZTJkLWFkOTgtZDUyYWM4MzQwNjk0XkEyXkFqcGc@._V1_SX300.jpg" },
-  { title: "Shakespeare in Love", year: 1998, theme: "Free screening · poetry & popcorn", date: "Coral Gables Branch Library", venue: "w/ Miami Poetry Club — live readings",
-    poster: "https://m.media-amazon.com/images/M/MV5BYmM3MTllNzYtN2MzNS00MWQwLTk0NTEtNjY1MmMwYjNkNTE5XkEyXkFqcGc@._V1_QL75_UY562_CR8,0,380,562_.jpg" },
-  { title: "Super Mario Bros.", year: 1993, theme: "Retro game social + trivia", date: "Muse Studio", venue: "Colada, popcorn & Ricky's trivia night",
-    poster: "https://m.media-amazon.com/images/M/MV5BYWUzYWIxMDUtYTdmYS00MjUxLWJjNDItYzcxOTY0N2M2YWE5XkEyXkFqcGc@._V1_QL75_UX380_CR0,1,380,562_.jpg" },
-];
-const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const calSVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>';
-const pinSVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1116 0z"/><circle cx="12" cy="10" r="3"/></svg>';
-
-document.getElementById("screenGrid").innerHTML = SCREENINGS.map(s => `
-  <article class="scard">
-    <div class="p"><img src="${s.poster}" alt="${esc(s.title)} (${s.year}) movie poster" loading="lazy"></div>
-    <div>
-      <span class="theme">${esc(s.theme)}</span>
-      <h3>${esc(s.title)}</h3>
-      <div class="yr">${s.year}</div>
-      <div class="detail-line">${calSVG}${esc(s.date)}</div>
-      <div class="detail-line">${pinSVG}${esc(s.venue)}</div>
-    </div>
-  </article>`).join("");
-
-// marquee content (duplicated for seamless loop)
-const words = ["Pop-up cinema", "Movie parties", "Horror nights", "Cult classics", "The 305", "Advance screenings", "Discord community"];
-const seq = words.map(w => `<span>${w} <b>·</b></span>`).join("");
-document.getElementById("mqTrack").innerHTML = seq + seq;
-</script>
 </body>
 </html>
