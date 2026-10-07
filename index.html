@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#06061f" id="tcolor">
-<title>Miami Film Club — 16 Concepts</title>
-<meta name="description" content="Sixteen concept redesigns for the Miami Film Club. Unofficial pitch mockup.">
+<title>Miami Film Club — 50 Concepts</title>
+<meta name="description" content="Fifty concept redesigns for the Miami Film Club. Unofficial pitch mockup.">
 <style>
 /* ============ SHELL (shared by all 16 themes — keep minimal) ============ */
 *,*::before,*::after{box-sizing:border-box}
@@ -1401,6 +1401,644 @@ body[data-theme="boarding"] :focus-visible{outline:2px solid #0b5cab;outline-off
   body[data-theme="boarding"] *{animation:none!important;transition:none!important}
 }
 
+
+/* ===== batch5 ===== */
+/* ===== batch 5 ===== */
+/* --- terminal --- */
+body[data-theme="terminal"]{background:#0a0f0a;color:#c8f5c8}
+body[data-theme="terminal"] .tabbar{background:#0a0f0a;border-color:#1e3a1e}
+.tm-wrap{max-width:760px;margin:0 auto;padding:18px 14px 40px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;line-height:1.65}
+.tm-bar{display:flex;align-items:center;gap:8px;background:#162016;border-radius:10px 10px 0 0;padding:10px 14px}
+.tm-dot{width:11px;height:11px;border-radius:50%;background:#3a5a3a}
+.tm-dot:first-child{background:#e05a5a}.tm-dot:nth-child(2){background:#e0b45a}
+.tm-title{margin-left:8px;opacity:.6;font-size:12px}
+.tm-body{background:#0d130d;border:1px solid #1e3a1e;border-top:0;border-radius:0 0 10px 10px;padding:18px}
+.tm-p{color:#7dff9a;font-weight:700}
+.tm-o{color:#c8f5c8}
+.tm-ev{display:block;margin:10px 0;padding:10px;border:1px dashed #2e5a2e;border-radius:6px}
+.tm-ev .tm-t{display:block;font-weight:700;color:#fff}
+.tm-ev .tm-m{display:block;opacity:.75;font-size:13px}
+.tm-a{color:#7dff9a;text-decoration:none;font-weight:700}
+.tm-feed{margin:10px 0}
+.tm-line{margin:6px 0;font-size:13px}
+.tm-u{color:#7dff9a}
+.tm-cursor{animation:tblink 1s steps(1) infinite;color:#7dff9a}
+@keyframes tblink{50%{opacity:0}}
+/* --- passport --- */
+body[data-theme="passport"]{background:#0d1b3d;color:#f2e9d8}
+.pp-book{max-width:680px;margin:0 auto;padding:20px 14px 44px;font-family:Georgia,serif}
+.pp-cover{background:#1a2f5a;border:2px solid #c9a227;border-radius:14px;text-align:center;padding:44px 20px;margin-bottom:18px}
+.pp-emblem{font-size:44px;color:#c9a227}
+.pp-cover h1{letter-spacing:.14em;text-transform:uppercase;font-size:22px;margin:10px 0}
+.pp-cover p{letter-spacing:.3em;font-size:11px;opacity:.7}
+.pp-pages h2{letter-spacing:.12em;text-transform:uppercase;font-size:15px;border-bottom:1px solid rgba(201,162,39,.5);padding-bottom:8px}
+.pp-sub{font-size:12px;opacity:.6;font-style:italic}
+.pp-stamp{display:flex;gap:14px;align-items:center;border:1px solid rgba(201,162,39,.4);border-radius:10px;padding:12px;margin:10px 0;transform:rotate(-.6deg)}
+.pp-stamp:nth-child(even){transform:rotate(.7deg)}
+.pp-ring{flex:none;width:74px;height:74px;border:3px double #c9a227;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.pp-day{font-size:20px;font-weight:700}.pp-mon{font-size:10px;letter-spacing:.2em}
+.pp-info b{display:block}.pp-info span{display:block;font-size:13px;opacity:.75;margin:2px 0}
+.pp-info a{color:#ffd978;font-size:13px}
+.pp-visa{border-left:3px solid #c9a227;padding:8px 12px;margin:10px 0;background:rgba(201,162,39,.07)}
+.pp-visa b{display:block}.pp-visa span{font-size:12px;opacity:.7}.pp-visa i{display:block;font-size:13px;opacity:.85;margin-top:4px}
+.pp-join{text-align:center;margin-top:26px;font-size:14px}
+.pp-join a{color:#ffd978}
+/* --- radio --- */
+body[data-theme="radio"]{background:#201408;color:#ffe9c4}
+.rd-radio{max-width:720px;margin:0 auto;padding:18px 14px 44px}
+.rd-top{background:linear-gradient(#3a2a12,#241708);border:1px solid #6b4d1f;border-radius:14px;padding:18px;margin-bottom:14px}
+.rd-brand{font-weight:900;letter-spacing:.3em;color:#ffb347;font-size:18px}
+.rd-needle{position:relative;height:26px;background:#120b04;border-radius:6px;margin:12px 0;overflow:hidden}
+.rd-line{position:absolute;top:0;bottom:0;width:3px;background:#ff5a3c;left:8%;transition:left .3s}
+.rd-dial{display:flex;gap:8px}
+.rd-station{flex:1;border:1px solid #6b4d1f;border-radius:8px;padding:8px 4px;color:#ffe9c4;display:flex;flex-direction:column;gap:2px}
+.rd-station.on{background:#ffb347;color:#201408}
+.rd-freq{font-weight:800;font-size:15px}.rd-name{font-size:10px;letter-spacing:.14em}
+.rd-show{display:none;background:#2c1f0e;border-radius:12px;padding:18px;margin-bottom:8px}
+.rd-show.on{display:block}
+.rd-onair{color:#ff5a3c;font-size:11px;font-weight:800;letter-spacing:.2em;animation:tblink 1.4s steps(1) infinite}
+.rd-show h3{margin:8px 0;font-size:20px}.rd-show p{font-size:14px;opacity:.8}
+.rd-show a{color:#ffb347;font-weight:700}
+.rd-radio h2{font-size:13px;letter-spacing:.2em;text-transform:uppercase;margin:22px 0 8px}
+.rd-req{border-bottom:1px dashed #6b4d1f;padding:10px 0;font-size:14px}
+.rd-req span{display:block;font-size:12px;opacity:.6}
+.rd-join{margin-top:24px;text-align:center}.rd-join a{color:#ffb347}
+/* --- menu --- */
+body[data-theme="menu"]{background:#f7f1e6;color:#2b1a12}
+body[data-theme="menu"] .tabbar{background:#f7f1e6;border-color:#d8c9ae}
+body[data-theme="menu"] .tab{color:#2b1a12}
+.mn-menu{max-width:620px;margin:0 auto;padding:26px 18px 50px;font-family:Georgia,serif;text-align:center}
+.mn-est{font-size:11px;letter-spacing:.4em;opacity:.6}
+.mn-menu h1{font-size:34px;letter-spacing:.1em;margin:6px 0}
+.mn-sub{font-style:italic;opacity:.7}
+.mn-course{border-top:1px solid #d8c9ae;border-bottom:1px solid #d8c9ae;padding:20px 6px;margin:14px 0}
+.mn-clabel{font-size:11px;letter-spacing:.3em;text-transform:uppercase;opacity:.6}
+.mn-course h3{font-size:22px;margin:8px 0}
+.mn-course p{font-size:14px;opacity:.8}
+.mn-course a{color:#8a4b1f;font-weight:700;text-decoration:none;border-bottom:1px solid}
+.mn-menu h2{font-size:15px;letter-spacing:.2em;text-transform:uppercase;margin:30px 0 6px}
+.mn-menu h2 span{font-size:12px;opacity:.6;font-style:italic;letter-spacing:0;text-transform:none}
+.mn-pair{padding:10px 0;border-bottom:1px dotted #d8c9ae;font-size:14px}
+.mn-pair span{display:block;font-size:13px;opacity:.7;font-style:italic}
+.mn-menu footer{margin-top:30px;font-size:14px}.mn-menu footer a{color:#8a4b1f}
+/* --- blueprint --- */
+body[data-theme="blueprint"]{background:#123a5c;color:#d9ecff}
+.bp-sheet{max-width:860px;margin:0 auto;padding:20px 16px 46px;font-family:ui-monospace,Menlo,monospace}
+.bp-sheet header{border:2px solid #d9ecff;padding:14px;margin-bottom:16px}
+.bp-sheet h1{font-size:18px;letter-spacing:.12em;margin:0}
+.bp-sheet header p{font-size:12px;opacity:.7;margin:6px 0 0}
+.bp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.bp-room{border:1px dashed #9cc4e8;padding:14px;position:relative;min-height:150px}
+.bp-num{position:absolute;top:8px;right:10px;font-size:11px;opacity:.6}
+.bp-room b{display:block;font-size:16px;margin-bottom:6px}
+.bp-room span{display:block;font-size:12px;opacity:.75;margin-bottom:10px}
+.bp-room a{color:#ffd978;font-size:13px}
+.bp-sheet h2{font-size:13px;letter-spacing:.2em;margin:26px 0 8px}
+.bp-sheet h2 span{opacity:.6;font-size:11px}
+.bp-spec{border:1px solid #9cc4e8;padding:10px 12px;margin:8px 0;font-size:13px}
+.bp-spec span{display:block;opacity:.7;font-size:12px}
+.bp-sheet footer{margin-top:26px;font-size:13px;border-top:2px solid #d9ecff;padding-top:12px}
+.bp-sheet footer a{color:#ffd978}
+/* --- mixtape --- */
+body[data-theme="mixtape"]{background:#141318;color:#efe9dc}
+.mx-tape{max-width:640px;margin:0 auto;padding:20px 14px 46px}
+.mx-shell{background:#232228;border-radius:14px;padding:22px;margin-bottom:16px;position:relative}
+.mx-window{background:#101014;border-radius:8px;height:74px;display:flex;align-items:center;justify-content:center;gap:60px;margin-bottom:14px}
+.mx-reel{width:52px;height:52px;border-radius:50%;border:6px solid #4a4a55;position:relative;animation:spin 4s linear infinite}
+.mx-reel::after{content:"";position:absolute;inset:14px;background:#232228;border-radius:50%}
+@keyframes spin{to{transform:rotate(360deg)}}
+.mx-label{text-align:center;font-weight:800;letter-spacing:.24em;font-size:13px;color:#ffb347}
+.mx-track{display:flex;gap:12px;align-items:baseline;width:100%;text-align:left;padding:12px;border-bottom:1px solid #2c2c34;color:#efe9dc}
+.mx-track.on{background:#232228}
+.mx-num{font-family:ui-monospace,monospace;color:#ffb347;font-size:13px;flex:none}
+.mx-t{font-weight:700}.mx-m{margin-left:auto;font-size:12px;opacity:.6}
+.mx-detail{display:none;padding:16px;background:#232228;border-radius:10px;margin-top:10px}
+.mx-detail.on{display:block}
+.mx-detail h3{margin:0 0 6px}.mx-detail p{font-size:14px;opacity:.8}
+.mx-detail a{color:#ffb347;font-weight:700}
+.mx-tape h2{font-size:13px;letter-spacing:.2em;text-transform:uppercase;margin:24px 0 8px;color:#ffb347}
+.mx-liner{padding:10px 0;border-bottom:1px dotted #2c2c34;font-size:14px}
+.mx-liner span{display:block;font-size:13px;opacity:.65;font-style:italic}
+.mx-join{margin-top:24px;text-align:center}.mx-join a{color:#ffb347}
+/* --- newspaper --- */
+body[data-theme="newspaper"]{background:#f4f1e8;color:#1c1a16}
+body[data-theme="newspaper"] .tabbar{background:#f4f1e8;border-color:#cfc8b4}
+body[data-theme="newspaper"] .tab{color:#1c1a16}
+.nw-paper{max-width:760px;margin:0 auto;padding:22px 18px 50px;font-family:Georgia,serif}
+.nw-dateline{font-size:11px;letter-spacing:.24em;text-transform:uppercase;border-top:3px double #1c1a16;border-bottom:1px solid #1c1a16;padding:8px 0;text-align:center}
+.nw-paper h1{font-size:44px;text-align:center;margin:10px 0 2px;letter-spacing:.02em}
+.nw-tag{text-align:center;font-style:italic;opacity:.7;margin:0 0 18px}
+.nw-lead{border-top:3px double #1c1a16;border-bottom:1px solid #1c1a16;padding:18px 0;margin-bottom:14px}
+.nw-kicker{font-size:11px;letter-spacing:.24em;font-weight:700}
+.nw-lead h2{font-size:30px;margin:8px 0}
+.nw-lead p{font-size:15px}
+.nw-btn{display:inline-block;background:#1c1a16;color:#f4f1e8;padding:10px 22px;text-decoration:none;font-size:13px;letter-spacing:.14em;margin-top:8px}
+.nw-rest{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.nw-story{padding:14px;border-right:1px solid #cfc8b4}
+.nw-story:last-child{border-right:0}
+.nw-story h3{font-size:17px;margin:0 0 6px}
+.nw-story p{font-size:13px;opacity:.8}
+.nw-story a{font-size:13px;color:#8a4b1f}
+.nw-sec{font-size:15px;letter-spacing:.2em;text-transform:uppercase;border-top:3px double #1c1a16;padding-top:16px;margin-top:20px}
+.nw-col{padding:10px 0;border-bottom:1px dotted #cfc8b4;font-size:14px}
+.nw-col p{font-size:13px;opacity:.75;font-style:italic}
+.nw-paper footer{text-align:center;margin-top:26px;font-size:14px}
+/* --- arcade --- */
+body[data-theme="arcade"]{background:#0d0221;color:#f0e6ff}
+.ac-cab{max-width:700px;margin:0 auto;padding:18px 14px 46px}
+.ac-top{text-align:center;font-weight:900;letter-spacing:.3em;color:#ffea00;text-shadow:0 0 12px #ff00a8;font-size:15px;margin-bottom:12px;animation:tblink 2s steps(1) infinite}
+.ac-screen{background:#05010f;border:4px solid #2a1b4e;border-radius:16px;padding:16px;box-shadow:0 0 30px rgba(255,0,168,.25) inset}
+.ac-game{display:block;width:100%;text-align:left;background:transparent;border:1px solid #3a2a6e;border-radius:8px;padding:12px;margin:8px 0;color:#f0e6ff}
+.ac-game.on{border-color:#ffea00;box-shadow:0 0 14px rgba(255,234,0,.4)}
+.ac-marq{display:block;font-size:10px;letter-spacing:.3em;color:#ff00a8}
+.ac-t{display:block;font-weight:800;font-size:17px;margin:4px 0}
+.ac-hi{font-size:11px;color:#ffea00;font-family:ui-monospace,monospace}
+.ac-detail{display:none;padding:14px;font-size:14px}
+.ac-detail.on{display:block}
+.ac-detail h3{margin:0 0 6px;color:#ffea00}
+.ac-detail a{color:#00f0ff;font-weight:700}
+.ac-cab h2{font-size:13px;letter-spacing:.24em;color:#ff00a8;margin:24px 0 8px}
+.ac-cab h2 span{color:#f0e6ff;font-size:11px;letter-spacing:.1em}
+.ac-lb{display:flex;gap:10px;align-items:baseline;padding:8px 0;border-bottom:1px dashed #3a2a6e;font-size:14px}
+.ac-lb b{flex:1}
+.ac-join{text-align:center;margin-top:26px;font-size:15px}
+.ac-join a{color:#ffea00;font-weight:800}
+
+
+/* ===== batch6 ===== */
+/* ===== batch 6 ===== */
+/* --- subway --- */
+body[data-theme="subway"]{background:#101418;color:#f2f4f6}
+.sw-map{max-width:720px;margin:0 auto;padding:20px 14px 46px}
+.sw-map header h1{font-size:26px;margin:0;letter-spacing:.06em}
+.sw-map header p{opacity:.6;font-size:14px}
+.sw-track{position:relative;margin:26px 0}
+.sw-rail{position:absolute;left:14px;top:8px;bottom:8px;width:5px;background:#e4002b;border-radius:3px}
+.sw-stops{display:flex;flex-direction:column;gap:6px}
+.sw-stop{display:flex;gap:12px;align-items:center;text-align:left;color:#f2f4f6;padding:10px 10px 10px 0;width:100%}
+.sw-dot{flex:none;width:22px;height:22px;border-radius:50%;background:#101418;border:4px solid #fff;margin-left:6px}
+.sw-stop.on .sw-dot{background:#e4002b}
+.sw-t{font-weight:700}.sw-m{margin-left:auto;font-size:12px;opacity:.6;font-family:ui-monospace,monospace}
+.sw-detail{display:none;border:1px solid #2a3138;border-left:5px solid #e4002b;border-radius:8px;padding:16px;margin-top:10px}
+.sw-detail.on{display:block}
+.sw-line{font-size:11px;letter-spacing:.24em;color:#e4002b;font-weight:800}
+.sw-detail h3{margin:6px 0}.sw-detail a{color:#ffd200;font-weight:700}
+.sw-map h2{font-size:12px;letter-spacing:.24em;margin:24px 0 8px;opacity:.7}
+.sw-svc{font-size:13px;padding:8px 0;border-bottom:1px dashed #2a3138}
+.sw-join{margin-top:24px;text-align:center}.sw-join a{color:#ffd200}
+/* --- polaroid --- */
+body[data-theme="polaroid"]{background:#e8e2d4;color:#2b2620}
+body[data-theme="polaroid"] .tabbar{background:#e8e2d4;border-color:#c9c2ae}
+body[data-theme="polaroid"] .tab{color:#2b2620}
+.pl-wall{max-width:760px;margin:0 auto;padding:20px 14px 46px}
+.pl-wall header h1{font-family:"Comic Sans MS",cursive;font-size:24px}
+.pl-wall header p{opacity:.6;font-size:14px}
+.pl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin:14px 0}
+.pl-shot{background:#fff;padding:8px 8px 26px;box-shadow:0 3px 10px rgba(0,0,0,.18);cursor:pointer;margin:0}
+.pl-shot:nth-child(odd){transform:rotate(-1.6deg)}.pl-shot:nth-child(even){transform:rotate(1.4deg)}
+.pl-photo{aspect-ratio:1;background:linear-gradient(135deg,#9db8d6,#c8d8ea);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.pl-photo img{width:100%;height:100%;object-fit:cover}
+.pl-date{font-family:ui-monospace,monospace;font-size:12px;color:#5a6a80}
+.pl-shot figcaption{font-size:13px;padding-top:8px}
+.pl-shot figcaption b{display:block;font-size:14px}
+.pl-shot figcaption span{opacity:.65;font-size:12px}
+.pl-wall h2{font-family:"Comic Sans MS",cursive;font-size:19px;margin:26px 0 4px}
+.pl-card{background:#fff;padding:16px;box-shadow:0 3px 10px rgba(0,0,0,.18);margin:10px 0;transform:rotate(-.8deg)}
+.pl-card b{display:block;font-size:17px}.pl-card span{display:block;font-size:13px;opacity:.7;margin:4px 0}
+.pl-card a{color:#b3541e;font-weight:700}
+.pl-join{text-align:center;margin-top:26px}.pl-join a{color:#b3541e}
+/* --- vhs --- */
+body[data-theme="vhs"]{background:#0b0b12;color:#d8dcff}
+.vh-player{max-width:700px;margin:0 auto;padding:18px 14px 46px;font-family:ui-monospace,Menlo,monospace}
+.vh-track{font-size:12px;letter-spacing:.2em;color:#8a8fb8;border-bottom:1px solid #23233a;padding-bottom:10px}
+.vh-player h1{font-size:24px;letter-spacing:.08em}
+.vh-player h1 span{font-size:13px;color:#8a8fb8;letter-spacing:.3em}
+.vh-tape{display:flex;gap:12px;align-items:center;width:100%;text-align:left;background:#14141f;border:1px solid #2a2a44;color:#d8dcff;padding:12px;margin:8px 0}
+.vh-tape.on{border-color:#00e5ff}
+.vh-sp{font-size:10px;border:1px solid #8a8fb8;padding:2px 5px;color:#8a8fb8}
+.vh-t{font-weight:700;flex:1}.vh-m{font-size:12px;opacity:.6}
+.vh-detail{display:none;background:#000;border:1px solid #2a2a44;padding:18px;margin-top:8px;position:relative}
+.vh-detail.on{display:block}
+.vh-osd{position:absolute;top:10px;left:12px;color:#00e5ff;font-size:13px;animation:tblink 1.2s steps(1) infinite}
+.vh-detail h3{margin:18px 0 6px}.vh-detail a{color:#00e5ff}
+.vh-player h2{font-size:12px;letter-spacing:.3em;color:#8a8fb8;margin:24px 0 6px}
+.vh-rew{font-size:13px;padding:8px 0;border-bottom:1px dashed #2a2a44}
+.vh-join{margin-top:24px;text-align:center}.vh-join a{color:#00e5ff;font-weight:700}
+/* --- weather --- */
+body[data-theme="weather"]{background:linear-gradient(#7ec8e3,#bfe6f5);color:#123}
+body[data-theme="weather"] .tabbar{background:rgba(255,255,255,.7);border-color:#9cc8dc}
+body[data-theme="weather"] .tab{color:#123}
+.wx-app{max-width:640px;margin:0 auto;padding:22px 16px 48px}
+.wx-app header h1{font-size:34px;margin:0;font-weight:300}
+.wx-sub{opacity:.65;font-size:14px}
+.wx-days{display:flex;gap:8px;margin:16px 0}
+.wx-day{flex:1;background:rgba(255,255,255,.55);border:0;border-radius:14px;padding:14px 6px;display:flex;flex-direction:column;gap:4px;color:#123}
+.wx-day.on{background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.12)}
+.wx-icon{font-size:30px}.wx-dow{font-size:12px;font-weight:700}.wx-t{font-size:11px;opacity:.7}
+.wx-detail{display:none;background:rgba(255,255,255,.75);border-radius:18px;padding:22px;margin-bottom:8px}
+.wx-detail.on{display:block}
+.wx-big{font-size:56px}.wx-detail h3{margin:8px 0;font-size:21px}
+.wx-cond{font-style:italic;opacity:.7}
+.wx-detail a{color:#0a6ebd;font-weight:700}
+.wx-app h2{font-size:13px;letter-spacing:.2em;text-transform:uppercase;margin:26px 0 6px;opacity:.7}
+.wx-radar{padding:10px 0;border-bottom:1px solid rgba(0,0,0,.08);font-size:14px}
+.wx-radar span{opacity:.65;font-size:13px;margin-left:8px}
+.wx-join{text-align:center;margin-top:26px}.wx-join a{color:#0a6ebd}
+/* --- stocks --- */
+body[data-theme="stocks"]{background:#0a0e14;color:#d7dee8}
+.st-mkt{max-width:720px;margin:0 auto;padding:0 0 46px;font-family:ui-monospace,Menlo,monospace}
+.st-ticker{overflow:hidden;border-bottom:1px solid #1c2530;background:#0d1219}
+.st-tick{white-space:nowrap;padding:10px 0;color:#4ade80;font-size:13px;animation:stick 22s linear infinite}
+@keyframes stick{to{transform:translateX(-50%)}}
+.st-mkt h1{padding:18px 16px 4px;font-size:22px;margin:0}
+.st-mkt h1 span{color:#4ade80;font-size:14px}
+.st-row{display:flex;gap:12px;align-items:baseline;width:100%;text-align:left;background:transparent;border:0;border-bottom:1px solid #1c2530;color:#d7dee8;padding:14px 16px}
+.st-row.on{background:#111a26}
+.st-sym{color:#4ade80;font-size:11px;border:1px solid #4ade80;padding:2px 6px;border-radius:4px}
+.st-t{flex:1;font-weight:700}.st-chg{color:#4ade80}
+.st-detail{display:none;padding:18px 16px;background:#111a26}
+.st-detail.on{display:block}
+.st-detail h3{margin:0 0 6px;font-size:18px}
+.st-tk{font-size:12px;color:#4ade80}
+.st-detail a{color:#4ade80;font-weight:700}
+.st-mkt h2{padding:20px 16px 4px;font-size:12px;letter-spacing:.24em;color:#8a94a3}
+.st-w{display:flex;padding:10px 16px;border-bottom:1px solid #1c2530;font-size:14px}
+.st-w span{margin-left:auto;color:#8a94a3}
+.st-join{text-align:center;padding-top:24px}.st-join a{color:#4ade80}
+/* --- fieldnotes --- */
+body[data-theme="fieldnotes"]{background:#f5eeda;color:#3a2f1d}
+body[data-theme="fieldnotes"] .tabbar{background:#f5eeda;border-color:#d9cba6}
+body[data-theme="fieldnotes"] .tab{color:#3a2f1d}
+.fn-book{max-width:600px;margin:0 auto;padding:24px 20px 50px;font-family:Georgia,serif;background-image:repeating-linear-gradient(transparent,transparent 27px,rgba(58,47,29,.12) 28px)}
+.fn-book header{text-align:center;border:2px solid #3a2f1d;padding:16px;margin-bottom:20px}
+.fn-book h1{letter-spacing:.34em;font-size:20px;margin:0}
+.fn-book header p{font-size:13px;opacity:.7}
+.fn-note{margin:16px 0}
+.fn-n{font-size:11px;letter-spacing:.2em;opacity:.6}
+.fn-note h3{margin:4px 0;font-size:19px}
+.fn-note p{font-size:14px}
+.fn-note a{color:#8a5a1f}
+.fn-book h2{font-size:14px;letter-spacing:.24em;margin:28px 0 8px}
+.fn-obs{font-size:14px;margin:10px 0}
+.fn-obs i{display:block;font-size:13px;opacity:.7;font-style:italic}
+.fn-book footer{text-align:center;margin-top:28px;font-size:14px}
+/* --- telegram --- */
+body[data-theme="telegram"]{background:#e8dcc0;color:#2e2418}
+body[data-theme="telegram"] .tabbar{background:#e8dcc0;border-color:#c9b98f}
+body[data-theme="telegram"] .tab{color:#2e2418}
+.tg-office{max-width:620px;margin:0 auto;padding:24px 18px 50px;font-family:"Courier New",monospace}
+.tg-office h1{text-align:center;letter-spacing:.18em;font-size:22px}
+.tg-sub{text-align:center;font-size:13px;opacity:.7}
+.tg-msg{border:2px solid #2e2418;padding:16px;margin:16px 0;background:#f2e9d2}
+.tg-head{font-size:10px;letter-spacing:.3em;border-bottom:1px solid #2e2418;padding-bottom:8px;margin-bottom:10px}
+.tg-msg p{font-size:14px;line-height:1.7}
+.tg-msg a{font-weight:700;color:#8a4b1f}
+.tg-office h2{font-size:13px;letter-spacing:.3em;margin:26px 0 6px}
+.tg-wire{font-size:13px;padding:10px 0;border-bottom:1px dashed #a08c5a}
+.tg-office footer{text-align:center;margin-top:28px}
+/* --- locker --- */
+body[data-theme="locker"]{background:#3b4a5a;color:#eef2f5}
+.lk-door{max-width:680px;margin:0 auto;padding:20px 14px 46px}
+.lk-vents{height:26px;background:repeating-linear-gradient(90deg,#2c3844 0 14px,#3b4a5a 14px 28px);border-radius:6px;margin-bottom:12px}
+.lk-door h1{text-align:center;letter-spacing:.4em;font-size:18px;opacity:.8}
+.lk-flyers{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+.lk-flyer{background:#fffbe8;color:#2b2b2b;padding:26px 12px 12px;position:relative;cursor:pointer;box-shadow:0 3px 8px rgba(0,0,0,.3)}
+.lk-flyer.on{outline:3px solid #ffd200}
+.lk-tape{position:absolute;top:-8px;left:50%;transform:translateX(-50%) rotate(-3deg);width:64px;height:18px;background:rgba(255,255,255,.65);border:1px solid #ddd}
+.lk-flyer b{display:block;font-size:14px}.lk-flyer span{font-size:12px;opacity:.65}
+.lk-detail{display:none;background:#2c3844;border-radius:10px;padding:16px;margin-bottom:8px}
+.lk-detail.on{display:block}
+.lk-detail h3{margin:0 0 6px}.lk-detail a{color:#ffd200;font-weight:700}
+.lk-door h2{font-size:12px;letter-spacing:.3em;opacity:.7;margin:22px 0 8px}
+.lk-notes{display:flex;gap:8px;flex-wrap:wrap}
+.lk-note{background:#fffbe8;color:#2b2b2b;font-size:12px;padding:8px 12px;transform:rotate(-1deg)}
+.lk-join{text-align:center;margin-top:24px}.lk-join a{color:#ffd200}
+/* --- drivein --- */
+body[data-theme="drivein"]{background:#0a0a18;color:#f5ecd7}
+.dv-lot{max-width:720px;margin:0 auto;padding:18px 14px 46px}
+.dv-dash{display:flex;justify-content:space-between;background:#151524;border:1px solid #2c2c44;border-radius:12px;padding:14px 18px;font-family:ui-monospace,monospace;font-size:12px;letter-spacing:.2em;color:#8a8fb8;margin-bottom:14px}
+.dv-screen{display:none;background:#000;border:6px solid #3a3a55;border-radius:8px;padding:34px 20px;text-align:center;margin-bottom:12px;box-shadow:0 0 60px rgba(255,255,255,.08)}
+.dv-screen.on{display:block}
+.dv-film{font-size:10px;letter-spacing:.5em;color:#8a8fb8}
+.dv-screen h3{font-size:26px;margin:10px 0}
+.dv-screen p{font-size:14px;opacity:.75}
+.dv-screen a{color:#ffd978;font-weight:700}
+.dv-cars{display:flex;gap:8px}
+.dv-car{flex:1;background:#151524;border:1px solid #2c2c44;border-radius:10px;padding:12px 6px;color:#f5ecd7}
+.dv-car.on{border-color:#ffd978}
+.dv-spot{display:block;font-size:10px;letter-spacing:.2em;color:#8a8fb8}
+.dv-t{display:block;font-size:13px;font-weight:700;margin-top:4px}
+.dv-lot h2{font-size:12px;letter-spacing:.3em;color:#8a8fb8;margin:24px 0 6px}
+.dv-radio{font-size:14px;padding:8px 0;border-bottom:1px dashed #2c2c44}
+.dv-radio span{font-size:12px;opacity:.6}
+.dv-join{text-align:center;margin-top:24px}.dv-join a{color:#ffd978}
+
+
+/* ===== batch7 ===== */
+/* ===== batch 7 ===== */
+/* --- museum --- */
+body[data-theme="museum"]{background:#f2efe6;color:#2a2620}
+body[data-theme="museum"] .tabbar{background:#f2efe6;border-color:#d5cfbd}
+body[data-theme="museum"] .tab{color:#2a2620}
+.mu-hall{max-width:820px;margin:0 auto;padding:26px 18px 52px}
+.mu-hall header{text-align:center;border-bottom:1px solid #b8b09a;padding-bottom:20px}
+.mu-hall header p{font-size:11px;letter-spacing:.4em}
+.mu-hall h1{font-family:Georgia,serif;font-size:36px;margin:8px 0}
+.mu-sub{font-style:italic;opacity:.65}
+.mu-wings{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;margin:20px 0}
+.mu-wing{border:1px solid #b8b09a;padding:26px 18px;text-align:center}
+.mu-num{font-family:Georgia,serif;font-size:13px;letter-spacing:.3em;opacity:.55}
+.mu-wing b{display:block;font-family:Georgia,serif;font-size:18px;margin:10px 0}
+.mu-wing span{display:block;font-size:13px;opacity:.7;margin-bottom:12px}
+.mu-wing a{font-size:13px;color:#8a6d2f}
+.mu-hall h2{font-family:Georgia,serif;font-size:20px;margin:30px 0 10px}
+.mu-item{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #d5cfbd}
+.mu-item img{width:72px;flex:none;border:1px solid #b8b09a}
+.mu-item b{display:block}.mu-item span{font-size:12px;opacity:.65}
+.mu-item i{display:block;font-size:13px;font-style:italic;opacity:.8;margin-top:4px}
+.mu-hall footer{text-align:center;margin-top:30px;font-size:14px}
+/* --- airbnb --- */
+body[data-theme="airbnb"]{background:#fff;color:#222}
+body[data-theme="airbnb"] .tabbar{background:#fff;border-color:#e8e8e8}
+body[data-theme="airbnb"] .tab{color:#222}
+.ab-list{max-width:860px;margin:0 auto;padding:22px 18px 50px}
+.ab-list header h1{font-size:26px;margin:0}
+.ab-list header p{opacity:.65;font-size:14px}
+.ab-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin:16px 0}
+.ab-card{background:none;border:0;text-align:left;color:#222;padding:0;cursor:pointer}
+.ab-card.on .ab-ph{outline:3px solid #ff385c}
+.ab-ph{aspect-ratio:4/3;border-radius:14px;background:linear-gradient(135deg,#ff9a9e,#fecfef);display:flex;align-items:flex-end;padding:12px}
+.ab-ph span{background:rgba(255,255,255,.9);border-radius:8px;padding:4px 10px;font-size:12px;font-weight:700}
+.ab-card b{display:block;margin:8px 0 2px;font-size:15px}
+.ab-m{font-size:13px;opacity:.65}
+.ab-detail{display:none;border:1px solid #e8e8e8;border-radius:14px;padding:18px;margin-bottom:8px}
+.ab-detail.on{display:block}
+.ab-detail h3{margin:0 0 6px}
+.ab-book{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+.ab-book a{background:#ff385c;color:#fff;padding:10px 22px;border-radius:10px;text-decoration:none;font-weight:700}
+.ab-list h2{font-size:17px;margin:26px 0 6px}
+.ab-rev{padding:12px 0;border-bottom:1px solid #e8e8e8;font-size:14px}
+.ab-rev span{font-size:12px;opacity:.6;margin-left:8px}
+.ab-rev p{margin:6px 0 0;opacity:.8}
+.ab-join{text-align:center;margin-top:26px}.ab-join a{color:#ff385c}
+/* --- keynote --- */
+body[data-theme="deck"]{background:#000;color:#fff}
+.dk-deck{max-width:900px;margin:0 auto;padding:20px 14px 46px;min-height:70vh;display:flex;flex-direction:column}
+.dk-stage{flex:1;position:relative;min-height:52vh}
+.dk-slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:30px}
+.dk-slide.on{display:flex}
+.dk-k{font-size:13px;letter-spacing:.5em;color:#0a84ff;margin-bottom:18px}
+.dk-slide h3{font-size:clamp(30px,6vw,58px);margin:0 0 14px;font-weight:700;letter-spacing:-.02em}
+.dk-slide p{font-size:17px;opacity:.75;max-width:560px}
+.dk-slide a{margin-top:22px;color:#0a84ff;font-size:18px;text-decoration:none;border:1px solid #0a84ff;border-radius:999px;padding:12px 30px}
+.dk-ctrl{display:flex;align-items:center;justify-content:center;gap:22px;padding:18px}
+.dk-ctrl button{width:52px;height:52px;border-radius:50%;border:1px solid #444;color:#fff;font-size:20px}
+.dk-count{font-size:13px;opacity:.6;font-family:ui-monospace,monospace}
+.dk-join{text-align:center;font-size:14px}.dk-join a{color:#0a84ff}
+/* --- wanted --- */
+body[data-theme="wanted"]{background:#e5d3a8;color:#3a2a12}
+body[data-theme="wanted"] .tabbar{background:#e5d3a8;border-color:#b89b5e}
+body[data-theme="wanted"] .tab{color:#3a2a12}
+.wt-board{max-width:860px;margin:0 auto;padding:24px 16px 50px}
+.wt-board h1{text-align:center;font-family:Georgia,serif;letter-spacing:.1em}
+.wt-board h1 span{display:block;font-size:13px;letter-spacing:.4em;opacity:.65}
+.wt-posters{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:18px 0}
+.wt-poster{border:3px double #3a2a12;padding:20px 16px;text-align:center;background:#efe0bd;transform:rotate(-.8deg)}
+.wt-poster:nth-child(even){transform:rotate(.9deg)}
+.wt-head{font-size:26px;font-weight:900;letter-spacing:.24em;border-bottom:2px solid #3a2a12;padding-bottom:8px}
+.wt-poster h3{font-family:Georgia,serif;font-size:19px;margin:12px 0}
+.wt-poster p{font-size:13px}
+.wt-reward{background:#3a2a12;color:#e5d3a8;font-size:12px;letter-spacing:.14em;padding:8px;margin:12px 0}
+.wt-poster a{color:#8a4b1f;font-weight:700;font-size:14px}
+.wt-board h2{font-family:Georgia,serif;text-align:center;margin:30px 0 10px}
+.wt-alley{text-align:center;padding:8px;font-size:14px;border-bottom:1px dashed #b89b5e}
+.wt-alley span{font-size:12px;opacity:.65;margin-left:8px}
+.wt-board footer{text-align:center;margin-top:28px}
+/* --- playbill --- */
+body[data-theme="playbill"]{background:#f8f5ec;color:#1d1a14}
+body[data-theme="playbill"] .tabbar{background:#f8f5ec;border-color:#d9d2bd}
+body[data-theme="playbill"] .tab{color:#1d1a14}
+.pb-prog{max-width:560px;margin:0 auto;padding:30px 22px 54px;text-align:center;font-family:Georgia,serif}
+.pb-pres{font-size:12px;letter-spacing:.3em;text-transform:uppercase;opacity:.65}
+.pb-prog h1{font-size:38px;margin:6px 0;letter-spacing:.04em}
+.pb-sub{font-style:italic;opacity:.7}
+.pb-act{border-top:1px solid #d9d2bd;border-bottom:1px solid #d9d2bd;padding:22px 8px;margin:16px 0}
+.pb-an{font-size:11px;letter-spacing:.4em;opacity:.6}
+.pb-act h3{font-size:24px;margin:8px 0}
+.pb-cast{font-size:14px;opacity:.75;font-style:italic}
+.pb-act a{color:#8a5a1f}
+.pb-prog h2{font-size:15px;letter-spacing:.26em;margin:32px 0 8px}
+.pb-note{padding:12px 0;border-bottom:1px dotted #d9d2bd;font-size:14px}
+.pb-note p{font-size:13px;font-style:italic;opacity:.75}
+.pb-prog footer{margin-top:30px;font-size:14px}
+/* --- departures --- */
+body[data-theme="departures"]{background:#0a0a0a;color:#ffd200}
+.dp-board{max-width:760px;margin:0 auto;padding:20px 14px 46px;font-family:ui-monospace,Menlo,monospace}
+.dp-board h1{font-size:24px;letter-spacing:.14em}
+.dp-board h1 span{font-size:13px;opacity:.6}
+.dp-row{display:grid;grid-template-columns:110px 1fr 90px 90px;gap:8px;width:100%;text-align:left;background:#111;border:0;border-bottom:1px solid #2a2a2a;color:#ffd200;padding:14px 10px;align-items:center}
+.dp-row.on{background:#1e1e08}
+.dp-time{font-size:13px}.dp-dest{font-weight:700;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dp-gate{font-size:11px;border:1px solid #ffd200;padding:2px 6px;text-align:center}
+.dp-stat{font-size:11px;color:#4ade80;text-align:right}
+.dp-detail{display:none;background:#1e1e08;padding:18px;margin-bottom:8px}
+.dp-detail.on{display:block}
+.dp-detail h3{margin:0 0 6px;font-size:19px}
+.dp-detail a{color:#ffd200;font-weight:700}
+.dp-join{text-align:center;margin-top:26px}.dp-join a{color:#ffd200}
+/* --- recipe --- */
+body[data-theme="recipe"]{background:#fff8ee;color:#4a3220}
+body[data-theme="recipe"] .tabbar{background:#fff8ee;border-color:#e5d5b8}
+body[data-theme="recipe"] .tab{color:#4a3220}
+.rc-box{max-width:640px;margin:0 auto;padding:24px 18px 50px}
+.rc-box header{text-align:center;margin-bottom:18px}
+.rc-box h1{font-family:Georgia,serif;font-size:30px;margin:0}
+.rc-box header p{opacity:.65;font-style:italic}
+.rc-card{background:#fff;border:1px solid #e5d5b8;border-radius:12px;padding:20px;margin:14px 0;box-shadow:0 2px 8px rgba(74,50,32,.08)}
+.rc-time{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#b3541e}
+.rc-card h3{font-family:Georgia,serif;font-size:22px;margin:8px 0}
+.rc-ing,.rc-steps{font-size:14px;margin:10px 0;line-height:1.6}
+.rc-card a{display:inline-block;background:#b3541e;color:#fff;padding:10px 24px;border-radius:8px;text-decoration:none;font-weight:700;margin-top:6px}
+.rc-box h2{font-family:Georgia,serif;font-size:20px;margin:28px 0 8px}
+.rc-idxs{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.rc-idx{background:#fff;border:1px solid #e5d5b8;border-radius:8px;padding:10px 12px;font-size:13px}
+.rc-idx span{float:right;color:#b3541e}
+.rc-box footer{text-align:center;margin-top:28px}
+/* --- comic --- */
+body[data-theme="comic"]{background:#fff200;color:#111}
+body[data-theme="comic"] .tabbar{background:#fff200;border-color:#111}
+body[data-theme="comic"] .tab{color:#111}
+.cm-issue{max-width:800px;margin:0 auto;padding:20px 14px 48px}
+.cm-issue header{text-align:center;position:relative;margin-bottom:16px}
+.cm-burst{position:absolute;top:-6px;right:8%;background:#e63b2e;color:#fff;font-weight:900;padding:14px 10px;transform:rotate(12deg);clip-path:polygon(50% 0,61% 12%,76% 6%,79% 22%,95% 25%,88% 39%,100% 50%,88% 61%,95% 75%,79% 78%,76% 94%,61% 88%,50% 100%,39% 88%,24% 94%,21% 78%,5% 75%,12% 61%,0 50%,12% 39%,5% 25%,21% 22%,24% 6%,39% 12%);font-size:12px}
+.cm-issue h1{font-size:clamp(34px,7vw,60px);font-weight:900;letter-spacing:.02em;-webkit-text-stroke:2px #111;text-shadow:4px 4px 0 #e63b2e;margin:26px 0 4px}
+.cm-panels{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.cm-panel{background:#fff;border:4px solid #111;padding:16px;box-shadow:6px 6px 0 #111}
+.cm-cap{display:inline-block;background:#111;color:#fff200;font-size:11px;font-weight:800;letter-spacing:.2em;padding:4px 10px;margin-bottom:10px}
+.cm-panel h3{font-size:19px;margin:0 0 8px}
+.cm-panel p{font-size:13px}
+.cm-panel a{display:inline-block;background:#e63b2e;color:#fff;font-weight:800;padding:8px 16px;text-decoration:none;margin-top:8px;transform:rotate(-2deg)}
+.cm-issue h2{font-size:18px;letter-spacing:.2em;margin:28px 0 8px}
+.cm-strip{background:#fff;border:3px solid #111;padding:12px 16px;margin:10px 0;font-size:14px}
+.cm-strip p{font-size:13px;margin:6px 0 0}
+.cm-issue footer{text-align:center;margin-top:28px;font-weight:700}
+.cm-issue footer a{color:#e63b2e}
+/* --- answering machine --- */
+body[data-theme="answering"]{background:#1a1a1a;color:#e8e8e8}
+.am-machine{max-width:620px;margin:0 auto;padding:20px 14px 46px}
+.am-face{background:#2c2c2c;border-radius:16px;padding:20px;margin-bottom:16px;text-align:center}
+.am-lcd{background:#0d2b12;color:#4ade80;font-family:ui-monospace,monospace;letter-spacing:.2em;padding:12px;border-radius:6px;font-size:14px;margin-bottom:14px}
+.am-btns{display:flex;justify-content:center;gap:14px;font-size:22px}
+.am-btns span{width:52px;height:52px;border-radius:50%;background:#3a3a3a;display:flex;align-items:center;justify-content:center}
+.am-msg{display:flex;gap:12px;align-items:baseline;width:100%;text-align:left;background:#242424;border:0;border-bottom:1px solid #333;color:#e8e8e8;padding:14px}
+.am-msg.on{background:#2e3a2e}
+.am-n{font-family:ui-monospace,monospace;color:#4ade80;font-size:12px;flex:none}
+.am-t{font-weight:700;flex:1}.am-d{font-size:12px;opacity:.55}
+.am-play{display:none;background:#242424;border-left:4px solid #4ade80;padding:18px;margin-bottom:8px}
+.am-play.on{display:block}
+.am-play h3{margin:10px 0 6px}
+.am-play p{font-size:14px;opacity:.85}
+.am-play a{color:#4ade80;font-weight:700}
+.am-join{text-align:center;margin-top:24px}.am-join a{color:#4ade80}
+
+
+/* ===== batch8 ===== */
+/* ===== batch 8 ===== */
+/* --- scorecard --- */
+body[data-theme="scorecard"]{background:#f4f1e6;color:#22291f}
+body[data-theme="scorecard"] .tabbar{background:#f4f1e6;border-color:#d3ccb6}
+body[data-theme="scorecard"] .tab{color:#22291f}
+.sc-card{max-width:760px;margin:0 auto;padding:22px 16px 50px;font-family:Georgia,serif}
+.sc-card header{text-align:center;border:3px double #22291f;padding:16px;margin-bottom:16px}
+.sc-card h1{letter-spacing:.2em;margin:0;font-size:24px}
+.sc-card header p{font-size:12px;letter-spacing:.14em;opacity:.7}
+.sc-head,.sc-row{display:grid;grid-template-columns:44px 1fr 90px 110px;gap:8px;align-items:center;padding:10px 6px;font-size:14px}
+.sc-head{font-size:11px;letter-spacing:.2em;opacity:.6;border-bottom:2px solid #22291f}
+.sc-row{border-bottom:1px solid #d3ccb6}
+.sc-row b{font-size:15px}
+.sc-row a{color:#8a5a1f;font-size:13px}
+.sc-card h2{font-size:18px;margin:28px 0 8px}
+.sc-card h2 span{font-size:13px;opacity:.6;font-style:italic}
+.sc-boxes{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px}
+.sc-box{border:1px solid #d3ccb6;padding:10px;font-size:13px}
+.sc-box span:first-child{font-weight:800;margin-right:6px}
+.sc-box b{display:block;margin:4px 0}
+.sc-card footer{text-align:center;margin-top:28px}
+/* --- yearbook --- */
+body[data-theme="yearbook"]{background:#1f2a44;color:#f0e8d8}
+.yb-book{max-width:800px;margin:0 auto;padding:26px 16px 50px;text-align:center}
+.yb-book header h1{font-family:Georgia,serif;font-size:44px;letter-spacing:.3em;margin:0}
+.yb-book header p{letter-spacing:.2em;font-size:12px;opacity:.7}
+.yb-grads{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:18px;margin:22px 0}
+.yb-grad{background:rgba(255,255,255,.05);border-radius:10px;padding:16px}
+.yb-ph{aspect-ratio:3/4;border-radius:8px;background:linear-gradient(135deg,#3a4a6e,#5a6e9e);margin-bottom:10px}
+.yb-grad b{display:block;font-size:14px}
+.yb-grad span{font-size:12px;opacity:.65}
+.yb-grad a{display:inline-block;margin-top:8px;color:#ffd978;font-size:13px}
+.yb-book h2{font-family:Georgia,serif;font-style:italic;margin:30px 0 10px}
+.yb-sig{font-family:"Comic Sans MS",cursive;font-size:15px;padding:10px;transform:rotate(-1deg)}
+.yb-sig span{display:block;font-size:12px;opacity:.6}
+.yb-book footer{margin-top:28px;font-size:14px}.yb-book footer a{color:#ffd978}
+/* --- classifieds --- */
+body[data-theme="classifieds"]{background:#f0ede2;color:#26241e}
+body[data-theme="classifieds"] .tabbar{background:#f0ede2;border-color:#cfc9b4}
+body[data-theme="classifieds"] .tab{color:#26241e}
+.cf-page{max-width:680px;margin:0 auto;padding:22px 18px 50px;font-family:Georgia,serif;column-gap:0}
+.cf-page header{text-align:center;border-bottom:3px double #26241e;padding-bottom:14px}
+.cf-page h1{letter-spacing:.3em;font-size:26px;margin:0}
+.cf-page header p{font-size:13px;opacity:.7}
+.cf-page h2{font-size:13px;letter-spacing:.3em;background:#26241e;color:#f0ede2;display:inline-block;padding:4px 14px;margin:22px 0 6px}
+.cf-ad{font-size:14px;line-height:1.65;padding:10px 0;border-bottom:1px dotted #b9b29a}
+.cf-ad a{color:#8a5a1f;font-weight:700}
+.cf-page footer{text-align:center;margin-top:28px;font-size:14px}
+/* --- jukebox --- */
+body[data-theme="jukebox"]{background:#160a1e;color:#ffe9f5}
+.jk-box{max-width:640px;margin:0 auto;padding:20px 14px 46px;text-align:center}
+.jk-arch{background:linear-gradient(#ff5ad0,#a02080);border-radius:120px 120px 12px 12px;padding:26px 16px 18px;font-weight:900;letter-spacing:.24em;margin-bottom:16px;box-shadow:0 0 40px rgba(255,90,208,.4)}
+.jk-keys{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.jk-key{background:#241031;border:1px solid #5a2a6e;border-radius:10px;padding:14px 6px;color:#ffe9f5}
+.jk-key.on{background:#ff5ad0;color:#160a1e}
+.jk-l{display:block;font-family:ui-monospace,monospace;font-weight:800;font-size:16px}
+.jk-t{display:block;font-size:12px;margin-top:4px}
+.jk-now{display:none;background:#241031;border-radius:12px;padding:20px;margin-bottom:8px}
+.jk-now.on{display:block}
+.jk-sel{font-size:11px;letter-spacing:.3em;color:#ff5ad0}
+.jk-now h3{margin:8px 0}
+.jk-now a{color:#ff5ad0;font-weight:700}
+.jk-box h2{font-size:12px;letter-spacing:.3em;opacity:.7;margin:24px 0 6px}
+.jk-side{font-size:14px;padding:8px 0;border-bottom:1px dashed #5a2a6e}
+.jk-side span{margin-left:8px;opacity:.65}
+.jk-join{margin-top:24px}.jk-join a{color:#ff5ad0}
+/* --- treasure map --- */
+body[data-theme="treasuremap"]{background:#e8d5a8;color:#4a3418}
+body[data-theme="treasuremap"] .tabbar{background:#e8d5a8;border-color:#c2a86e}
+body[data-theme="treasuremap"] .tab{color:#4a3418}
+.tr-chart{max-width:720px;margin:0 auto;padding:22px 16px 50px;font-family:Georgia,serif}
+.tr-chart h1{text-align:center;letter-spacing:.14em}
+.tr-map{position:relative;height:340px;background:#d9c491;border:3px solid #8a6d3b;border-radius:8px;margin:16px 0;overflow:hidden}
+.tr-sea{position:absolute;bottom:14px;left:0;right:0;text-align:center;letter-spacing:.6em;font-size:13px;opacity:.55;font-style:italic}
+.tr-compass{position:absolute;top:12px;right:14px;font-size:13px;opacity:.7}
+.tr-x{position:absolute;width:44px;height:44px;font-size:26px;font-weight:900;color:#a02020;background:none;border:0;transform:translate(-50%,-50%)}
+.tr-x.on{color:#fff;background:#a02020;border-radius:50%}
+.tr-leg{display:none;background:#f2e4bc;border:1px dashed #8a6d3b;padding:14px;margin:8px 0}
+.tr-leg.on{display:block}
+.tr-leg b{display:block}
+.tr-leg span{display:block;font-size:13px;opacity:.75;margin:4px 0}
+.tr-leg a{color:#8a4b1f;font-weight:700}
+.tr-chart h2{text-align:center;margin:26px 0 8px}
+.tr-log{padding:10px 0;border-bottom:1px dashed #c2a86e;font-size:14px}
+.tr-log span{display:block;font-size:13px;font-style:italic;opacity:.75}
+.tr-chart footer{text-align:center;margin-top:26px}
+/* --- yellow pages --- */
+body[data-theme="phonebook"]{background:#fffbe0;color:#2b2b2b}
+body[data-theme="phonebook"] .tabbar{background:#fffbe0;border-color:#e0d6a8}
+body[data-theme="phonebook"] .tab{color:#2b2b2b}
+.yp-book{max-width:640px;margin:0 auto;padding:22px 18px 50px}
+.yp-book header{text-align:center}
+.yp-book h1{font-size:30px;letter-spacing:.1em;margin:0;text-shadow:2px 2px 0 #ffd200}
+.yp-book header p{font-size:13px;opacity:.7}
+.yp-alpha{background:#2b2b2b;color:#ffd200;font-size:12px;letter-spacing:.3em;padding:6px 12px;margin:20px 0 4px}
+.yp-listing{padding:12px 4px;border-bottom:1px solid #e0d6a8;font-size:14px}
+.yp-listing b{display:block}
+.yp-listing span{font-size:13px;opacity:.7}
+.yp-listing a{display:inline-block;margin-top:4px;color:#0a6ebd;font-weight:700}
+.yp-book footer{text-align:center;margin-top:28px;font-size:14px}
+/* --- trading cards --- */
+body[data-theme="tradingcards"]{background:#10241a;color:#f0e8d0}
+.tc-album{max-width:800px;margin:0 auto;padding:22px 14px 48px;text-align:center}
+.tc-album h1{letter-spacing:.14em}
+.tc-album h1 span{font-size:14px;opacity:.6;letter-spacing:.3em}
+.tc-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin:18px 0}
+.tc-card{position:relative;background:linear-gradient(150deg,#1e3a2c,#142a20);border:2px solid #c9a227;border-radius:12px;padding:40px 10px 14px;color:#f0e8d0;cursor:pointer;overflow:hidden}
+.tc-card.on{outline:3px solid #fff}
+.tc-holo{position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.18) 45%,transparent 60%)}
+.tc-set{position:absolute;top:8px;left:0;right:0;font-size:9px;letter-spacing:.3em;color:#c9a227}
+.tc-card b{display:block;font-size:14px;margin:6px 0}
+.tc-m{font-size:11px;opacity:.65}
+.tc-back{display:none;background:#f0e8d0;color:#10241a;border-radius:12px;padding:20px;margin:0 auto 8px;max-width:420px;text-align:left}
+.tc-back.on{display:block}
+.tc-back h3{margin:0 0 10px}
+.tc-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px}
+.tc-stats span{font-size:10px;letter-spacing:.2em;opacity:.6}
+.tc-stats b{display:block;font-size:16px}
+.tc-back a{color:#8a6d2f;font-weight:700}
+.tc-join{margin-top:26px}.tc-join a{color:#c9a227}
+/* --- billboards --- */
+body[data-theme="billboard"]{background:#0e1a2e;color:#f2f2f2}
+.bb-hwy{max-width:780px;margin:0 auto;padding:18px 14px 48px}
+.bb-sky{text-align:center;font-size:12px;letter-spacing:.4em;color:#8ab4e8;margin-bottom:8px}
+.bb-board{margin:22px 0}
+.bb-ad{background:#fff;color:#111;border:6px solid #2a2a2a;padding:26px 20px;text-align:center}
+.bb-k{display:inline-block;background:#e63b2e;color:#fff;font-size:11px;font-weight:800;letter-spacing:.24em;padding:4px 12px;margin-bottom:10px}
+.bb-ad h3{font-size:clamp(22px,5vw,38px);margin:0 0 8px;font-weight:900}
+.bb-ad p{font-size:14px;opacity:.7}
+.bb-pole{width:14px;height:56px;background:#3a3a3a;margin:0 auto}
+.bb-exit{display:block;text-align:center;color:#4ade80;font-family:ui-monospace,monospace;font-size:13px;margin-top:8px}
+.bb-hwy h2{font-size:12px;letter-spacing:.3em;color:#8ab4e8;margin:26px 0 6px}
+.bb-radio{font-size:14px;padding:10px 0;border-bottom:1px dashed #2c3e5a}
+.bb-radio span{font-size:12px;opacity:.6}
+.bb-join{text-align:center;margin-top:26px}.bb-join a{color:#4ade80}
+
 </style>
 </head>
 <body data-theme="neon">
@@ -1417,7 +2055,7 @@ body[data-theme="boarding"] :focus-visible{outline:2px solid #0b5cab;outline-off
 <script>
 "use strict";
 /* ================================================================
-   MIAMI FILM CLUB — 16 concepts. One shared content pool, 16
+   MIAMI FILM CLUB — 50 concepts. One shared content pool, 50
    completely different products. Each theme renders its own DOM
    into #stage via THEMES[key].render(CONTENT).
 
@@ -1518,7 +2156,11 @@ var MFC = {
 var THEMES = {};
 var THEME_ORDER = ["neon","zine","editorial","screenplay","brutalist","noir",
   "letterboxd","boxoffice","festival","videostore","groupchat","calendar",
-  "marquee","stubs","booth","boarding"];
+  "marquee","stubs","booth","boarding",
+  "terminal","passport","radio","menu","blueprint","mixtape","newspaper","arcade",
+  "subway","polaroid","vhs","weather","stocks","fieldnotes","telegram","locker","drivein",
+  "museum","airbnb","deck","wanted","playbill","departures","recipe","comic","answering",
+  "scorecard","yearbook","classifieds","jukebox","treasuremap","phonebook","tradingcards","billboard"];
 
 
 /* ===== batch1 ===== */
@@ -3377,6 +4019,909 @@ THEMES.boarding = {
       + '<p class="bd-blurb">' + b4esc(c.club.blurb) + '</p>'
       + '</footer>'
       + '</div>';
+  }
+};
+
+
+/* ===== batch5 ===== */
+// MIAMI FILM CLUB — batch 5 concept themes (terminal, passport, radio, menu,
+// blueprint, mixtape, newspaper, arcade). Same contract as batches 1-4.
+
+THEMES.terminal = {
+  label: "Terminal",
+  meta: "#0a0f0a",
+  render: function(c){
+    var ev = c.events.map(function(e, i){
+      return '<div class="tm-ev rv"><span class="tm-p">$ screen --night-'+(i+1)+'</span>'
+        + '<span class="tm-t">'+e.title+'</span>'
+        + '<span class="tm-m">'+[e.dow, e.mon, e.day, e.time, e.venue].filter(Boolean).join(' · ')+'</span>'
+        + '<a class="tm-a" href="'+e.ticketUrl+'" target="_blank" rel="noopener">[ '+e.ticketLabel+' ]</a></div>';
+    }).join('');
+    var feed = c.reviews.map(function(r){
+      return '<div class="tm-line"><span class="tm-u">'+c.member.handle+'</span> logged <b>'+r.film+'</b> '
+        + (r.stars ? MFC.stars(r.stars) : '(no rating)') + (r.text ? ' — '+r.text : '') + '</div>';
+    }).join('');
+    return '<section class="tm-wrap">'
+      + '<div class="tm-bar rv"><span class="tm-dot"></span><span class="tm-dot"></span><span class="tm-dot"></span><span class="tm-title">filmclub — zsh</span></div>'
+      + '<div class="tm-body">'
+      + '<p class="rv"><span class="tm-p">$</span> whoami<br><span class="tm-o">'+c.club.name+' · '+c.club.tagline+'</span></p>'
+      + '<p class="rv"><span class="tm-p">$</span> ls upcoming/<br><span class="tm-o">'+ev+'</span></p>'
+      + '<p class="rv"><span class="tm-p">$</span> tail -f letterboxd.log</p>'
+      + '<div class="tm-feed rv">'+feed+'<div class="tm-cursor">▊</div></div>'
+      + '<p class="rv"><span class="tm-p">$</span> cat join.txt<br><span class="tm-o">'+c.join.network+' · '+c.join.price+' — <a class="tm-a" href="'+c.join.patreon+'" target="_blank" rel="noopener">join</a> · <a class="tm-a" href="'+c.join.volunteer+'" target="_blank" rel="noopener">volunteer</a></span></p>'
+      + '</div></section>';
+  }
+};
+
+THEMES.passport = {
+  label: "Passport",
+  meta: "#1a2f5a",
+  render: function(c){
+    var stamps = c.events.map(function(e, i){
+      return '<div class="pp-stamp rv" data-i="'+i+'">'
+        + '<div class="pp-ring"><span class="pp-day">'+e.day+'</span><span class="pp-mon">'+e.mon+'</span></div>'
+        + '<div class="pp-info"><b>'+e.title+'</b><span>'+[e.venue, e.time].filter(Boolean).join(' · ')+'</span>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">'+e.ticketLabel+' →</a></div></div>';
+    }).join('');
+    var visas = c.diary.map(function(d){
+      return '<div class="pp-visa rv"><b>'+d.film+'</b> ('+d.year+')<span>'+MFC.stars(d.stars)+' · '+d.date+'</span><i>'+d.note+'</i></div>';
+    }).join('');
+    return '<section class="pp-book">'
+      + '<div class="pp-cover rv"><div class="pp-emblem">✦</div><h1>'+c.club.name+'</h1><p>CINEMA PASSPORT · 305</p></div>'
+      + '<div class="pp-pages">'
+      + '<h2 class="rv">Entry stamps</h2><div class="pp-stamps">'+stamps+'</div>'
+      + '<h2 class="rv">Travel history <span class="pp-sub">via Letterboxd</span></h2><div class="pp-visas">'+visas+'</div>'
+      + '<div class="pp-join rv"><b>'+c.join.network+'</b> · '+c.join.price+'<br><a href="'+c.join.patreon+'" target="_blank" rel="noopener">Get stamped in</a> · <a href="'+c.join.volunteer+'" target="_blank" rel="noopener">Volunteer</a></div>'
+      + '</div></section>';
+  }
+};
+
+THEMES.radio = {
+  label: "Radio 305",
+  meta: "#201408",
+  render: function(c){
+    var dial = c.events.map(function(e, i){
+      var freq = (88.1 + i * 4.7).toFixed(1);
+      return '<button type="button" class="rd-station rv" data-i="'+i+'"><span class="rd-freq">'+freq+'</span><span class="rd-name">'+e.tag+'</span></button>';
+    }).join('');
+    var shows = c.events.map(function(e, i){
+      return '<article class="rd-show" data-i="'+i+'"><div class="rd-onair">● ON AIR</div>'
+        + '<h3>'+e.title+'</h3><p>'+[e.dow, e.mon, e.day, e.time, e.venue, e.note].filter(Boolean).join(' · ')+'</p>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">'+e.ticketLabel+'</a></article>';
+    }).join('');
+    var req = c.reviews.slice(0, 4).map(function(r){
+      return '<div class="rd-req rv">“'+(r.text || r.film)+'”<span>— '+c.member.handle+' · '+r.film+'</span></div>';
+    }).join('');
+    return '<section class="rd-radio">'
+      + '<div class="rd-top rv"><div class="rd-brand">RADIO 305 FM</div><div class="rd-needle"><div class="rd-line"></div></div>'
+      + '<div class="rd-dial">'+dial+'</div></div>'
+      + '<div class="rd-stage">'+shows+'</div>'
+      + '<h2 class="rv">Listener requests</h2><div class="rd-reqs">'+req+'</div>'
+      + '<div class="rd-join rv"><b>'+c.join.network+'</b> · '+c.join.price+' — <a href="'+c.join.patreon+'" target="_blank" rel="noopener">Become a member</a></div>'
+      + '</section>';
+  },
+  mount: function(root){
+    var btns = root.querySelectorAll('.rd-station'), shows = root.querySelectorAll('.rd-show');
+    function tune(i){
+      btns.forEach(function(b, j){ b.classList.toggle('on', j === i); });
+      shows.forEach(function(s, j){ s.classList.toggle('on', j === i); });
+      var line = root.querySelector('.rd-line');
+      if (line) line.style.left = (8 + i * 42) + '%';
+    }
+    btns.forEach(function(b){ b.addEventListener('click', function(){ tune(parseInt(b.dataset.i, 10)); }); });
+    tune(0);
+  }
+};
+
+THEMES.menu = {
+  label: "Tasting Menu",
+  meta: "#2b1a12",
+  render: function(c){
+    var courses = c.events.map(function(e, i){
+      var label = ['Amuse-bouche', 'Primo', 'Dolce'][i] || 'Course ' + (i + 1);
+      return '<div class="mn-course rv"><div class="mn-clabel">'+label+' · '+e.tag+'</div>'
+        + '<h3>'+e.title+'</h3><p>'+[e.dow, e.mon, e.day, e.time, e.venue, e.note].filter(Boolean).join(' · ')+'</p>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">'+e.ticketLabel+'</a></div>';
+    }).join('');
+    var pairings = c.diary.map(function(d){
+      return '<div class="mn-pair rv"><b>'+d.film+'</b><span>'+MFC.stars(d.stars)+' · pairs with '+d.note.split('.')[0]+'</span></div>';
+    }).join('');
+    return '<section class="mn-menu">'
+      + '<header class="rv"><p class="mn-est">EST. MIAMI · 305</p><h1>'+c.club.name+'</h1><p class="mn-sub">A tasting menu of upcoming nights</p></header>'
+      + '<div class="mn-courses">'+courses+'</div>'
+      + '<h2 class="rv">Sommelier&rsquo;s pairings <span>from the diary</span></h2><div class="mn-pairs">'+pairings+'</div>'
+      + '<footer class="rv"><b>'+c.join.network+'</b> · '+c.join.price+'<br><a href="'+c.join.patreon+'" target="_blank" rel="noopener">Reserve your seat</a></footer>'
+      + '</section>';
+  }
+};
+
+THEMES.blueprint = {
+  label: "Blueprint",
+  meta: "#123a5c",
+  render: function(c){
+    var rooms = c.events.map(function(e, i){
+      return '<div class="bp-room rv" data-i="'+i+'"><span class="bp-num">R-0'+(i+1)+'</span><b>'+e.title+'</b>'
+        + '<span>'+[e.dow, e.mon, e.day, e.time, e.venue].filter(Boolean).join(' · ')+'</span>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">'+e.ticketLabel+'</a></div>';
+    }).join('');
+    var specs = c.reviews.slice(0, 3).map(function(r){
+      return '<div class="bp-spec rv"><b>SPEC '+r.film.toUpperCase()+'</b><span>'+(r.stars ? MFC.stars(r.stars) : '—')+' · logged '+r.date+'</span></div>';
+    }).join('');
+    return '<section class="bp-sheet">'
+      + '<header class="rv"><h1>'+c.club.name+' — SITE PLAN</h1><p>SCALE 1:305 · SHEET A-101 · '+c.club.tagline+'</p></header>'
+      + '<div class="bp-grid">'+rooms+'</div>'
+      + '<h2 class="rv">Material specs <span>community log</span></h2><div class="bp-specs">'+specs+'</div>'
+      + '<footer class="rv">TITLE BLOCK — '+c.join.network+' · '+c.join.price+' · <a href="'+c.join.patreon+'" target="_blank" rel="noopener">join</a> · <a href="'+c.join.volunteer+'" target="_blank" rel="noopener">volunteer</a></footer>'
+      + '</section>';
+  }
+};
+
+THEMES.mixtape = {
+  label: "Mixtape",
+  meta: "#1c1c22",
+  render: function(c){
+    var tracks = c.events.map(function(e, i){
+      var side = i < 2 ? 'A' : 'B';
+      return '<button type="button" class="mx-track rv" data-i="'+i+'"><span class="mx-num">'+side+(i % 2 + 1)+'</span>'
+        + '<span class="mx-t">'+e.title+'</span><span class="mx-m">'+[e.mon, e.day, e.venue].filter(Boolean).join(' · ')+'</span></button>';
+    }).join('');
+    var detail = c.events.map(function(e, i){
+      return '<article class="mx-detail" data-i="'+i+'"><h3>'+e.title+'</h3>'
+        + '<p>'+[e.dow, e.mon, e.day, e.time, e.venue, e.note].filter(Boolean).join(' · ')+'</p>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">'+e.ticketLabel+'</a></article>';
+    }).join('');
+    var liner = c.diary.map(function(d){
+      return '<div class="mx-liner rv"><b>'+d.film+'</b> '+MFC.stars(d.stars)+'<span>'+d.note+'</span></div>';
+    }).join('');
+    return '<section class="mx-tape">'
+      + '<div class="mx-shell rv"><div class="mx-window"><div class="mx-reel"></div><div class="mx-reel"></div></div>'
+      + '<div class="mx-label">'+c.club.name+' · VOL. 305</div></div>'
+      + '<div class="mx-tracks">'+tracks+'</div><div class="mx-details">'+detail+'</div>'
+      + '<h2 class="rv">Liner notes</h2><div class="mx-liners">'+liner+'</div>'
+      + '<div class="mx-join rv"><b>'+c.join.network+'</b> · '+c.join.price+' — <a href="'+c.join.patreon+'" target="_blank" rel="noopener">Dub yourself in</a></div>'
+      + '</section>';
+  },
+  mount: function(root){
+    var ts = root.querySelectorAll('.mx-track'), ds = root.querySelectorAll('.mx-detail');
+    function play(i){
+      ts.forEach(function(t, j){ t.classList.toggle('on', j === i); });
+      ds.forEach(function(d, j){ d.classList.toggle('on', j === i); });
+    }
+    ts.forEach(function(t){ t.addEventListener('click', function(){ play(parseInt(t.dataset.i, 10)); }); });
+    play(0);
+  }
+};
+
+THEMES.newspaper = {
+  label: "The 305 Times",
+  meta: "#f4f1e8",
+  render: function(c){
+    var lead = c.events[0];
+    var rest = c.events.slice(1).map(function(e){
+      return '<article class="nw-story rv"><h3>'+e.title+'</h3><p>'+[e.dow, e.mon, e.day, e.time, e.venue].filter(Boolean).join(' · ')+'</p>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">'+e.ticketLabel+'</a></article>';
+    }).join('');
+    var col = c.reviews.slice(0, 3).map(function(r){
+      return '<div class="nw-col rv"><b>'+r.film+'</b> '+(r.stars ? MFC.stars(r.stars) : '')+'<p>'+(r.text || 'Logged '+r.date+' by '+c.member.handle)+'</p></div>';
+    }).join('');
+    return '<section class="nw-paper">'
+      + '<header class="rv"><p class="nw-dateline">MIAMI, FLA. · '+c.club.handle+'</p><h1>The 305 Times</h1><p class="nw-tag">'+c.club.slogan+'</p></header>'
+      + '<article class="nw-lead rv"><div class="nw-kicker">FRONT PAGE · '+lead.tag+'</div><h2>'+lead.title+'</h2>'
+      + '<p>'+[lead.dow, lead.mon, lead.day, lead.time, lead.venue, lead.note].filter(Boolean).join(' · ')+'</p>'
+      + '<a class="nw-btn" href="'+lead.ticketUrl+'" target="_blank" rel="noopener">'+lead.ticketLabel+'</a></article>'
+      + '<div class="nw-rest">'+rest+'</div>'
+      + '<h2 class="rv nw-sec">The Critic&rsquo;s Desk</h2><div class="nw-cols">'+col+'</div>'
+      + '<footer class="rv">Subscriptions — <b>'+c.join.network+'</b> · '+c.join.price+' · <a href="'+c.join.patreon+'" target="_blank" rel="noopener">Subscribe</a></footer>'
+      + '</section>';
+  }
+};
+
+THEMES.arcade = {
+  label: "Arcade",
+  meta: "#0d0221",
+  render: function(c){
+    var games = c.events.map(function(e, i){
+      return '<button type="button" class="ac-game rv" data-i="'+i+'"><span class="ac-marq">'+e.tag+'</span>'
+        + '<span class="ac-t">'+e.title+'</span><span class="ac-hi">HI-SCORE '+[25, 18, 12][i % 3]+'K</span></button>';
+    }).join('');
+    var detail = c.events.map(function(e, i){
+      return '<div class="ac-detail" data-i="'+i+'"><h3>'+e.title+'</h3>'
+        + '<p>'+[e.dow, e.mon, e.day, e.time, e.venue, e.note].filter(Boolean).join(' · ')+'</p>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">▸ '+e.ticketLabel+'</a></div>';
+    }).join('');
+    var lb = c.diary.map(function(d, i){
+      return '<div class="ac-lb rv"><span>'+(i+1)+'.</span><b>'+d.film+'</b><span>'+MFC.stars(d.stars)+'</span></div>';
+    }).join('');
+    return '<section class="ac-cab">'
+      + '<div class="ac-top rv">INSERT COIN · '+c.club.name+'</div>'
+      + '<div class="ac-screen"><div class="ac-games">'+games+'</div><div class="ac-details">'+detail+'</div></div>'
+      + '<h2 class="rv">Leaderboard <span>diary high scores</span></h2><div class="ac-lbs">'+lb+'</div>'
+      + '<div class="ac-join rv">CONTINUE? <b>'+c.join.price+'</b> — <a href="'+c.join.patreon+'" target="_blank" rel="noopener">9…8… JOIN</a></div>'
+      + '</section>';
+  },
+  mount: function(root){
+    var gs = root.querySelectorAll('.ac-game'), ds = root.querySelectorAll('.ac-detail');
+    function sel(i){
+      gs.forEach(function(g, j){ g.classList.toggle('on', j === i); });
+      ds.forEach(function(d, j){ d.classList.toggle('on', j === i); });
+    }
+    gs.forEach(function(g){ g.addEventListener('click', function(){ sel(parseInt(g.dataset.i, 10)); }); });
+    sel(0);
+  }
+};
+
+
+/* ===== batch6 ===== */
+// MIAMI FILM CLUB — batch 6 concept themes.
+
+THEMES.subway = {
+  label: "Transit Map",
+  meta: "#101418",
+  render: function(c){
+    var stops = c.events.map(function(e, i){
+      return '<button type="button" class="sw-stop rv" data-i="'+i+'"><span class="sw-dot"></span>'
+        + '<span class="sw-t">'+e.title+'</span><span class="sw-m">'+e.mon+' '+e.day+'</span></button>';
+    }).join('');
+    var detail = c.events.map(function(e, i){
+      return '<article class="sw-detail" data-i="'+i+'"><div class="sw-line">LINE 305 · LOCAL</div>'
+        + '<h3>'+e.title+'</h3><p>'+[e.dow, e.mon, e.day, e.time, e.venue, e.note].filter(Boolean).join(' · ')+'</p>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">'+e.ticketLabel+' →</a></article>';
+    }).join('');
+    var svc = c.reviews.slice(0, 3).map(function(r){
+      return '<div class="sw-svc rv">SERVICE ADVISORY — <b>'+r.film+'</b> rated '+(r.stars ? MFC.stars(r.stars) : '—')+' by '+c.member.handle+'</div>';
+    }).join('');
+    return '<section class="sw-map"><header class="rv"><h1>305 Transit</h1><p>'+c.club.name+' · all lines lead to the movies</p></header>'
+      + '<div class="sw-track"><div class="sw-rail"></div><div class="sw-stops">'+stops+'</div></div>'
+      + '<div class="sw-details">'+detail+'</div>'
+      + '<h2 class="rv">Service advisories</h2>'+svc
+      + '<div class="sw-join rv">Monthly pass <b>'+c.join.price+'</b> — <a href="'+c.join.patreon+'" target="_blank" rel="noopener">Get a Metrocard</a></div></section>';
+  },
+  mount: function(root){
+    var ss = root.querySelectorAll('.sw-stop'), ds = root.querySelectorAll('.sw-detail');
+    function go(i){
+      ss.forEach(function(s, j){ s.classList.toggle('on', j === i); });
+      ds.forEach(function(d, j){ d.classList.toggle('on', j === i); });
+    }
+    ss.forEach(function(s){ s.addEventListener('click', function(){ go(parseInt(s.dataset.i, 10)); }); });
+    go(0);
+  }
+};
+
+THEMES.polaroid = {
+  label: "Polaroid Wall",
+  meta: "#e8e2d4",
+  render: function(c){
+    var shots = c.events.map(function(e, i){
+      return '<figure class="pl-shot rv" data-i="'+i+'"><div class="pl-photo"><span class="pl-date">'+e.mon+' '+e.day+'</span></div>'
+        + '<figcaption><b>'+e.title+'</b><span>'+[e.venue, e.time].filter(Boolean).join(' · ')+'</span></figcaption></figure>';
+    }).join('');
+    var wall = c.diary.map(function(d){
+      return '<figure class="pl-shot rv"><div class="pl-photo pl-alt"><img src="'+d.poster+'" alt="'+d.film+'" loading="lazy"></div>'
+        + '<figcaption><b>'+d.film+'</b><span>'+MFC.stars(d.stars)+'</span></figcaption></figure>';
+    }).join('');
+    return '<section class="pl-wall"><header class="rv"><h1> developing… '+c.club.name+'</h1><p>tap a photo for the night&rsquo;s details</p></header>'
+      + '<div class="pl-grid">'+shots+'</div><div class="pl-detail"></div>'
+      + '<h2 class="rv">From the camera roll</h2><div class="pl-grid">'+wall+'</div>'
+      + '<div class="pl-join rv"><b>'+c.join.network+'</b> · '+c.join.price+' — <a href="'+c.join.patreon+'" target="_blank" rel="noopener">Join the album</a></div></section>';
+  },
+  mount: function(root){
+    var det = root.querySelector('.pl-detail');
+    root.querySelectorAll('.pl-shot[data-i]').forEach(function(f){
+      f.addEventListener('click', function(){
+        var i = parseInt(f.dataset.i, 10), e = CONTENT.events[i];
+        det.innerHTML = '<div class="pl-card"><b>'+e.title+'</b><span>'+[e.dow, e.mon, e.day, e.time, e.venue, e.note].filter(Boolean).join(' · ')+'</span><a href="'+e.ticketUrl+'" target="_blank" rel="noopener">'+e.ticketLabel+' →</a></div>';
+        det.scrollIntoView({behavior:'smooth', block:'nearest'});
+      });
+    });
+  }
+};
+
+THEMES.vhs = {
+  label: "VHS",
+  meta: "#0b0b12",
+  render: function(c){
+    var tapes = c.events.map(function(e, i){
+      return '<button type="button" class="vh-tape rv" data-i="'+i+'"><span class="vh-sp">SP</span>'
+        + '<span class="vh-t">'+e.title+'</span><span class="vh-m">'+e.mon+' '+e.day+' · '+e.tag+'</span></button>';
+    }).join('');
+    var detail = c.events.map(function(e, i){
+      return '<div class="vh-detail" data-i="'+i+'"><div class="vh-osd">PLAY ▶</div><h3>'+e.title+'</h3>'
+        + '<p>'+[e.dow, e.mon, e.day, e.time, e.venue, e.note].filter(Boolean).join(' · ')+'</p>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">'+e.ticketLabel+'</a></div>';
+    }).join('');
+    var rew = c.reviews.slice(0, 3).map(function(r){
+      return '<div class="vh-rew rv">REWIND ⏪ <b>'+r.film+'</b> — '+(r.text || 'logged '+r.date)+'</div>';
+    }).join('');
+    return '<section class="vh-player"><div class="vh-track rv">TRACKING <span>▓▓▓▓▓▓░░</span> AUTO</div>'
+      + '<h1 class="rv">'+c.club.name+' <span>HOME VIDEO</span></h1>'
+      + '<div class="vh-tapes">'+tapes+'</div><div class="vh-details">'+detail+'</div>'
+      + '<h2 class="rv">Be kind, rewind</h2>'+rew
+      + '<div class="vh-join rv">MEMBERSHIP — <b>'+c.join.price+'</b> <a href="'+c.join.patreon+'" target="_blank" rel="noopener">[ RENT ]</a></div></section>';
+  },
+  mount: function(root){
+    var ts = root.querySelectorAll('.vh-tape'), ds = root.querySelectorAll('.vh-detail');
+    function play(i){
+      ts.forEach(function(t, j){ t.classList.toggle('on', j === i); });
+      ds.forEach(function(d, j){ d.classList.toggle('on', j === i); });
+    }
+    ts.forEach(function(t){ t.addEventListener('click', function(){ play(parseInt(t.dataset.i, 10)); }); });
+    play(0);
+  }
+};
+
+THEMES.weather = {
+  label: "Screening Forecast",
+  meta: "#7ec8e3",
+  render: function(c){
+    var days = c.events.map(function(e, i){
+      var icon = ['⛅', '🌙', '🎃'][i % 3];
+      return '<button type="button" class="wx-day rv" data-i="'+i+'"><span class="wx-icon">'+icon+'</span>'
+        + '<span class="wx-dow">'+(e.dow || e.mon)+'</span><span class="wx-t">'+e.title.split(' ').slice(0, 2).join(' ')+'</span></button>';
+    }).join('');
+    var detail = c.events.map(function(e, i){
+      return '<div class="wx-detail" data-i="'+i+'"><div class="wx-big">'+['⛅','🌙','🎃'][i % 3]+'</div>'
+        + '<h3>'+e.title+'</h3><p>'+[e.dow, e.mon, e.day, e.time, e.venue].filter(Boolean).join(' · ')+'</p>'
+        + '<p class="wx-cond">Conditions: 100% chance of cinema</p>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">'+e.ticketLabel+'</a></div>';
+    }).join('');
+    var radar = c.diary.map(function(d){
+      return '<div class="wx-radar rv"><b>'+d.film+'</b><span>'+MFC.stars(d.stars)+' · '+d.date+'</span></div>';
+    }).join('');
+    return '<section class="wx-app"><header class="rv"><h1>Miami</h1><p class="wx-sub">Screening forecast · '+c.club.handle+'</p></header>'
+      + '<div class="wx-days">'+days+'</div><div class="wx-details">'+detail+'</div>'
+      + '<h2 class="rv">Doppler diary</h2>'+radar
+      + '<div class="wx-join rv">Premium radar <b>'+c.join.price+'</b> — <a href="'+c.join.patreon+'" target="_blank" rel="noopener">Upgrade</a></div></section>';
+  },
+  mount: function(root){
+    var ds = root.querySelectorAll('.wx-day'), dt = root.querySelectorAll('.wx-detail');
+    function f(i){
+      ds.forEach(function(d, j){ d.classList.toggle('on', j === i); });
+      dt.forEach(function(d, j){ d.classList.toggle('on', j === i); });
+    }
+    ds.forEach(function(d){ d.addEventListener('click', function(){ f(parseInt(d.dataset.i, 10)); }); });
+    f(0);
+  }
+};
+
+THEMES.stocks = {
+  label: "Film Exchange",
+  meta: "#0a0e14",
+  render: function(c){
+    var tick = c.events.map(function(e){ return e.title.toUpperCase() + ' ▲'; }).join(' · ');
+    var rows = c.events.map(function(e, i){
+      var chg = ['+4.2%', '+2.8%', '+9.1%'][i % 3];
+      return '<button type="button" class="st-row rv" data-i="'+i+'"><span class="st-sym">'+e.tag+'</span>'
+        + '<span class="st-t">'+e.title+'</span><span class="st-chg">'+chg+'</span></button>';
+    }).join('');
+    var detail = c.events.map(function(e, i){
+      return '<div class="st-detail" data-i="'+i+'"><h3>'+e.title+' <span class="st-tk">'+e.tag+'</span></h3>'
+        + '<p>'+[e.dow, e.mon, e.day, e.time, e.venue].filter(Boolean).join(' · ')+'</p>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">BUY '+e.ticketLabel+'</a></div>';
+    }).join('');
+    var watch = c.reviews.slice(0, 4).map(function(r){
+      return '<div class="st-w rv"><b>'+r.film+'</b><span>'+(r.stars ? MFC.stars(r.stars) : '—')+'</span></div>';
+    }).join('');
+    return '<section class="st-mkt"><div class="st-ticker rv"><div class="st-tick">'+tick+' · '+tick+'</div></div>'
+      + '<h1 class="rv">Film Exchange <span>305</span></h1>'
+      + '<div class="st-rows">'+rows+'</div><div class="st-details">'+detail+'</div>'
+      + '<h2 class="rv">Watchlist</h2>'+watch
+      + '<div class="st-join rv">Open an account — <b>'+c.join.price+'</b> <a href="'+c.join.patreon+'" target="_blank" rel="noopener">Invest</a></div></section>';
+  },
+  mount: function(root){
+    var rs = root.querySelectorAll('.st-row'), ds = root.querySelectorAll('.st-detail');
+    function p(i){
+      rs.forEach(function(r, j){ r.classList.toggle('on', j === i); });
+      ds.forEach(function(d, j){ d.classList.toggle('on', j === i); });
+    }
+    rs.forEach(function(r){ r.addEventListener('click', function(){ p(parseInt(r.dataset.i, 10)); }); });
+    p(0);
+  }
+};
+
+THEMES.fieldnotes = {
+  label: "Field Notes",
+  meta: "#f5eeda",
+  render: function(c){
+    var notes = c.events.map(function(e, i){
+      return '<article class="fn-note rv"><div class="fn-n">N°'+(i+1)+' — '+e.tag+'</div><h3>'+e.title+'</h3>'
+        + '<p>'+[e.dow, e.mon, e.day, e.time, e.venue, e.note].filter(Boolean).join(' · ')+'</p>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">☐ '+e.ticketLabel+'</a></article>';
+    }).join('');
+    var obs = c.diary.map(function(d){
+      return '<div class="fn-obs rv"><b>OBS:</b> '+d.film+' — '+MFC.stars(d.stars)+'<i>'+d.note+'</i></div>';
+    }).join('');
+    return '<section class="fn-book"><header class="rv"><h1>FIELD NOTES</h1><p>'+c.club.name+' · screening log · 48 pages</p></header>'
+      + notes + '<h2 class="rv">Observations</h2>' + obs
+      + '<footer class="rv">Join the expedition — <b>'+c.join.price+'</b> <a href="'+c.join.patreon+'" target="_blank" rel="noopener">sign the log</a></footer></section>';
+  }
+};
+
+THEMES.telegram = {
+  label: "Telegram",
+  meta: "#e8dcc0",
+  render: function(c){
+    var msgs = c.events.map(function(e){
+      return '<div class="tg-msg rv"><div class="tg-head">WESTERN UNION · MIAMI FLA</div>'
+        + '<p>STOP ' + e.title.toUpperCase() + ' STOP ' + [e.dow, e.mon, e.day, e.time, e.venue].filter(Boolean).join(' ').toUpperCase() + ' STOP</p>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">'+e.ticketLabel+' STOP</a></div>';
+    }).join('');
+    var wire = c.reviews.slice(0, 3).map(function(r){
+      return '<div class="tg-wire rv">WIRE — '+r.film.toUpperCase()+' '+(r.stars ? MFC.stars(r.stars) : '')+' STOP '+(r.text || 'LOGGED '+r.date.toUpperCase())+' STOP</div>';
+    }).join('');
+    return '<section class="tg-office"><h1 class="rv">'+c.club.name+'</h1><p class="rv tg-sub">by wire · '+c.club.tagline+'</p>'
+      + msgs + '<h2 class="rv">Incoming wires</h2>' + wire
+      + '<footer class="rv">REPLY BY WIRE — <b>'+c.join.price+'</b> <a href="'+c.join.patreon+'" target="_blank" rel="noopener">join</a></footer></section>';
+  }
+};
+
+THEMES.locker = {
+  label: "Locker",
+  meta: "#3b4a5a",
+  render: function(c){
+    var flyers = c.events.map(function(e, i){
+      var rot = (i % 2 ? 2 : -2);
+      return '<div class="lk-flyer rv" style="transform:rotate('+rot+'deg)" data-i="'+i+'"><div class="lk-tape"></div>'
+        + '<b>'+e.title+'</b><span>'+[e.mon, e.day, e.venue].filter(Boolean).join(' · ')+'</span></div>';
+    }).join('');
+    var detail = c.events.map(function(e, i){
+      return '<div class="lk-detail" data-i="'+i+'"><h3>'+e.title+'</h3>'
+        + '<p>'+[e.dow, e.mon, e.day, e.time, e.venue, e.note].filter(Boolean).join(' · ')+'</p>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">'+e.ticketLabel+'</a></div>';
+    }).join('');
+    var notes = c.diary.map(function(d){
+      return '<div class="lk-note rv"><b>'+d.film+'</b> '+MFC.stars(d.stars)+'</div>';
+    }).join('');
+    return '<section class="lk-door"><div class="lk-vents rv"></div><h1 class="rv">LKR 305</h1>'
+      + '<div class="lk-flyers">'+flyers+'</div><div class="lk-details">'+detail+'</div>'
+      + '<h2 class="rv">Passed notes</h2><div class="lk-notes">'+notes+'</div>'
+      + '<div class="lk-join rv">Combination: <b>'+c.join.price+'</b> — <a href="'+c.join.patreon+'" target="_blank" rel="noopener">claim a locker</a></div></section>';
+  },
+  mount: function(root){
+    var fs = root.querySelectorAll('.lk-flyer'), ds = root.querySelectorAll('.lk-detail');
+    function o(i){
+      fs.forEach(function(f, j){ f.classList.toggle('on', j === i); });
+      ds.forEach(function(d, j){ d.classList.toggle('on', j === i); });
+    }
+    fs.forEach(function(f){ f.addEventListener('click', function(){ o(parseInt(f.dataset.i, 10)); }); });
+    o(0);
+  }
+};
+
+THEMES.drivein = {
+  label: "Drive-In",
+  meta: "#0a0a18",
+  render: function(c){
+    var cars = c.events.map(function(e, i){
+      return '<button type="button" class="dv-car rv" data-i="'+i+'"><span class="dv-spot">SPOT '+(i+1)+'</span><span class="dv-t">'+e.title+'</span></button>';
+    }).join('');
+    var screen = c.events.map(function(e, i){
+      return '<div class="dv-screen" data-i="'+i+'"><div class="dv-film">NOW SHOWING</div><h3>'+e.title+'</h3>'
+        + '<p>'+[e.dow, e.mon, e.day, e.time, e.venue].filter(Boolean).join(' · ')+'</p>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">'+e.ticketLabel+'</a></div>';
+    }).join('');
+    var radio = c.reviews.slice(0, 3).map(function(r){
+      return '<div class="dv-radio rv">♪ '+(r.text || r.film)+' <span>— '+c.member.handle+'</span></div>';
+    }).join('');
+    return '<section class="dv-lot"><div class="dv-dash rv"><span>TUNE TO 88.5</span><span>'+c.club.name+'</span></div>'
+      + '<div class="dv-screens">'+screen+'</div><div class="dv-cars">'+cars+'</div>'
+      + '<h2 class="rv">On the radio</h2>'+radio
+      + '<div class="dv-join rv">Per-car admission <b>'+c.join.price+'</b> — <a href="'+c.join.patreon+'" target="_blank" rel="noopener">Pull in</a></div></section>';
+  },
+  mount: function(root){
+    var cs = root.querySelectorAll('.dv-car'), ss = root.querySelectorAll('.dv-screen');
+    function t(i){
+      cs.forEach(function(x, j){ x.classList.toggle('on', j === i); });
+      ss.forEach(function(x, j){ x.classList.toggle('on', j === i); });
+    }
+    cs.forEach(function(x){ x.addEventListener('click', function(){ t(parseInt(x.dataset.i, 10)); }); });
+    t(0);
+  }
+};
+
+
+/* ===== batch7 ===== */
+// MIAMI FILM CLUB — batch 7 concept themes.
+
+THEMES.museum = {
+  label: "Museum",
+  meta: "#f2efe6",
+  render: function(c){
+    var wings = c.events.map(function(e, i){
+      return '<div class="mu-wing rv"><div class="mu-num">'+['I','II','III'][i]+'</div><b>'+e.title+'</b>'
+        + '<span>'+[e.dow, e.mon, e.day, e.time, e.venue].filter(Boolean).join(' · ')+'</span>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">Plan your visit →</a></div>';
+    }).join('');
+    var coll = c.diary.map(function(d){
+      return '<div class="mu-item rv"><img src="'+d.poster+'" alt="'+d.film+'" loading="lazy"><div><b>'+d.film+'</b> ('+d.year+')<span>'+MFC.stars(d.stars)+' · '+d.date+'</span><i>'+d.note+'</i></div></div>';
+    }).join('');
+    return '<section class="mu-hall"><header class="rv"><p>THE 305 COLLECTION</p><h1>'+c.club.name+'</h1><p class="mu-sub">An exhibition of nights at the movies</p></header>'
+      + '<div class="mu-wings">'+wings+'</div>'
+      + '<h2 class="rv">Permanent collection</h2><div class="mu-coll">'+coll+'</div>'
+      + '<footer class="rv">Membership — <b>'+c.join.price+'</b> <a href="'+c.join.patreon+'" target="_blank" rel="noopener">Become a patron</a></footer></section>';
+  }
+};
+
+THEMES.airbnb = {
+  label: "Stay & Screen",
+  meta: "#ffffff",
+  render: function(c){
+    var stays = c.events.map(function(e, i){
+      return '<button type="button" class="ab-card rv" data-i="'+i+'"><div class="ab-ph"><span>'+e.mon+' '+e.day+'</span></div>'
+        + '<b>'+e.title+'</b><span class="ab-m">'+[e.venue, e.time].filter(Boolean).join(' · ')+' ★ '+(4.9 - i * 0.1).toFixed(1)+'</span></button>';
+    }).join('');
+    var detail = c.events.map(function(e, i){
+      return '<div class="ab-detail" data-i="'+i+'"><h3>'+e.title+'</h3>'
+        + '<p>'+[e.dow, e.mon, e.day, e.time, e.venue, e.note].filter(Boolean).join(' · ')+'</p>'
+        + '<div class="ab-book"><span><b>Free</b> / night</span><a href="'+e.ticketUrl+'" target="_blank" rel="noopener">'+e.ticketLabel+'</a></div></div>';
+    }).join('');
+    var rev = c.reviews.slice(0, 3).map(function(r){
+      return '<div class="ab-rev rv"><b>'+c.member.handle+'</b><span>★ '+(r.stars || '—')+' · '+r.date+'</span><p>'+(r.text || r.film+' — a night to remember.')+'</p></div>';
+    }).join('');
+    return '<section class="ab-list"><header class="rv"><h1>Screenings in Miami</h1><p>'+c.club.tagline+' · '+c.stats.upcoming+' upcoming</p></header>'
+      + '<div class="ab-cards">'+stays+'</div><div class="ab-details">'+detail+'</div>'
+      + '<h2 class="rv">Guest reviews</h2>'+rev
+      + '<div class="ab-join rv">Become a Superhost — <b>'+c.join.price+'</b> <a href="'+c.join.patreon+'" target="_blank" rel="noopener">Join</a></div></section>';
+  },
+  mount: function(root){
+    var cs = root.querySelectorAll('.ab-card'), ds = root.querySelectorAll('.ab-detail');
+    function s(i){
+      cs.forEach(function(x, j){ x.classList.toggle('on', j === i); });
+      ds.forEach(function(x, j){ x.classList.toggle('on', j === i); });
+    }
+    cs.forEach(function(x){ x.addEventListener('click', function(){ s(parseInt(x.dataset.i, 10)); }); });
+    s(0);
+  }
+};
+
+THEMES.deck = {
+  label: "Keynote",
+  meta: "#000000",
+  render: function(c){
+    var slides = c.events.map(function(e, i){
+      return '<div class="dk-slide" data-i="'+i+'"><div class="dk-k">'+e.tag+'</div><h3>'+e.title+'</h3>'
+        + '<p>'+[e.dow, e.mon, e.day, e.time, e.venue].filter(Boolean).join(' · ')+'</p>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">'+e.ticketLabel+' →</a></div>';
+    }).join('');
+    var app = c.reviews.slice(0, 3).map(function(r, i){
+      return '<div class="dk-slide" data-s="a'+i+'"><div class="dk-k">APPENDIX</div><h3>'+r.film+'</h3>'
+        + '<p>'+(r.stars ? MFC.stars(r.stars) : '')+' '+(r.text || 'Logged '+r.date)+'</p></div>';
+    }).join('');
+    return '<section class="dk-deck"><div class="dk-stage">'+slides+app+'</div>'
+      + '<div class="dk-ctrl rv"><button type="button" class="dk-prev">←</button><span class="dk-count">1 / '+(c.events.length + 3)+'</span><button type="button" class="dk-next">→</button></div>'
+      + '<div class="dk-join rv"><b>'+c.join.network+'</b> · '+c.join.price+' — <a href="'+c.join.patreon+'" target="_blank" rel="noopener">Q&A after</a></div></section>';
+  },
+  mount: function(root){
+    var slides = root.querySelectorAll('.dk-slide'), count = root.querySelector('.dk-count'), k = 0;
+    function go(i){
+      k = (i + slides.length) % slides.length;
+      slides.forEach(function(s, j){ s.classList.toggle('on', j === k); });
+      if (count) count.textContent = (k + 1) + ' / ' + slides.length;
+    }
+    root.querySelector('.dk-prev').addEventListener('click', function(){ go(k - 1); });
+    root.querySelector('.dk-next').addEventListener('click', function(){ go(k + 1); });
+    root.addEventListener('keydown', function(e){ if (e.key === 'ArrowRight') go(k + 1); if (e.key === 'ArrowLeft') go(k - 1); });
+    go(0);
+  }
+};
+
+THEMES.wanted = {
+  label: "Wanted",
+  meta: "#e5d3a8",
+  render: function(c){
+    var posters = c.events.map(function(e){
+      return '<div class="wt-poster rv"><div class="wt-head">WANTED</div><h3>'+e.title+'</h3>'
+        + '<p>Last seen: '+[e.dow, e.mon, e.day, e.time, e.venue].filter(Boolean).join(' · ')+'</p>'
+        + '<div class="wt-reward">REWARD: '+e.ticketLabel+'</div>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">Claim reward →</a></div>';
+    }).join('');
+    var alley = c.diary.map(function(d){
+      return '<div class="wt-alley rv"><b>'+d.film+'</b> ('+d.year+')<span>identified '+d.date+' · '+MFC.stars(d.stars)+'</span></div>';
+    }).join('');
+    return '<section class="wt-board"><h1 class="rv">'+c.club.name+' <span>SHERIFF&rsquo;S OFFICE</span></h1>'
+      + '<div class="wt-posters">'+posters+'</div>'
+      + '<h2 class="rv">Previously apprehended</h2><div class="wt-alleys">'+alley+'</div>'
+      + '<footer class="rv">Join the posse — <b>'+c.join.price+'</b> <a href="'+c.join.patreon+'" target="_blank" rel="noopener">Enlist</a></footer></section>';
+  }
+};
+
+THEMES.playbill = {
+  label: "Playbill",
+  meta: "#f8f5ec",
+  render: function(c){
+    var acts = c.events.map(function(e, i){
+      return '<div class="pb-act rv"><div class="pb-an">ACT '+['I','II','III'][i]+'</div><h3>'+e.title+'</h3>'
+        + '<p class="pb-cast">'+[e.dow, e.mon, e.day, e.time, e.venue].filter(Boolean).join(' · ')+'</p>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">'+e.ticketLabel+'</a></div>';
+    }).join('');
+    var notes = c.reviews.slice(0, 3).map(function(r){
+      return '<div class="pb-note rv"><b>'+r.film+'</b> '+(r.stars ? MFC.stars(r.stars) : '')+'<p>'+(r.text || 'Logged '+r.date)+'</p></div>';
+    }).join('');
+    return '<section class="pb-prog"><header class="rv"><p class="pb-pres">'+c.club.handle+' presents</p><h1>'+c.club.name+'</h1><p class="pb-sub">'+c.club.slogan+'</p></header>'
+      + acts + '<h2 class="rv">Director&rsquo;s notes</h2>' + notes
+      + '<footer class="rv">Season subscriptions <b>'+c.join.price+'</b> — <a href="'+c.join.patreon+'" target="_blank" rel="noopener">Subscribe</a></footer></section>';
+  }
+};
+
+THEMES.departures = {
+  label: "Departures",
+  meta: "#0a0a0a",
+  render: function(c){
+    var rows = c.events.map(function(e, i){
+      return '<button type="button" class="dp-row rv" data-i="'+i+'"><span class="dp-time">'+(e.time || e.mon+' '+e.day)+'</span>'
+        + '<span class="dp-dest">'+e.title.toUpperCase()+'</span><span class="dp-gate">'+e.tag+'</span>'
+        + '<span class="dp-stat">'+(i === 0 ? 'BOARDING' : 'ON TIME')+'</span></button>';
+    }).join('');
+    var detail = c.events.map(function(e, i){
+      return '<div class="dp-detail" data-i="'+i+'"><h3>'+e.title+'</h3>'
+        + '<p>Flight 305 · Gate '+e.tag+' · '+[e.dow, e.mon, e.day, e.time, e.venue].filter(Boolean).join(' · ')+'</p>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">'+e.ticketLabel+'</a></div>';
+    }).join('');
+    return '<section class="dp-board"><h1 class="rv">DEPARTURES <span>305 INTL</span></h1>'
+      + '<div class="dp-rows">'+rows+'</div><div class="dp-details">'+detail+'</div>'
+      + '<div class="dp-join rv">Frequent flyer — <b>'+c.join.price+'</b> <a href="'+c.join.patreon+'" target="_blank" rel="noopener">Join the club</a></div></section>';
+  },
+  mount: function(root){
+    var rs = root.querySelectorAll('.dp-row'), ds = root.querySelectorAll('.dp-detail');
+    function f(i){
+      rs.forEach(function(r, j){ r.classList.toggle('on', j === i); });
+      ds.forEach(function(d, j){ d.classList.toggle('on', j === i); });
+    }
+    rs.forEach(function(r){ r.addEventListener('click', function(){ f(parseInt(r.dataset.i, 10)); }); });
+    f(0);
+  }
+};
+
+THEMES.recipe = {
+  label: "Recipe Box",
+  meta: "#fff8ee",
+  render: function(c){
+    var cards = c.events.map(function(e, i){
+      return '<article class="rc-card rv"><div class="rc-time">'+(e.time || e.mon+' '+e.day)+' · serves a crowd</div><h3>'+e.title+'</h3>'
+        + '<div class="rc-ing"><b>Ingredients:</b> '+[e.venue, e.note || 'good company', 'popcorn'].filter(Boolean).join(', ')+'</div>'
+        + '<div class="rc-steps"><b>Method:</b> 1. Show up. 2. Watch together. 3. Talk about it after.</div>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">'+e.ticketLabel+'</a></article>';
+    }).join('');
+    var box = c.diary.map(function(d){
+      return '<div class="rc-idx rv"><b>'+d.film+'</b><span>'+MFC.stars(d.stars)+'</span></div>';
+    }).join('');
+    return '<section class="rc-box"><header class="rv"><h1>The Screening Cookbook</h1><p>'+c.club.name+' · tested recipes for a good night</p></header>'
+      + cards + '<h2 class="rv">Recipe index</h2><div class="rc-idxs">'+box+'</div>'
+      + '<footer class="rv">Get the whole box — <b>'+c.join.price+'</b> <a href="'+c.join.patreon+'" target="_blank" rel="noopener">Subscribe</a></footer></section>';
+  }
+};
+
+THEMES.comic = {
+  label: "Comic Book",
+  meta: "#fff200",
+  render: function(c){
+    var panels = c.events.map(function(e, i){
+      return '<div class="cm-panel rv"><div class="cm-cap">'+e.tag+'!</div><h3>'+e.title+'</h3>'
+        + '<p>'+[e.dow, e.mon, e.day, e.time, e.venue].filter(Boolean).join(' · ')+'</p>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">POW! '+e.ticketLabel+'</a></div>';
+    }).join('');
+    var strips = c.reviews.slice(0, 3).map(function(r){
+      return '<div class="cm-strip rv"><b>'+r.film+'</b> '+(r.stars ? MFC.stars(r.stars) : '')+'<p>'+(r.text || 'Logged '+r.date)+'</p></div>';
+    }).join('');
+    return '<section class="cm-issue"><header class="rv"><div class="cm-burst">ISSUE #305!</div><h1>'+c.club.name+'</h1></header>'
+      + '<div class="cm-panels">'+panels+'</div>'
+      + '<h2 class="rv">Letters page</h2>'+strips
+      + '<footer class="rv">Subscribe — <b>'+c.join.price+'</b>/mo <a href="'+c.join.patreon+'" target="_blank" rel="noopener">Excelsior!</a></footer></section>';
+  }
+};
+
+THEMES.answering = {
+  label: "Answering Machine",
+  meta: "#1a1a1a",
+  render: function(c){
+    var msgs = c.events.map(function(e, i){
+      return '<button type="button" class="am-msg rv" data-i="'+i+'"><span class="am-n">MSG '+(i+1)+'</span>'
+        + '<span class="am-t">'+e.title+'</span><span class="am-d">'+e.mon+' '+e.day+'</span></button>';
+    }).join('');
+    var play = c.events.map(function(e, i){
+      return '<div class="am-play" data-i="'+i+'"><div class="am-lcd">▶ PLAYING MSG '+(i+1)+'</div><h3>'+e.title+'</h3>'
+        + '<p><i>"Hey, it&rsquo;s the film club. '+e.title+' is happening '+[e.dow, e.mon, e.day, e.time].filter(Boolean).join(' ')+' at '+e.venue+'. Be there."</i></p>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">'+e.ticketLabel+'</a></div>';
+    }).join('');
+    return '<section class="am-machine"><div class="am-face rv"><div class="am-lcd">3 NEW MESSAGES</div><div class="am-btns"><span>⏮</span><span>▶</span><span>⏭</span><span>⏺</span></div></div>'
+      + '<div class="am-msgs">'+msgs+'</div><div class="am-plays">'+play+'</div>'
+      + '<div class="am-join rv">Leave your own message — <b>'+c.join.price+'</b> <a href="'+c.join.patreon+'" target="_blank" rel="noopener">Join</a></div></section>';
+  },
+  mount: function(root){
+    var ms = root.querySelectorAll('.am-msg'), ps = root.querySelectorAll('.am-play');
+    function p(i){
+      ms.forEach(function(m, j){ m.classList.toggle('on', j === i); });
+      ps.forEach(function(x, j){ x.classList.toggle('on', j === i); });
+    }
+    ms.forEach(function(m){ m.addEventListener('click', function(){ p(parseInt(m.dataset.i, 10)); }); });
+    p(0);
+  }
+};
+
+
+/* ===== batch8 ===== */
+// MIAMI FILM CLUB — batch 8 concept themes.
+
+THEMES.scorecard = {
+  label: "Scorecard",
+  meta: "#f4f1e6",
+  render: function(c){
+    var rows = c.events.map(function(e, i){
+      return '<div class="sc-row rv"><span class="sc-inn">'+(i+1)+'</span><b>'+e.title+'</b>'
+        + '<span class="sc-r">'+[e.mon, e.day].filter(Boolean).join(' ')+'</span>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">'+e.ticketLabel+'</a></div>';
+    }).join('');
+    var box = c.diary.map(function(d, i){
+      return '<div class="sc-box rv"><span>'+(i+1)+'</span><b>'+d.film+'</b><span>'+MFC.stars(d.stars)+'</span></div>';
+    }).join('');
+    return '<section class="sc-card"><header class="rv"><h1>'+c.club.name+'</h1><p>OFFICIAL SCORECARD · 305 LEAGUE · '+c.club.tagline+'</p></header>'
+      + '<div class="sc-head"><span>INN</span><b>MATCHUP</b><span>DATE</span><span>TIX</span></div>' + rows
+      + '<h2 class="rv">Box scores <span>recent finals</span></h2><div class="sc-boxes">'+box+'</div>'
+      + '<footer class="rv">Season tickets <b>'+c.join.price+'</b> — <a href="'+c.join.patreon+'" target="_blank" rel="noopener">Buy the season</a></footer></section>';
+  }
+};
+
+THEMES.yearbook = {
+  label: "Yearbook",
+  meta: "#1f2a44",
+  render: function(c){
+    var grads = c.events.map(function(e){
+      return '<div class="yb-grad rv"><div class="yb-ph"></div><b>'+e.title+'</b>'
+        + '<span>Class of '+e.mon+' '+e.day+'</span><a href="'+e.ticketUrl+'" target="_blank" rel="noopener">'+e.ticketLabel+'</a></div>';
+    }).join('');
+    var sigs = c.reviews.slice(0, 3).map(function(r){
+      return '<div class="yb-sig rv">“'+(r.text || r.film)+'”<span>— '+c.member.handle+', '+r.date+'</span></div>';
+    }).join('');
+    return '<section class="yb-book"><header class="rv"><h1>THE 305</h1><p>'+c.club.name+' · CLASS OF 2026</p></header>'
+      + '<div class="yb-grads">'+grads+'</div>'
+      + '<h2 class="rv">Sign my yearbook</h2>'+sigs
+      + '<footer class="rv">Alumni dues <b>'+c.join.price+'</b> — <a href="'+c.join.patreon+'" target="_blank" rel="noopener">Stay in touch</a></footer></section>';
+  }
+};
+
+THEMES.classifieds = {
+  label: "Classifieds",
+  meta: "#f0ede2",
+  render: function(c){
+    var ads = c.events.map(function(e){
+      return '<div class="cf-ad rv"><b>'+e.title.toUpperCase()+'</b> — '+[e.dow, e.mon, e.day, e.time, e.venue].filter(Boolean).join(', ')+'. '
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">'+e.ticketLabel+'</a></div>';
+    }).join('');
+    var pers = c.diary.map(function(d){
+      return '<div class="cf-ad rv"><b>SEEN:</b> '+d.film+' ('+d.year+'), rated '+MFC.stars(d.stars)+'. '+d.note+'</div>';
+    }).join('');
+    return '<section class="cf-page"><header class="rv"><h1>CLASSIFIEDS</h1><p>'+c.club.name+' · '+c.club.handle+' · all ads verified</p></header>'
+      + '<h2 class="rv">Announcements</h2>'+ads
+      + '<h2 class="rv">Missed connections</h2>'+pers
+      + '<footer class="rv">Place your ad — <b>'+c.join.price+'</b> <a href="'+c.join.patreon+'" target="_blank" rel="noopener">join</a></footer></section>';
+  }
+};
+
+THEMES.jukebox = {
+  label: "Jukebox",
+  meta: "#160a1e",
+  render: function(c){
+    var keys = c.events.map(function(e, i){
+      return '<button type="button" class="jk-key rv" data-i="'+i+'"><span class="jk-l">'+'ABC'[i]+(i+1)+'</span><span class="jk-t">'+e.title+'</span></button>';
+    }).join('');
+    var now = c.events.map(function(e, i){
+      return '<div class="jk-now" data-i="'+i+'"><div class="jk-sel">SELECTION '+'ABC'[i]+(i+1)+'</div><h3>'+e.title+'</h3>'
+        + '<p>'+[e.dow, e.mon, e.day, e.time, e.venue].filter(Boolean).join(' · ')+'</p>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">▶ '+e.ticketLabel+'</a></div>';
+    }).join('');
+    var sides = c.reviews.slice(0, 3).map(function(r){
+      return '<div class="jk-side rv"><b>'+r.film+'</b><span>'+(r.stars ? MFC.stars(r.stars) : '')+'</span></div>';
+    }).join('');
+    return '<section class="jk-box"><div class="jk-arch rv">'+c.club.name+'</div>'
+      + '<div class="jk-keys">'+keys+'</div><div class="jk-nows">'+now+'</div>'
+      + '<h2 class="rv">B-sides</h2>'+sides
+      + '<div class="jk-join rv">25¢ a play — or <b>'+c.join.price+'</b>/mo <a href="'+c.join.patreon+'" target="_blank" rel="noopener">unlimited</a></div></section>';
+  },
+  mount: function(root){
+    var ks = root.querySelectorAll('.jk-key'), ns = root.querySelectorAll('.jk-now');
+    function s(i){
+      ks.forEach(function(k, j){ k.classList.toggle('on', j === i); });
+      ns.forEach(function(n, j){ n.classList.toggle('on', j === i); });
+    }
+    ks.forEach(function(k){ k.addEventListener('click', function(){ s(parseInt(k.dataset.i, 10)); }); });
+    s(0);
+  }
+};
+
+THEMES.treasuremap = {
+  label: "Treasure Map",
+  meta: "#e8d5a8",
+  render: function(c){
+    var marks = c.events.map(function(e, i){
+      var pos = [[18, 30], [55, 55], [78, 22]][i] || [50, 50];
+      return '<button type="button" class="tr-x rv" style="left:'+pos[0]+'%;top:'+pos[1]+'%" data-i="'+i+'">✕</button>';
+    }).join('');
+    var legend = c.events.map(function(e, i){
+      return '<div class="tr-leg" data-i="'+i+'"><b>✕ Site '+(i+1)+': '+e.title+'</b>'
+        + '<span>'+[e.dow, e.mon, e.day, e.time, e.venue].filter(Boolean).join(' · ')+'</span>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">'+e.ticketLabel+' →</a></div>';
+    }).join('');
+    var log = c.diary.map(function(d){
+      return '<div class="tr-log rv">⚓ '+d.film+' — '+MFC.stars(d.stars)+'<span>'+d.note+'</span></div>';
+    }).join('');
+    return '<section class="tr-chart"><h1 class="rv">Ye Olde 305 Chart</h1>'
+      + '<div class="tr-map">'+marks+'<div class="tr-sea">THE ATLANTIC</div><div class="tr-compass">N ↑</div></div>'
+      + '<div class="tr-legends">'+legend+'</div>'
+      + '<h2 class="rv">Captain&rsquo;s log</h2>'+log
+      + '<footer class="rv">Join the crew — <b>'+c.join.price+'</b> <a href="'+c.join.patreon+'" target="_blank" rel="noopener">All aboard</a></footer></section>';
+  },
+  mount: function(root){
+    var xs = root.querySelectorAll('.tr-x'), ls = root.querySelectorAll('.tr-leg');
+    function s(i){
+      xs.forEach(function(x, j){ x.classList.toggle('on', j === i); });
+      ls.forEach(function(l, j){ l.classList.toggle('on', j === i); });
+    }
+    xs.forEach(function(x){ x.addEventListener('click', function(){ s(parseInt(x.dataset.i, 10)); }); });
+    s(0);
+  }
+};
+
+THEMES.phonebook = {
+  label: "Yellow Pages",
+  meta: "#fffbe0",
+  render: function(c){
+    var list = c.events.map(function(e){
+      return '<div class="yp-listing rv"><b>'+e.title.toUpperCase()+'</b><span>'+[e.dow, e.mon, e.day, e.time, e.venue].filter(Boolean).join(' · ')+'</span>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">☎ '+e.ticketLabel+'</a></div>';
+    }).join('');
+    var also = c.reviews.slice(0, 3).map(function(r){
+      return '<div class="yp-listing rv"><b>'+r.film.toUpperCase()+'</b><span>'+(r.stars ? MFC.stars(r.stars)+' · ' : '')+'see '+c.member.handle+' on Letterboxd</span></div>';
+    }).join('');
+    return '<section class="yp-book"><header class="rv"><h1>YELLOW PAGES</h1><p>'+c.club.name+' · let your fingers do the walking</p></header>'
+      + '<div class="yp-alpha">CINEMAS — M</div>' + list
+      + '<div class="yp-alpha">REVIEWS — R</div>' + also
+      + '<footer class="rv">Get listed — <b>'+c.join.price+'</b> <a href="'+c.join.patreon+'" target="_blank" rel="noopener">join</a></footer></section>';
+  }
+};
+
+THEMES.tradingcards = {
+  label: "Trading Cards",
+  meta: "#10241a",
+  render: function(c){
+    var cards = c.events.map(function(e, i){
+      return '<button type="button" class="tc-card rv" data-i="'+i+'"><div class="tc-holo"></div>'
+        + '<span class="tc-set">SERIES 305</span><b>'+e.title+'</b><span class="tc-m">'+e.mon+' '+e.day+' · '+e.tag+'</span></button>';
+    }).join('');
+    var back = c.events.map(function(e, i){
+      return '<div class="tc-back" data-i="'+i+'"><h3>'+e.title+'</h3><div class="tc-stats">'
+        + '<div><span>DATE</span><b>'+e.mon+' '+e.day+'</b></div><div><span>VENUE</span><b>'+(e.venue || '—')+'</b></div><div><span>HYPE</span><b>'+['98','91','87'][i]+'</b></div></div>'
+        + '<p>'+(e.note || e.time || 'Pop-up screening')+'</p>'
+        + '<a href="'+e.ticketUrl+'" target="_blank" rel="noopener">'+e.ticketLabel+'</a></div>';
+    }).join('');
+    return '<section class="tc-album"><h1 class="rv">'+c.club.name+' <span>TRADING CARDS</span></h1>'
+      + '<div class="tc-cards">'+cards+'</div><div class="tc-backs">'+back+'</div>'
+      + '<div class="tc-join rv">Complete your set — <b>'+c.join.price+'</b> <a href="'+c.join.patreon+'" target="_blank" rel="noopener">Open packs</a></div></section>';
+  },
+  mount: function(root){
+    var cs = root.querySelectorAll('.tc-card'), bs = root.querySelectorAll('.tc-back');
+    function f(i){
+      cs.forEach(function(x, j){ x.classList.toggle('on', j === i); });
+      bs.forEach(function(x, j){ x.classList.toggle('on', j === i); });
+    }
+    cs.forEach(function(x){ x.addEventListener('click', function(){ f(parseInt(x.dataset.i, 10)); }); });
+    f(0);
+  }
+};
+
+THEMES.billboard = {
+  label: "Billboards",
+  meta: "#0e1a2e",
+  render: function(c){
+    var boards = c.events.map(function(e, i){
+      return '<div class="bb-board rv"><div class="bb-ad"><span class="bb-k">'+e.tag+'</span><h3>'+e.title+'</h3>'
+        + '<p>'+[e.dow, e.mon, e.day, e.time, e.venue].filter(Boolean).join(' · ')+'</p></div>'
+        + '<div class="bb-pole"></div><a class="bb-exit" href="'+e.ticketUrl+'" target="_blank" rel="noopener">EXIT '+(i+1)+' · '+e.ticketLabel+'</a></div>';
+    }).join('');
+    var radio = c.reviews.slice(0, 2).map(function(r){
+      return '<div class="bb-radio rv">📻 '+(r.text || r.film)+'<span> — '+c.member.handle+'</span></div>';
+    }).join('');
+    return '<section class="bb-hwy"><div class="bb-sky rv">MIAMI · NEXT 3 EXITS</div>'
+      + boards + '<h2 class="rv">Traffic report</h2>' + radio
+      + '<div class="bb-join rv">E-ZPass — <b>'+c.join.price+'</b> <a href="'+c.join.patreon+'" target="_blank" rel="noopener">Keep driving</a></div></section>';
   }
 };
 

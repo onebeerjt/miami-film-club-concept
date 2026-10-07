@@ -6,7 +6,7 @@ root = pathlib.Path("/home/hatch/code/miami-film-club-concept")
 shell = (root / "src" / "shell.html").read_text()
 
 css_parts, js_parts = [], []
-for n in (1, 2, 3, 4):
+for n in (1, 2, 3, 4, 5, 6, 7, 8):
     c = root / "work" / f"batch{n}" / "themes.css"
     j = root / "work" / f"batch{n}" / "themes.js"
     if c.exists():
